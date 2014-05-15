@@ -1,0 +1,8 @@
+prefix=/home/sudha/catkin_ws/devel
+
+Name: tf
+Description: Description of tf
+Version: 1.10.8
+Cflags: -I/home/sudha/catkin_ws/devel/include -I/home/sudha/catkin_ws/src/geometry-hydro-devel/tf/include
+Libs: -L/home/sudha/catkin_ws/devel/lib -ltf
+Requires: geometry_msgs message_filters message_runtime roscpp sensor_msgs std_msgs tf2_ros rosconsole

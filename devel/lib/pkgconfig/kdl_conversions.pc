@@ -1,0 +1,8 @@
+prefix=/home/sudha/catkin_ws/devel
+
+Name: kdl_conversions
+Description: Description of kdl_conversions
+Version: 1.10.8
+Cflags: -I/home/sudha/catkin_ws/src/geometry-hydro-devel/kdl_conversions/include -I/usr/include/eigen3 -I/opt/ros/hydro/include
+Libs: -L/home/sudha/catkin_ws/devel/lib -lkdl_conversions
+Requires: geometry_msgs

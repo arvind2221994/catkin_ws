@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "pose_base_controller")
+set(pose_base_controller_MAINTAINER "Dave Hershberger <hersh@willowgarage.com>")
+set(pose_base_controller_DEPRECATED "")
+set(pose_base_controller_VERSION "0.1.11")
+set(pose_base_controller_BUILD_DEPENDS "actionlib" "move_base_msgs" "nav_msgs" "roscpp" "tf" "geometry_msgs")
+set(pose_base_controller_RUN_DEPENDS "actionlib" "move_base_msgs" "nav_msgs" "roscpp" "tf" "geometry_msgs")
+set(pose_base_controller_BUILDTOOL_DEPENDS "catkin")

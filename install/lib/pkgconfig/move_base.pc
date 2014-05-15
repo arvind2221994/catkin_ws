@@ -1,0 +1,8 @@
+prefix=/home/sudha/catkin_ws/install
+
+Name: move_base
+Description: Description of move_base
+Version: 1.11.6
+Cflags: -I/home/sudha/catkin_ws/install/include
+Libs: -L/home/sudha/catkin_ws/install/lib 
+Requires: roscpp dynamic_reconfigure

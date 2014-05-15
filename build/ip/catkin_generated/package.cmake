@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "ip")
+set(ip_MAINTAINER "akhil <akhil@todo.todo>")
+set(ip_DEPRECATED "")
+set(ip_VERSION "0.0.0")
+set(ip_BUILD_DEPENDS "cv_bridge" "opencv2" "roscpp" "rospy" "sensor_msgs")
+set(ip_RUN_DEPENDS "cv_bridge" "opencv2" "roscpp" "rospy" "sensor_msgs")
+set(ip_BUILDTOOL_DEPENDS "catkin")

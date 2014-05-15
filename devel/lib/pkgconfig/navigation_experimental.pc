@@ -1,0 +1,8 @@
+prefix=/home/sudha/catkin_ws/devel
+
+Name: navigation_experimental
+Description: Description of navigation_experimental
+Version: 0.1.11
+Cflags: 
+Libs: -L/home/sudha/catkin_ws/devel/lib 
+Requires: 

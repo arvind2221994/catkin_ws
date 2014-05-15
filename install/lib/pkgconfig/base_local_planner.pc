@@ -1,0 +1,8 @@
+prefix=/home/sudha/catkin_ws/install
+
+Name: base_local_planner
+Description: Description of base_local_planner
+Version: 1.11.6
+Cflags: -I/home/sudha/catkin_ws/install/include
+Libs: -L/home/sudha/catkin_ws/install/lib -lbase_local_planner -ltrajectory_planner_ros
+Requires: roscpp dynamic_reconfigure message_generation tf pluginlib costmap_2d nav_core angles

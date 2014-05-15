@@ -1,0 +1,8 @@
+prefix=/home/sudha/catkin_ws/devel
+
+Name: rotate_recovery
+Description: Description of rotate_recovery
+Version: 1.11.6
+Cflags: -I/home/sudha/catkin_ws/src/rotate_recovery/include
+Libs: -L/home/sudha/catkin_ws/devel/lib -lrotate_recovery
+Requires: roscpp pluginlib

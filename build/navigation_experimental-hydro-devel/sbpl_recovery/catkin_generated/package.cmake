@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "sbpl_recovery")
+set(sbpl_recovery_MAINTAINER "Dave Hershberger <hersh@willowgarage.com>")
+set(sbpl_recovery_DEPRECATED "")
+set(sbpl_recovery_VERSION "0.1.11")
+set(sbpl_recovery_BUILD_DEPENDS "roscpp" "nav_core" "sbpl_lattice_planner" "pose_follower" "costmap_2d" "pluginlib" "base_local_planner" "sbpl")
+set(sbpl_recovery_RUN_DEPENDS "roscpp" "nav_core" "sbpl_lattice_planner" "pose_follower" "costmap_2d" "pluginlib" "base_local_planner" "sbpl")
+set(sbpl_recovery_BUILDTOOL_DEPENDS "catkin")

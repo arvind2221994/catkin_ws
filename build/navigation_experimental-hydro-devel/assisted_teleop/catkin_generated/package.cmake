@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "assisted_teleop")
+set(assisted_teleop_MAINTAINER "Dave Hershberger <hersh@willowgarage.com>")
+set(assisted_teleop_DEPRECATED "")
+set(assisted_teleop_VERSION "0.1.11")
+set(assisted_teleop_BUILD_DEPENDS "tf" "costmap_2d" "roscpp" "roslib" "geometry_msgs" "move_base_msgs" "actionlib" "message_filters" "base_local_planner" "angles" "pluginlib" "sensor_msgs" "filters" "eigen")
+set(assisted_teleop_RUN_DEPENDS "tf" "costmap_2d" "roscpp" "roslib" "geometry_msgs" "move_base_msgs" "actionlib" "message_filters" "base_local_planner" "angles" "pluginlib" "sensor_msgs" "filters" "eigen")
+set(assisted_teleop_BUILDTOOL_DEPENDS "catkin")

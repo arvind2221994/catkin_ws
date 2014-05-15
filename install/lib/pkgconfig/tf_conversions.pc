@@ -1,0 +1,8 @@
+prefix=/home/sudha/catkin_ws/install
+
+Name: tf_conversions
+Description: Description of tf_conversions
+Version: 1.10.8
+Cflags: -I/home/sudha/catkin_ws/install/include -I/usr/include/eigen3 -I/opt/ros/hydro/include
+Libs: -L/home/sudha/catkin_ws/install/lib -ltf_conversions
+Requires: geometry_msgs kdl_conversions tf

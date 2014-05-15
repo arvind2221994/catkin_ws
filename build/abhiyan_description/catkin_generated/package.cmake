@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "abhiyan_description")
+set(abhiyan_description_MAINTAINER "sudha <sudha@todo.todo>")
+set(abhiyan_description_DEPRECATED "")
+set(abhiyan_description_VERSION "0.0.0")
+set(abhiyan_description_BUILD_DEPENDS "urdf")
+set(abhiyan_description_RUN_DEPENDS "urdf")
+set(abhiyan_description_BUILDTOOL_DEPENDS "catkin")

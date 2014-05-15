@@ -1,0 +1,8 @@
+prefix=/home/sudha/catkin_ws/install
+
+Name: gps_common
+Description: Description of gps_common
+Version: 0.1.6
+Cflags: -I/home/sudha/catkin_ws/install/include
+Libs: -L/home/sudha/catkin_ws/install/lib 
+Requires: message_runtime

@@ -1,0 +1,8 @@
+prefix=/home/sudha/catkin_ws/devel
+
+Name: ip
+Description: Description of ip
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/sudha/catkin_ws/devel/lib 
+Requires: 

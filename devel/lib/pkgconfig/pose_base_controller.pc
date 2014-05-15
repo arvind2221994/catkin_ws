@@ -1,0 +1,8 @@
+prefix=/home/sudha/catkin_ws/devel
+
+Name: pose_base_controller
+Description: Description of pose_base_controller
+Version: 0.1.11
+Cflags: -I/home/sudha/catkin_ws/src/navigation_experimental-hydro-devel/pose_base_controller/include
+Libs: -L/home/sudha/catkin_ws/devel/lib 
+Requires: actionlib move_base_msgs nav_msgs roscpp tf geometry_msgs

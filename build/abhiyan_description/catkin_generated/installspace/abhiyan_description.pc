@@ -1,0 +1,8 @@
+prefix=/home/sudha/catkin_ws/install
+
+Name: abhiyan_description
+Description: Description of abhiyan_description
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/sudha/catkin_ws/install/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/sudha/catkin_ws/install
+
+Name: pose_base_controller
+Description: Description of pose_base_controller
+Version: 0.1.11
+Cflags: -I/home/sudha/catkin_ws/install/include
+Libs: -L/home/sudha/catkin_ws/install/lib 
+Requires: actionlib move_base_msgs nav_msgs roscpp tf geometry_msgs

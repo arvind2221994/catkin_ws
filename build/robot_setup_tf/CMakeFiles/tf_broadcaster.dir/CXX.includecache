@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sudha/catkin_ws/src/robot_setup_tf/src/tf_broadcaster.cpp
+ros/ros.h
+-
+tf/transform_broadcaster.h
+-
+

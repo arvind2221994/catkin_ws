@@ -1,0 +1,8 @@
+prefix=/home/sudha/catkin_ws/install
+
+Name: robot_tf_config
+Description: Description of robot_tf_config
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/sudha/catkin_ws/install/lib 
+Requires: 
