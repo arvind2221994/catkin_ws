@@ -239,6 +239,10 @@
 /home/sudha/catkin_ws/install/share/simple_navigation_goals/cmake/simple_navigation_goalsConfig-version.cmake
 /home/sudha/catkin_ws/install/share/simple_navigation_goals/package.xml
 /home/sudha/catkin_ws/install/share/slam_gmapping/package.xml
+/home/sudha/catkin_ws/install/lib/pkgconfig/temp.pc
+/home/sudha/catkin_ws/install/share/temp/cmake/tempConfig.cmake
+/home/sudha/catkin_ws/install/share/temp/cmake/tempConfig-version.cmake
+/home/sudha/catkin_ws/install/share/temp/package.xml
 /home/sudha/catkin_ws/install/share/tf/msg/tfMessage.msg
 /home/sudha/catkin_ws/install/share/tf/srv/FrameGraph.srv
 /home/sudha/catkin_ws/install/share/tf/cmake/tf-msg-paths.cmake

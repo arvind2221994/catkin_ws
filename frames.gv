@@ -1,6 +1,6 @@
 digraph G {
-"base_link" -> "base_laser"[label="Broadcaster: /tf_broadcaster\nAverage rate: 100.202 Hz\nMost recent transform: 1400105265.762 \nBuffer length: 4.980 sec\n"];
-"odom" -> "base_link"[label="Broadcaster: /test_odom_code\nAverage rate: 1.250 Hz\nMost recent transform: 1400105265.245 \nBuffer length: 4.000 sec\n"];
-"base_link" -> "laser_frame"[label="Broadcaster: /tf_broadcaster\nAverage rate: 100.201 Hz\nMost recent transform: 1400105265.762 \nBuffer length: 4.980 sec\n"];
-"map" -> "odom"[label="Broadcaster: /slam_gmapping\nAverage rate: 20.202 Hz\nMost recent transform: 1400105265.790 \nBuffer length: 4.950 sec\n"];
+"base_link" -> "base_laser"[label="Broadcaster: /tf_broadcaster\nAverage rate: 100.203 Hz\nMost recent transform: 1400256275.889 \nBuffer length: 4.930 sec\n"];
+"odom" -> "base_link"[label="Broadcaster: /test_odom_code\nAverage rate: 1.250 Hz\nMost recent transform: 1400256275.572 \nBuffer length: 4.000 sec\n"];
+"base_link" -> "laser_frame"[label="Broadcaster: /tf_broadcaster\nAverage rate: 100.203 Hz\nMost recent transform: 1400256275.889 \nBuffer length: 4.930 sec\n"];
+"map" -> "odom"[label="Broadcaster: /gmapping\nAverage rate: 20.204 Hz\nMost recent transform: 1400256275.923 \nBuffer length: 4.900 sec\n"];
 }

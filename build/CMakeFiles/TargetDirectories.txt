@@ -313,6 +313,7 @@
 /home/sudha/catkin_ws/build/abhiyan_description/CMakeFiles/std_msgs_generate_messages_lisp.dir
 /home/sudha/catkin_ws/build/abhiyan_description/CMakeFiles/std_msgs_generate_messages_py.dir
 /home/sudha/catkin_ws/build/gps_t/CMakeFiles/sync.dir
+/home/sudha/catkin_ws/build/temp/CMakeFiles/temp.dir
 /home/sudha/catkin_ws/build/lite_odom/CMakeFiles/test2_odom_code.dir
 /home/sudha/catkin_ws/build/geometry-hydro-devel/tf/CMakeFiles/testBroadcaster.dir
 /home/sudha/catkin_ws/build/geometry-hydro-devel/tf/CMakeFiles/testListener.dir

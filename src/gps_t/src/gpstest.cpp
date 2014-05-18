@@ -37,10 +37,10 @@ class GpsTest{
                       //12.9917215 ;
             longprsnt= gpsMsgprsnt.longitude ;
                        //80.230916667 ;
-            double testlat=12.988888889;
-            double testlong=80.233611112;
-
-            theta=angle(latprsnt,gpsway[0][0],testlat,longprsnt,gpsway[0][1],testlong);
+            //double testlat=12.988888889;
+          //  double testlong=80.233611112;
+		  //theta=angle(latprsnt,gpsway[0][0],testlat, longprsnt,gpsway[0][1],testlong);
+            theta=angle(latprsnt,gpsway[0][0],latprev,longprsnt,gpsway[0][1],longprev);
             cout<<"theta is given by "<<rad2deg(theta)<<endl;
         }
         

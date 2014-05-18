@@ -4,5 +4,8 @@ global_costmap:
   update_frequency: 0.3
   publish_frequency: 0.5
   static_map: true
-rolling_window: false
-  
+  rolling_window: false
+  width: 14.0
+  height: 14.0
+
+

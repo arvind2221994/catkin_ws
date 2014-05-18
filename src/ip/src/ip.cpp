@@ -29,7 +29,7 @@ int main(int argc, char** argv)
     sensor_msgs::Image ros_image;
     Mat src;
 
-  ros::Publisher pub = nh.advertise<sensor_msgs::LaserScan>("/static_image", 1);
+  ros::Publisher pub = nh.advertise<sensor_msgs::LaserScan>("scan", 1);
   ros::Rate loop_rate(5);
 
   while (nh.ok()) 
@@ -121,18 +121,18 @@ int main(int argc, char** argv)
 
     ros::Time scan_time = ros::Time::now();
 
-    sensor_msgs::LaserScan scan;
-    scan.header.stamp = scan_time;
-    scan.header.frame_id = "laser_frame";
-    scan.angle_increment = angle_width;
-    scan.angle_min = -M_PI/2.0;
-    scan.angle_max = M_PI/2.0;
-    scan.range_max = exp(max_dist/LOG_SCALE)/(double)PIXELS_PER_METER;
-    scan.ranges.resize(num_readings);
-    scan.intensities.resize(num_readings);
+    sensor_msgs::LaserScan scan_cam;
+    scan_cam.header.stamp = scan_time;
+    scan_cam.header.frame_id = "laser_frame";
+    scan_cam.angle_increment = angle_width;
+    scan_cam.angle_min = -M_PI/2.0;
+    scan_cam.angle_max = M_PI/2.0;
+    scan_cam.range_max = exp(max_dist/LOG_SCALE)/(double)PIXELS_PER_METER;
+    scan_cam.ranges.resize(num_readings);
+    scan_cam.intensities.resize(num_readings);
     for(unsigned int i=0;i<num_readings;++i){
-        scan.ranges[i] = ranges[i];
-        scan.intensities[i] = 300.0;
+        scan_cam.ranges[i] = ranges[i];
+        scan_cam.intensities[i] = 300.0;
     }
     /* This part can be removed. It is only being used for debugging */
     cvtColor(temp_src,temp_src,CV_HSV2RGB);
@@ -141,6 +141,6 @@ int main(int argc, char** argv)
 
     cv_image.toImageMsg(ros_image);
     cvWaitKey(30);
-    pub.publish(scan);
+    pub.publish(scan_cam);
   }
 }

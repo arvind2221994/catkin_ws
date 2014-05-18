@@ -904,6 +904,7 @@ namespace move_base {
           last_valid_control_ = ros::Time::now();
           //make sure that we send the velocity command to the base
           vel_pub_.publish(cmd_vel);
+	//	ROS_INFO("Linear x: %lf y: %lf Ang z: %lf", cmd_vel.linear.x, cmd_vel.linear.y, cmd_vel.angular.z);
           if(recovery_trigger_ == CONTROLLING_R)
             recovery_index_ = 0;
         }
