@@ -187,11 +187,11 @@ namespace base_local_planner {
       private_nh.param("escape_reset_dist", escape_reset_dist, 0.10);
       private_nh.param("escape_reset_theta", escape_reset_theta, M_PI_4);
       private_nh.param("holonomic_robot", holonomic_robot, true);
-      private_nh.param("max_vel_x", max_vel_x, 0.5);
-      private_nh.param("min_vel_x", min_vel_x, 0.1);
+      private_nh.param("max_vel_x", max_vel_x, 0.09);
+      private_nh.param("min_vel_x", min_vel_x, 0.00);
 
       double max_rotational_vel;
-      private_nh.param("max_rotational_vel", max_rotational_vel, 1.0);
+      private_nh.param("max_rotational_vel", max_rotational_vel, 0.4);
       max_vel_th_ = max_rotational_vel;
       min_vel_th_ = -1.0 * max_rotational_vel;
       private_nh.param("min_in_place_rotational_vel", min_in_place_vel_th_, 0.4);

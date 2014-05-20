@@ -354,26 +354,6 @@ geometry_msgs/Point.h
 base_local_planner/planar_laser_scan.h
 -
 
-/home/sudha/catkin_ws/src/base_local_planner/src/trajectory_planner.cpp
-base_local_planner/trajectory_planner.h
--
-costmap_2d/footprint.h
--
-string
--
-sstream
--
-math.h
--
-angles/angles.h
--
-boost/algorithm/string.hpp
--
-ros/console.h
--
-queue
--
-
 /home/sudha/catkin_ws/src/base_local_planner/src/trajectory_planner_ros.cpp
 base_local_planner/trajectory_planner_ros.h
 -

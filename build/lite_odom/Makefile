@@ -161,6 +161,20 @@ lite_odom_code/fast:
 .PHONY : lite_odom_code/fast
 
 # Convenience name for target.
+lite_odom/CMakeFiles/ros_ard.dir/rule:
+	cd /home/sudha/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 lite_odom/CMakeFiles/ros_ard.dir/rule
+.PHONY : lite_odom/CMakeFiles/ros_ard.dir/rule
+
+# Convenience name for target.
+ros_ard: lite_odom/CMakeFiles/ros_ard.dir/rule
+.PHONY : ros_ard
+
+# fast build rule for target.
+ros_ard/fast:
+	cd /home/sudha/catkin_ws/build && $(MAKE) -f lite_odom/CMakeFiles/ros_ard.dir/build.make lite_odom/CMakeFiles/ros_ard.dir/build
+.PHONY : ros_ard/fast
+
+# Convenience name for target.
 lite_odom/CMakeFiles/test2_odom_code.dir/rule:
 	cd /home/sudha/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 lite_odom/CMakeFiles/test2_odom_code.dir/rule
 .PHONY : lite_odom/CMakeFiles/test2_odom_code.dir/rule
@@ -211,6 +225,30 @@ src/lite_odom_code.s: src/lite_odom_code.cpp.s
 src/lite_odom_code.cpp.s:
 	cd /home/sudha/catkin_ws/build && $(MAKE) -f lite_odom/CMakeFiles/lite_odom_code.dir/build.make lite_odom/CMakeFiles/lite_odom_code.dir/src/lite_odom_code.cpp.s
 .PHONY : src/lite_odom_code.cpp.s
+
+src/ros_ard.o: src/ros_ard.cpp.o
+.PHONY : src/ros_ard.o
+
+# target to build an object file
+src/ros_ard.cpp.o:
+	cd /home/sudha/catkin_ws/build && $(MAKE) -f lite_odom/CMakeFiles/ros_ard.dir/build.make lite_odom/CMakeFiles/ros_ard.dir/src/ros_ard.cpp.o
+.PHONY : src/ros_ard.cpp.o
+
+src/ros_ard.i: src/ros_ard.cpp.i
+.PHONY : src/ros_ard.i
+
+# target to preprocess a source file
+src/ros_ard.cpp.i:
+	cd /home/sudha/catkin_ws/build && $(MAKE) -f lite_odom/CMakeFiles/ros_ard.dir/build.make lite_odom/CMakeFiles/ros_ard.dir/src/ros_ard.cpp.i
+.PHONY : src/ros_ard.cpp.i
+
+src/ros_ard.s: src/ros_ard.cpp.s
+.PHONY : src/ros_ard.s
+
+# target to generate assembly for a file
+src/ros_ard.cpp.s:
+	cd /home/sudha/catkin_ws/build && $(MAKE) -f lite_odom/CMakeFiles/ros_ard.dir/build.make lite_odom/CMakeFiles/ros_ard.dir/src/ros_ard.cpp.s
+.PHONY : src/ros_ard.cpp.s
 
 src/test2_odom_code.o: src/test2_odom_code.cpp.o
 .PHONY : src/test2_odom_code.o
@@ -273,12 +311,16 @@ help:
 	@echo "... list_install_components"
 	@echo "... lite_odom_code"
 	@echo "... rebuild_cache"
+	@echo "... ros_ard"
 	@echo "... test"
 	@echo "... test2_odom_code"
 	@echo "... test_odom_code"
 	@echo "... src/lite_odom_code.o"
 	@echo "... src/lite_odom_code.i"
 	@echo "... src/lite_odom_code.s"
+	@echo "... src/ros_ard.o"
+	@echo "... src/ros_ard.i"
+	@echo "... src/ros_ard.s"
 	@echo "... src/test2_odom_code.o"
 	@echo "... src/test2_odom_code.i"
 	@echo "... src/test2_odom_code.s"

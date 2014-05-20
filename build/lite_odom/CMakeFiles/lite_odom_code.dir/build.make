@@ -86,12 +86,12 @@ lite_odom_code_EXTERNAL_OBJECTS =
 /home/sudha/catkin_ws/devel/lib/lite_odom/lite_odom_code: /usr/lib/libboost_filesystem-mt.so
 /home/sudha/catkin_ws/devel/lib/lite_odom/lite_odom_code: /opt/ros/hydro/lib/libxmlrpcpp.so
 /home/sudha/catkin_ws/devel/lib/lite_odom/lite_odom_code: /opt/ros/hydro/lib/libtf2.so
-/home/sudha/catkin_ws/devel/lib/lite_odom/lite_odom_code: /opt/ros/hydro/lib/libroscpp_serialization.so
 /home/sudha/catkin_ws/devel/lib/lite_odom/lite_odom_code: /opt/ros/hydro/lib/librosconsole.so
 /home/sudha/catkin_ws/devel/lib/lite_odom/lite_odom_code: /opt/ros/hydro/lib/librosconsole_log4cxx.so
 /home/sudha/catkin_ws/devel/lib/lite_odom/lite_odom_code: /opt/ros/hydro/lib/librosconsole_backend_interface.so
 /home/sudha/catkin_ws/devel/lib/lite_odom/lite_odom_code: /usr/lib/liblog4cxx.so
 /home/sudha/catkin_ws/devel/lib/lite_odom/lite_odom_code: /usr/lib/libboost_regex-mt.so
+/home/sudha/catkin_ws/devel/lib/lite_odom/lite_odom_code: /opt/ros/hydro/lib/libroscpp_serialization.so
 /home/sudha/catkin_ws/devel/lib/lite_odom/lite_odom_code: /opt/ros/hydro/lib/librostime.so
 /home/sudha/catkin_ws/devel/lib/lite_odom/lite_odom_code: /usr/lib/libboost_date_time-mt.so
 /home/sudha/catkin_ws/devel/lib/lite_odom/lite_odom_code: /usr/lib/libboost_system-mt.so

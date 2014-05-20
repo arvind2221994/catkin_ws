@@ -69,7 +69,7 @@ namespace move_base {
     private_nh.param("global_costmap/robot_base_frame", robot_base_frame_, std::string("base_link"));
     private_nh.param("global_costmap/global_frame", global_frame_, std::string("/map"));
     private_nh.param("planner_frequency", planner_frequency_, 0.0);
-    private_nh.param("controller_frequency", controller_frequency_, 10.0);
+    private_nh.param("controller_frequency", controller_frequency_, 20.0);
     private_nh.param("planner_patience", planner_patience_, 5.0);
     private_nh.param("controller_patience", controller_patience_, 15.0);
 
@@ -513,9 +513,7 @@ namespace move_base {
     vel_pub_.publish(cmd_vel);
 
   }
-	
-	ROS_INFO("Linear x: %lf y: %lf Ang z: %lf", cmd_vel.linear.x, cmd_vel.linear.y, cmd_vel.angular.z);
-	
+
   bool MoveBase::isQuaternionValid(const geometry_msgs::Quaternion& q){
     //first we need to check if the quaternion has nan's or infs
     if(!std::isfinite(q.x) || !std::isfinite(q.y) || !std::isfinite(q.z) || !std::isfinite(q.w)){

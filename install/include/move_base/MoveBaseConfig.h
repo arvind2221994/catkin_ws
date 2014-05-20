@@ -164,7 +164,7 @@ namespace move_base
 
       void convertParams()
       {
-        for(std::vector<AbstractParamDescriptionConstPtr>::const_iterator i = abstract_parameters.begin(); i != abstract_parameters.end(); i++)
+        for(std::vector<AbstractParamDescriptionConstPtr>::const_iterator i = abstract_parameters.begin(); i != abstract_parameters.end(); ++i)
         {
           parameters.push_back(dynamic_reconfigure::ParamDescription(**i));
         }
@@ -193,8 +193,8 @@ namespace move_base
         PT* config = boost::any_cast<PT*>(cfg);
         if(!dynamic_reconfigure::ConfigTools::getGroupState(msg, name, (*config).*field))
           return false;
-        
-        for(std::vector<AbstractGroupDescriptionConstPtr>::const_iterator i = groups.begin(); i != groups.end(); i++) 
+
+        for(std::vector<AbstractGroupDescriptionConstPtr>::const_iterator i = groups.begin(); i != groups.end(); ++i)
         {
           boost::any n = &((*config).*field);
           if(!(*i)->fromMessage(msg, n))
@@ -210,14 +210,14 @@ namespace move_base
         T* group = &((*config).*field);
         group->state = state;
 
-        for(std::vector<AbstractGroupDescriptionConstPtr>::const_iterator i = groups.begin(); i != groups.end(); i++)
+        for(std::vector<AbstractGroupDescriptionConstPtr>::const_iterator i = groups.begin(); i != groups.end(); ++i)
         {
           boost::any n = boost::any(&((*config).*field));
           (*i)->setInitialState(n);
         }
 
       }
-      
+
       virtual void updateParams(boost::any &cfg, MoveBaseConfig &top) const
       {
         PT* config = boost::any_cast<PT*>(cfg);
@@ -225,7 +225,7 @@ namespace move_base
         T* f = &((*config).*field);
         f->setParams(top, abstract_parameters);
 
-        for(std::vector<AbstractGroupDescriptionConstPtr>::const_iterator i = groups.begin(); i != groups.end(); i++) 
+        for(std::vector<AbstractGroupDescriptionConstPtr>::const_iterator i = groups.begin(); i != groups.end(); ++i)
         {
           boost::any n = &((*config).*field);
           (*i)->updateParams(n, top);
@@ -237,7 +237,7 @@ namespace move_base
         const PT config = boost::any_cast<PT>(cfg);
         dynamic_reconfigure::ConfigTools::appendGroup<T>(msg, name, id, parent, config.*field);
 
-        for(std::vector<AbstractGroupDescriptionConstPtr>::const_iterator i = groups.begin(); i != groups.end(); i++)
+        for(std::vector<AbstractGroupDescriptionConstPtr>::const_iterator i = groups.begin(); i != groups.end(); ++i)
         {
           (*i)->toMessage(msg, config.*field);
         }
@@ -258,7 +258,7 @@ class DEFAULT
 
     void setParams(MoveBaseConfig &config, const std::vector<AbstractParamDescriptionConstPtr> params)
     {
-      for (std::vector<AbstractParamDescriptionConstPtr>::const_iterator i = params.begin(); i != params.end(); i++)
+      for (std::vector<AbstractParamDescriptionConstPtr>::const_iterator i = params.begin(); i != params.end(); ++i)
       {
         boost::any val;
         (*i)->getValue(config, val);
@@ -301,31 +301,31 @@ bool restore_defaults;
 
 
 
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       std::string base_global_planner;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       std::string base_local_planner;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double planner_frequency;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double controller_frequency;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double planner_patience;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double controller_patience;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double conservative_reset_dist;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       bool recovery_behavior_enabled;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       bool clearing_rotation_allowed;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       bool shutdown_costmaps;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double oscillation_timeout;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double oscillation_distance;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       bool restore_defaults;
 //#line 255 "/opt/ros/hydro/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
 
@@ -335,7 +335,7 @@ bool restore_defaults;
       const std::vector<AbstractGroupDescriptionConstPtr> &__group_descriptions__ = __getGroupDescriptions__();
 
       int count = 0;
-      for (std::vector<AbstractParamDescriptionConstPtr>::const_iterator i = __param_descriptions__.begin(); i != __param_descriptions__.end(); i++)
+      for (std::vector<AbstractParamDescriptionConstPtr>::const_iterator i = __param_descriptions__.begin(); i != __param_descriptions__.end(); ++i)
         if ((*i)->fromMessage(msg, *this))
           count++;
 
@@ -376,10 +376,10 @@ bool restore_defaults;
     void __toMessage__(dynamic_reconfigure::Config &msg, const std::vector<AbstractParamDescriptionConstPtr> &__param_descriptions__, const std::vector<AbstractGroupDescriptionConstPtr> &__group_descriptions__) const
     {
       dynamic_reconfigure::ConfigTools::clear(msg);
-      for (std::vector<AbstractParamDescriptionConstPtr>::const_iterator i = __param_descriptions__.begin(); i != __param_descriptions__.end(); i++)
+      for (std::vector<AbstractParamDescriptionConstPtr>::const_iterator i = __param_descriptions__.begin(); i != __param_descriptions__.end(); ++i)
         (*i)->toMessage(msg, *this);
 
-      for (std::vector<AbstractGroupDescriptionConstPtr>::const_iterator i = __group_descriptions__.begin(); i != __group_descriptions__.end(); i++)
+      for (std::vector<AbstractGroupDescriptionConstPtr>::const_iterator i = __group_descriptions__.begin(); i != __group_descriptions__.end(); ++i)
       {
         if((*i)->id == 0)
         {
@@ -398,7 +398,7 @@ bool restore_defaults;
     void __toServer__(const ros::NodeHandle &nh) const
     {
       const std::vector<AbstractParamDescriptionConstPtr> &__param_descriptions__ = __getParamDescriptions__();
-      for (std::vector<AbstractParamDescriptionConstPtr>::const_iterator i = __param_descriptions__.begin(); i != __param_descriptions__.end(); i++)
+      for (std::vector<AbstractParamDescriptionConstPtr>::const_iterator i = __param_descriptions__.begin(); i != __param_descriptions__.end(); ++i)
         (*i)->toServer(nh, *this);
     }
 
@@ -407,7 +407,7 @@ bool restore_defaults;
       static bool setup=false;
 
       const std::vector<AbstractParamDescriptionConstPtr> &__param_descriptions__ = __getParamDescriptions__();
-      for (std::vector<AbstractParamDescriptionConstPtr>::const_iterator i = __param_descriptions__.begin(); i != __param_descriptions__.end(); i++)
+      for (std::vector<AbstractParamDescriptionConstPtr>::const_iterator i = __param_descriptions__.begin(); i != __param_descriptions__.end(); ++i)
         (*i)->fromServer(nh, *this);
 
       const std::vector<AbstractGroupDescriptionConstPtr> &__group_descriptions__ = __getGroupDescriptions__();
@@ -425,7 +425,7 @@ bool restore_defaults;
       const std::vector<AbstractParamDescriptionConstPtr> &__param_descriptions__ = __getParamDescriptions__();
       const MoveBaseConfig &__max__ = __getMax__();
       const MoveBaseConfig &__min__ = __getMin__();
-      for (std::vector<AbstractParamDescriptionConstPtr>::const_iterator i = __param_descriptions__.begin(); i != __param_descriptions__.end(); i++)
+      for (std::vector<AbstractParamDescriptionConstPtr>::const_iterator i = __param_descriptions__.begin(); i != __param_descriptions__.end(); ++i)
         (*i)->clamp(*this, __max__, __min__);
     }
 
@@ -433,7 +433,7 @@ bool restore_defaults;
     {
       const std::vector<AbstractParamDescriptionConstPtr> &__param_descriptions__ = __getParamDescriptions__();
       uint32_t level = 0;
-      for (std::vector<AbstractParamDescriptionConstPtr>::const_iterator i = __param_descriptions__.begin(); i != __param_descriptions__.end(); i++)
+      for (std::vector<AbstractParamDescriptionConstPtr>::const_iterator i = __param_descriptions__.begin(); i != __param_descriptions__.end(); ++i)
         (*i)->calcLevel(level, config, *this);
       return level;
     }
@@ -462,143 +462,143 @@ bool restore_defaults;
     MoveBaseConfigStatics()
     {
 MoveBaseConfig::GroupDescription<MoveBaseConfig::DEFAULT, MoveBaseConfig> Default("Default", "", 0, 0, true, &MoveBaseConfig::groups);
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.base_global_planner = "";
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.base_global_planner = "";
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.base_global_planner = "navfn/NavfnROS";
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(MoveBaseConfig::AbstractParamDescriptionConstPtr(new MoveBaseConfig::ParamDescription<std::string>("base_global_planner", "str", 0, "The name of the plugin for the global planner to use with move_base.", "", &MoveBaseConfig::base_global_planner)));
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(MoveBaseConfig::AbstractParamDescriptionConstPtr(new MoveBaseConfig::ParamDescription<std::string>("base_global_planner", "str", 0, "The name of the plugin for the global planner to use with move_base.", "", &MoveBaseConfig::base_global_planner)));
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.base_local_planner = "";
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.base_local_planner = "";
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.base_local_planner = "base_local_planner/TrajectoryPlannerROS";
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(MoveBaseConfig::AbstractParamDescriptionConstPtr(new MoveBaseConfig::ParamDescription<std::string>("base_local_planner", "str", 0, "The name of the plugin for the local planner to use with move_base.", "", &MoveBaseConfig::base_local_planner)));
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(MoveBaseConfig::AbstractParamDescriptionConstPtr(new MoveBaseConfig::ParamDescription<std::string>("base_local_planner", "str", 0, "The name of the plugin for the local planner to use with move_base.", "", &MoveBaseConfig::base_local_planner)));
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.planner_frequency = 0.0;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.planner_frequency = 100.0;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.planner_frequency = 0.0;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(MoveBaseConfig::AbstractParamDescriptionConstPtr(new MoveBaseConfig::ParamDescription<double>("planner_frequency", "double", 0, "The rate in Hz at which to run the planning loop.", "", &MoveBaseConfig::planner_frequency)));
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(MoveBaseConfig::AbstractParamDescriptionConstPtr(new MoveBaseConfig::ParamDescription<double>("planner_frequency", "double", 0, "The rate in Hz at which to run the planning loop.", "", &MoveBaseConfig::planner_frequency)));
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.controller_frequency = 0.0;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.controller_frequency = 100.0;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.controller_frequency = 20.0;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(MoveBaseConfig::AbstractParamDescriptionConstPtr(new MoveBaseConfig::ParamDescription<double>("controller_frequency", "double", 0, "The rate in Hz at which to run the control loop and send velocity commands to the base.", "", &MoveBaseConfig::controller_frequency)));
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(MoveBaseConfig::AbstractParamDescriptionConstPtr(new MoveBaseConfig::ParamDescription<double>("controller_frequency", "double", 0, "The rate in Hz at which to run the control loop and send velocity commands to the base.", "", &MoveBaseConfig::controller_frequency)));
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.planner_patience = 0.0;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.planner_patience = 100.0;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.planner_patience = 5.0;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(MoveBaseConfig::AbstractParamDescriptionConstPtr(new MoveBaseConfig::ParamDescription<double>("planner_patience", "double", 0, "How long the planner will wait in seconds in an attempt to find a valid plan before space-clearing operations are performed.", "", &MoveBaseConfig::planner_patience)));
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(MoveBaseConfig::AbstractParamDescriptionConstPtr(new MoveBaseConfig::ParamDescription<double>("planner_patience", "double", 0, "How long the planner will wait in seconds in an attempt to find a valid plan before space-clearing operations are performed.", "", &MoveBaseConfig::planner_patience)));
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.controller_patience = 0.0;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.controller_patience = 100.0;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.controller_patience = 5.0;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(MoveBaseConfig::AbstractParamDescriptionConstPtr(new MoveBaseConfig::ParamDescription<double>("controller_patience", "double", 0, "How long the controller will wait in seconds without receiving a valid control before space-clearing operations are performed.", "", &MoveBaseConfig::controller_patience)));
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(MoveBaseConfig::AbstractParamDescriptionConstPtr(new MoveBaseConfig::ParamDescription<double>("controller_patience", "double", 0, "How long the controller will wait in seconds without receiving a valid control before space-clearing operations are performed.", "", &MoveBaseConfig::controller_patience)));
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.conservative_reset_dist = 0.0;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.conservative_reset_dist = 50.0;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.conservative_reset_dist = 3.0;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(MoveBaseConfig::AbstractParamDescriptionConstPtr(new MoveBaseConfig::ParamDescription<double>("conservative_reset_dist", "double", 0, "The distance away from the robot in meters at which obstacles will be cleared from the costmap when attempting to clear space in the map.", "", &MoveBaseConfig::conservative_reset_dist)));
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(MoveBaseConfig::AbstractParamDescriptionConstPtr(new MoveBaseConfig::ParamDescription<double>("conservative_reset_dist", "double", 0, "The distance away from the robot in meters at which obstacles will be cleared from the costmap when attempting to clear space in the map.", "", &MoveBaseConfig::conservative_reset_dist)));
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.recovery_behavior_enabled = 0;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.recovery_behavior_enabled = 1;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.recovery_behavior_enabled = 1;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(MoveBaseConfig::AbstractParamDescriptionConstPtr(new MoveBaseConfig::ParamDescription<bool>("recovery_behavior_enabled", "bool", 0, "Whether or not to enable the move_base recovery behaviors to attempt to clear out space.", "", &MoveBaseConfig::recovery_behavior_enabled)));
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(MoveBaseConfig::AbstractParamDescriptionConstPtr(new MoveBaseConfig::ParamDescription<bool>("recovery_behavior_enabled", "bool", 0, "Whether or not to enable the move_base recovery behaviors to attempt to clear out space.", "", &MoveBaseConfig::recovery_behavior_enabled)));
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.clearing_rotation_allowed = 0;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.clearing_rotation_allowed = 1;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.clearing_rotation_allowed = 1;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(MoveBaseConfig::AbstractParamDescriptionConstPtr(new MoveBaseConfig::ParamDescription<bool>("clearing_rotation_allowed", "bool", 0, "Determines whether or not the robot will attempt an in-place rotation when attempting to clear out space.", "", &MoveBaseConfig::clearing_rotation_allowed)));
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(MoveBaseConfig::AbstractParamDescriptionConstPtr(new MoveBaseConfig::ParamDescription<bool>("clearing_rotation_allowed", "bool", 0, "Determines whether or not the robot will attempt an in-place rotation when attempting to clear out space.", "", &MoveBaseConfig::clearing_rotation_allowed)));
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.shutdown_costmaps = 0;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.shutdown_costmaps = 1;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.shutdown_costmaps = 0;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(MoveBaseConfig::AbstractParamDescriptionConstPtr(new MoveBaseConfig::ParamDescription<bool>("shutdown_costmaps", "bool", 0, "Determines whether or not to shutdown the costmaps of the node when move_base is in an inactive state", "", &MoveBaseConfig::shutdown_costmaps)));
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(MoveBaseConfig::AbstractParamDescriptionConstPtr(new MoveBaseConfig::ParamDescription<bool>("shutdown_costmaps", "bool", 0, "Determines whether or not to shutdown the costmaps of the node when move_base is in an inactive state", "", &MoveBaseConfig::shutdown_costmaps)));
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.oscillation_timeout = 0.0;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.oscillation_timeout = 60.0;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.oscillation_timeout = 0.0;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(MoveBaseConfig::AbstractParamDescriptionConstPtr(new MoveBaseConfig::ParamDescription<double>("oscillation_timeout", "double", 0, "How long in seconds to allow for oscillation before executing recovery behaviors.", "", &MoveBaseConfig::oscillation_timeout)));
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(MoveBaseConfig::AbstractParamDescriptionConstPtr(new MoveBaseConfig::ParamDescription<double>("oscillation_timeout", "double", 0, "How long in seconds to allow for oscillation before executing recovery behaviors.", "", &MoveBaseConfig::oscillation_timeout)));
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.oscillation_distance = 0.0;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.oscillation_distance = 10.0;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.oscillation_distance = 0.5;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(MoveBaseConfig::AbstractParamDescriptionConstPtr(new MoveBaseConfig::ParamDescription<double>("oscillation_distance", "double", 0, "How far in meters the robot must move to be considered not to be oscillating.", "", &MoveBaseConfig::oscillation_distance)));
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(MoveBaseConfig::AbstractParamDescriptionConstPtr(new MoveBaseConfig::ParamDescription<double>("oscillation_distance", "double", 0, "How far in meters the robot must move to be considered not to be oscillating.", "", &MoveBaseConfig::oscillation_distance)));
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.restore_defaults = 0;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.restore_defaults = 1;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.restore_defaults = 0;
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(MoveBaseConfig::AbstractParamDescriptionConstPtr(new MoveBaseConfig::ParamDescription<bool>("restore_defaults", "bool", 0, "Restore to the original configuration", "", &MoveBaseConfig::restore_defaults)));
-//#line 260 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 262 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(MoveBaseConfig::AbstractParamDescriptionConstPtr(new MoveBaseConfig::ParamDescription<bool>("restore_defaults", "bool", 0, "Restore to the original configuration", "", &MoveBaseConfig::restore_defaults)));
-//#line 231 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 233 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.convertParams();
-//#line 231 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 233 "/opt/ros/hydro/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __group_descriptions__.push_back(MoveBaseConfig::AbstractGroupDescriptionConstPtr(new MoveBaseConfig::GroupDescription<MoveBaseConfig::DEFAULT, MoveBaseConfig>(Default)));
 //#line 390 "/opt/ros/hydro/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
-    
-      for (std::vector<MoveBaseConfig::AbstractGroupDescriptionConstPtr>::const_iterator i = __group_descriptions__.begin(); i != __group_descriptions__.end(); i++)
+
+      for (std::vector<MoveBaseConfig::AbstractGroupDescriptionConstPtr>::const_iterator i = __group_descriptions__.begin(); i != __group_descriptions__.end(); ++i)
       {
         __description_message__.groups.push_back(**i);
       }

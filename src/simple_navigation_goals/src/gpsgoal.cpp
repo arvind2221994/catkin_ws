@@ -163,11 +163,11 @@ void callback(const NavSatFixConstPtr& gpsmsg, const TwistStampedConstPtr& compa
     ac.waitForResult();
 
     if(ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED){
-        ROS_INFO("Hooray, the base moved 1 meter forward");
+        ROS_INFO("Hooray, the base moved 10 meter forward");
         flag=0;
     }
     else{
-        ROS_INFO("The base failed to move forward 1 meter for some reason");
+        ROS_INFO("The base failed to move forward 10 meter for some reason");
     }
 }
     

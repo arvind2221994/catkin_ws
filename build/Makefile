@@ -940,6 +940,97 @@ move_base_msgs_genpy/fast:
 .PHONY : move_base_msgs_genpy/fast
 
 #=============================================================================
+# Target rules for targets named ros_arduino_msgs_gencpp
+
+# Build rule for target.
+ros_arduino_msgs_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ros_arduino_msgs_gencpp
+.PHONY : ros_arduino_msgs_gencpp
+
+# fast build rule for target.
+ros_arduino_msgs_gencpp/fast:
+	$(MAKE) -f ros_arduino_bridge/ros_arduino_msgs/CMakeFiles/ros_arduino_msgs_gencpp.dir/build.make ros_arduino_bridge/ros_arduino_msgs/CMakeFiles/ros_arduino_msgs_gencpp.dir/build
+.PHONY : ros_arduino_msgs_gencpp/fast
+
+#=============================================================================
+# Target rules for targets named ros_arduino_msgs_generate_messages
+
+# Build rule for target.
+ros_arduino_msgs_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ros_arduino_msgs_generate_messages
+.PHONY : ros_arduino_msgs_generate_messages
+
+# fast build rule for target.
+ros_arduino_msgs_generate_messages/fast:
+	$(MAKE) -f ros_arduino_bridge/ros_arduino_msgs/CMakeFiles/ros_arduino_msgs_generate_messages.dir/build.make ros_arduino_bridge/ros_arduino_msgs/CMakeFiles/ros_arduino_msgs_generate_messages.dir/build
+.PHONY : ros_arduino_msgs_generate_messages/fast
+
+#=============================================================================
+# Target rules for targets named ros_arduino_msgs_generate_messages_cpp
+
+# Build rule for target.
+ros_arduino_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ros_arduino_msgs_generate_messages_cpp
+.PHONY : ros_arduino_msgs_generate_messages_cpp
+
+# fast build rule for target.
+ros_arduino_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f ros_arduino_bridge/ros_arduino_msgs/CMakeFiles/ros_arduino_msgs_generate_messages_cpp.dir/build.make ros_arduino_bridge/ros_arduino_msgs/CMakeFiles/ros_arduino_msgs_generate_messages_cpp.dir/build
+.PHONY : ros_arduino_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named ros_arduino_msgs_generate_messages_lisp
+
+# Build rule for target.
+ros_arduino_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ros_arduino_msgs_generate_messages_lisp
+.PHONY : ros_arduino_msgs_generate_messages_lisp
+
+# fast build rule for target.
+ros_arduino_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f ros_arduino_bridge/ros_arduino_msgs/CMakeFiles/ros_arduino_msgs_generate_messages_lisp.dir/build.make ros_arduino_bridge/ros_arduino_msgs/CMakeFiles/ros_arduino_msgs_generate_messages_lisp.dir/build
+.PHONY : ros_arduino_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named ros_arduino_msgs_generate_messages_py
+
+# Build rule for target.
+ros_arduino_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ros_arduino_msgs_generate_messages_py
+.PHONY : ros_arduino_msgs_generate_messages_py
+
+# fast build rule for target.
+ros_arduino_msgs_generate_messages_py/fast:
+	$(MAKE) -f ros_arduino_bridge/ros_arduino_msgs/CMakeFiles/ros_arduino_msgs_generate_messages_py.dir/build.make ros_arduino_bridge/ros_arduino_msgs/CMakeFiles/ros_arduino_msgs_generate_messages_py.dir/build
+.PHONY : ros_arduino_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named ros_arduino_msgs_genlisp
+
+# Build rule for target.
+ros_arduino_msgs_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ros_arduino_msgs_genlisp
+.PHONY : ros_arduino_msgs_genlisp
+
+# fast build rule for target.
+ros_arduino_msgs_genlisp/fast:
+	$(MAKE) -f ros_arduino_bridge/ros_arduino_msgs/CMakeFiles/ros_arduino_msgs_genlisp.dir/build.make ros_arduino_bridge/ros_arduino_msgs/CMakeFiles/ros_arduino_msgs_genlisp.dir/build
+.PHONY : ros_arduino_msgs_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named ros_arduino_msgs_genpy
+
+# Build rule for target.
+ros_arduino_msgs_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ros_arduino_msgs_genpy
+.PHONY : ros_arduino_msgs_genpy
+
+# fast build rule for target.
+ros_arduino_msgs_genpy/fast:
+	$(MAKE) -f ros_arduino_bridge/ros_arduino_msgs/CMakeFiles/ros_arduino_msgs_genpy.dir/build.make ros_arduino_bridge/ros_arduino_msgs/CMakeFiles/ros_arduino_msgs_genpy.dir/build
+.PHONY : ros_arduino_msgs_genpy/fast
+
+#=============================================================================
 # Target rules for targets named rosserial_msgs_gencpp
 
 # Build rule for target.
@@ -1991,6 +2082,19 @@ lite_odom_code: cmake_check_build_system
 lite_odom_code/fast:
 	$(MAKE) -f lite_odom/CMakeFiles/lite_odom_code.dir/build.make lite_odom/CMakeFiles/lite_odom_code.dir/build
 .PHONY : lite_odom_code/fast
+
+#=============================================================================
+# Target rules for targets named ros_ard
+
+# Build rule for target.
+ros_ard: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ros_ard
+.PHONY : ros_ard
+
+# fast build rule for target.
+ros_ard/fast:
+	$(MAKE) -f lite_odom/CMakeFiles/ros_ard.dir/build.make lite_odom/CMakeFiles/ros_ard.dir/build
+.PHONY : ros_ard/fast
 
 #=============================================================================
 # Target rules for targets named test2_odom_code
@@ -4900,6 +5004,13 @@ help:
 	@echo "... move_base_msgs_generate_messages_py"
 	@echo "... move_base_msgs_genlisp"
 	@echo "... move_base_msgs_genpy"
+	@echo "... ros_arduino_msgs_gencpp"
+	@echo "... ros_arduino_msgs_generate_messages"
+	@echo "... ros_arduino_msgs_generate_messages_cpp"
+	@echo "... ros_arduino_msgs_generate_messages_lisp"
+	@echo "... ros_arduino_msgs_generate_messages_py"
+	@echo "... ros_arduino_msgs_genlisp"
+	@echo "... ros_arduino_msgs_genpy"
 	@echo "... rosserial_msgs_gencpp"
 	@echo "... rosserial_msgs_generate_messages"
 	@echo "... rosserial_msgs_generate_messages_cpp"
@@ -4981,6 +5092,7 @@ help:
 	@echo "... run_tests_gmapping_rostest_test_basic_localization_stage.launch"
 	@echo "... slam_gmapping"
 	@echo "... lite_odom_code"
+	@echo "... ros_ard"
 	@echo "... test2_odom_code"
 	@echo "... test_odom_code"
 	@echo "... _run_tests_map_server"

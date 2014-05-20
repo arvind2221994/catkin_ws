@@ -1849,6 +1849,30 @@ robot_tf_config_BINARY_DIR:STATIC=/home/sudha/catkin_ws/build/robot_tf_config
 //Value Computed by CMake
 robot_tf_config_SOURCE_DIR:STATIC=/home/sudha/catkin_ws/src/robot_tf_config
 
+//Value Computed by CMake
+ros_arduino_bridge_BINARY_DIR:STATIC=/home/sudha/catkin_ws/build/ros_arduino_bridge/ros_arduino_bridge
+
+//Value Computed by CMake
+ros_arduino_bridge_SOURCE_DIR:STATIC=/home/sudha/catkin_ws/src/ros_arduino_bridge/ros_arduino_bridge
+
+//Value Computed by CMake
+ros_arduino_firmware_BINARY_DIR:STATIC=/home/sudha/catkin_ws/build/ros_arduino_bridge/ros_arduino_firmware
+
+//Value Computed by CMake
+ros_arduino_firmware_SOURCE_DIR:STATIC=/home/sudha/catkin_ws/src/ros_arduino_bridge/ros_arduino_firmware
+
+//Value Computed by CMake
+ros_arduino_msgs_BINARY_DIR:STATIC=/home/sudha/catkin_ws/build/ros_arduino_bridge/ros_arduino_msgs
+
+//Value Computed by CMake
+ros_arduino_msgs_SOURCE_DIR:STATIC=/home/sudha/catkin_ws/src/ros_arduino_bridge/ros_arduino_msgs
+
+//Value Computed by CMake
+ros_arduino_python_BINARY_DIR:STATIC=/home/sudha/catkin_ws/build/ros_arduino_bridge/ros_arduino_python
+
+//Value Computed by CMake
+ros_arduino_python_SOURCE_DIR:STATIC=/home/sudha/catkin_ws/src/ros_arduino_bridge/ros_arduino_python
+
 //The directory containing a CMake configuration file for rosbag.
 rosbag_DIR:PATH=/opt/ros/hydro/share/rosbag/cmake
 
@@ -2346,7 +2370,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=52
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=56
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
