@@ -35,6 +35,7 @@
 * Author: Eitan Marder-Eppstein
 *         Mike Phillips (put the planner in its own thread)
 *********************************************************************/
+#include <iostream>
 #include <move_base/move_base.h>
 #include <cmath>
 
@@ -515,6 +516,7 @@ namespace move_base {
   }
 
   bool MoveBase::isQuaternionValid(const geometry_msgs::Quaternion& q){
+	
     //first we need to check if the quaternion has nan's or infs
     if(!std::isfinite(q.x) || !std::isfinite(q.y) || !std::isfinite(q.z) || !std::isfinite(q.w)){
       ROS_ERROR("Quaternion has nans or infs... discarding as a navigation goal");
@@ -522,6 +524,8 @@ namespace move_base {
     }
 
     tf::Quaternion tf_q(q.x, q.y, q.z, q.w);
+    	 ROS_ERROR("LOOK HERE _____ ");
+	 std::cout<<q.x<<" "<<q.y<<" "<<q.z<<" "<<q.w<<" "<<std::endl;
 
     //next, we need to check if the length of the quaternion is close to zero
     if(tf_q.length2() < 1e-6){

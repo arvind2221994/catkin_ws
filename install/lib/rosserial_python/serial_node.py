@@ -38,12 +38,15 @@ __author__ = "mferguson@willowgarage.com (Michael Ferguson)"
 import rospy
 from rosserial_python import SerialClient, RosSerialServer
 import multiprocessing
+from random import randint
 
 import sys
    
 if __name__=="__main__":
-
-    rospy.init_node("serial_node")
+    faisal="serial_node_"
+    change=str(randint(1,100))
+    faisal=faisal+change
+    rospy.init_node(faisal)
     rospy.loginfo("ROS Serial Python Node")
 
     port_name = rospy.get_param('~port','/dev/ttyUSB0')

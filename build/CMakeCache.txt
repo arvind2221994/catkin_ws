@@ -280,6 +280,9 @@ FLANN_LIBRARY:FILEPATH=/usr/lib/libflann_cpp_s.a
 //Path to a library.
 FLANN_LIBRARY_DEBUG:FILEPATH=/usr/lib/libflann_cpp_s.a
 
+//git command line client
+GIT_EXECUTABLE:FILEPATH=/usr/bin/git
+
 //Path to a file.
 GTEST_INCLUDE_DIR:PATH=/usr/include
 
@@ -1464,6 +1467,12 @@ cpp_common_DIR:PATH=/opt/ros/hydro/share/cpp_common/cmake
 //The directory containing a CMake configuration file for cv_bridge.
 cv_bridge_DIR:PATH=/opt/ros/hydro/share/cv_bridge/cmake
 
+//Value Computed by CMake
+debug_test_BINARY_DIR:STATIC=/home/sudha/catkin_ws/build/debug_test
+
+//Value Computed by CMake
+debug_test_SOURCE_DIR:STATIC=/home/sudha/catkin_ws/src/debug_test
+
 //Dependencies for the target
 default_plugin_LIB_DEPENDS:STATIC=general;rviz;general;/opt/ros/hydro/lib/libimage_transport.so;general;/opt/ros/hydro/lib/libinteractive_markers.so;general;/opt/ros/hydro/lib/liblaser_geometry.so;general;/usr/lib/libtinyxml.so;general;/opt/ros/hydro/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/i386-linux-gnu/libdl.so;general;/opt/ros/hydro/lib/libresource_retriever.so;general;/opt/ros/hydro/lib/librosbag.so;general;/opt/ros/hydro/lib/librosbag_storage.so;general;/usr/lib/libboost_program_options-mt.so;general;/opt/ros/hydro/lib/libtopic_tools.so;general;/opt/ros/hydro/lib/libroslib.so;general;tf;general;/opt/ros/hydro/lib/libtf2_ros.so;general;/opt/ros/hydro/lib/libactionlib.so;general;/opt/ros/hydro/lib/libmessage_filters.so;general;/opt/ros/hydro/lib/libtf2.so;general;/opt/ros/hydro/lib/liburdf.so;general;/opt/ros/hydro/lib/liburdfdom_sensor.so;general;/opt/ros/hydro/lib/liburdfdom_model_state.so;general;/opt/ros/hydro/lib/liburdfdom_model.so;general;/opt/ros/hydro/lib/liburdfdom_world.so;general;/opt/ros/hydro/lib/librosconsole_bridge.so;general;/opt/ros/hydro/lib/libroscpp.so;general;/usr/lib/libboost_signals-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/opt/ros/hydro/lib/librosconsole.so;general;/opt/ros/hydro/lib/librosconsole_log4cxx.so;general;/opt/ros/hydro/lib/librosconsole_backend_interface.so;general;/usr/lib/liblog4cxx.so;general;/usr/lib/libboost_regex-mt.so;general;/opt/ros/hydro/lib/libxmlrpcpp.so;general;/opt/ros/hydro/lib/libroscpp_serialization.so;general;/opt/ros/hydro/lib/librostime.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/i386-linux-gnu/libpthread.so;general;/opt/ros/hydro/lib/libcpp_common.so;general;/opt/ros/hydro/lib/libconsole_bridge.so;general;/usr/lib/i386-linux-gnu/libQtOpenGL.so;general;/usr/lib/i386-linux-gnu/libQtGui.so;general;/usr/lib/i386-linux-gnu/libQtCore.so;general;/usr/lib/i386-linux-gnu/libOgreMain.so;general;/usr/lib/i386-linux-gnu/libpthread.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_program_options-mt.so;general;/usr/lib/libboost_signals-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_thread-mt.so;general;pthread;general;/opt/ros/hydro/lib/liburdfdom_sensor.so;general;/opt/ros/hydro/lib/liburdfdom_model_state.so;general;/opt/ros/hydro/lib/liburdfdom_model.so;general;/opt/ros/hydro/lib/liburdfdom_world.so;general;/opt/ros/hydro/lib/libconsole_bridge.so;
 
@@ -1639,8 +1648,56 @@ kdl_conversions_SOURCE_DIR:STATIC=/home/sudha/catkin_ws/src/geometry-hydro-devel
 //The directory containing a CMake configuration file for laser_geometry.
 laser_geometry_DIR:PATH=/opt/ros/hydro/share/laser_geometry/cmake
 
+//Value Computed by CMake
+laser_ortho_projector_BINARY_DIR:STATIC=/home/sudha/catkin_ws/build/scan_tools/laser_ortho_projector
+
+//Dependencies for the target
+laser_ortho_projector_LIB_DEPENDS:STATIC=general;/opt/ros/hydro/lib/libpcl_ros_filters.so;general;/opt/ros/hydro/lib/libpcl_ros_io.so;general;/opt/ros/hydro/lib/libpcl_ros_tf.so;optimized;/usr/lib/libpcl_common.so;debug;/usr/lib/libpcl_common.so;optimized;/usr/lib/libpcl_kdtree.so;debug;/usr/lib/libpcl_kdtree.so;optimized;/usr/lib/libpcl_octree.so;debug;/usr/lib/libpcl_octree.so;optimized;/usr/lib/libpcl_search.so;debug;/usr/lib/libpcl_search.so;optimized;/usr/lib/libpcl_io.so;debug;/usr/lib/libpcl_io.so;optimized;/usr/lib/libpcl_sample_consensus.so;debug;/usr/lib/libpcl_sample_consensus.so;optimized;/usr/lib/libpcl_filters.so;debug;/usr/lib/libpcl_filters.so;optimized;/usr/lib/libpcl_visualization.so;debug;/usr/lib/libpcl_visualization.so;optimized;/usr/lib/libpcl_outofcore.so;debug;/usr/lib/libpcl_outofcore.so;optimized;/usr/lib/libpcl_features.so;debug;/usr/lib/libpcl_features.so;optimized;/usr/lib/libpcl_segmentation.so;debug;/usr/lib/libpcl_segmentation.so;optimized;/usr/lib/libpcl_people.so;debug;/usr/lib/libpcl_people.so;optimized;/usr/lib/libpcl_registration.so;debug;/usr/lib/libpcl_registration.so;optimized;/usr/lib/libpcl_recognition.so;debug;/usr/lib/libpcl_recognition.so;optimized;/usr/lib/libpcl_keypoints.so;debug;/usr/lib/libpcl_keypoints.so;optimized;/usr/lib/libpcl_surface.so;debug;/usr/lib/libpcl_surface.so;optimized;/usr/lib/libpcl_tracking.so;debug;/usr/lib/libpcl_tracking.so;optimized;/usr/lib/libpcl_apps.so;debug;/usr/lib/libpcl_apps.so;general;/usr/lib/libboost_iostreams-mt.so;general;/usr/lib/libboost_serialization-mt.so;optimized;/usr/lib/libqhull.so;debug;/usr/lib/libqhull.so;general;/usr/lib/libOpenNI.so;optimized;/usr/lib/libflann_cpp_s.a;debug;/usr/lib/libflann_cpp_s.a;general;/opt/ros/hydro/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/hydro/lib/libnodeletlib.so;general;/opt/ros/hydro/lib/libbondcpp.so;general;/usr/lib/i386-linux-gnu/libuuid.so;general;/usr/lib/libtinyxml.so;general;/opt/ros/hydro/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/i386-linux-gnu/libdl.so;general;/opt/ros/hydro/lib/libroslib.so;general;/opt/ros/hydro/lib/librosbag.so;general;/opt/ros/hydro/lib/librosbag_storage.so;general;/usr/lib/libboost_program_options-mt.so;general;/opt/ros/hydro/lib/libtopic_tools.so;general;tf;general;/opt/ros/hydro/lib/libtf2_ros.so;general;/opt/ros/hydro/lib/libactionlib.so;general;/opt/ros/hydro/lib/libtf2.so;general;/opt/ros/hydro/lib/libmessage_filters.so;general;/opt/ros/hydro/lib/libroscpp.so;general;/usr/lib/libboost_signals-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/opt/ros/hydro/lib/libroscpp_serialization.so;general;/opt/ros/hydro/lib/libxmlrpcpp.so;general;/opt/ros/hydro/lib/librosconsole.so;general;/opt/ros/hydro/lib/librosconsole_log4cxx.so;general;/opt/ros/hydro/lib/librosconsole_backend_interface.so;general;/usr/lib/liblog4cxx.so;general;/usr/lib/libboost_regex-mt.so;general;/opt/ros/hydro/lib/librostime.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/i386-linux-gnu/libpthread.so;general;/opt/ros/hydro/lib/libcpp_common.so;general;/opt/ros/hydro/lib/libconsole_bridge.so;
+
+//Value Computed by CMake
+laser_ortho_projector_SOURCE_DIR:STATIC=/home/sudha/catkin_ws/src/scan_tools/laser_ortho_projector
+
+//Dependencies for the target
+laser_ortho_projector_nodelet_LIB_DEPENDS:STATIC=general;laser_ortho_projector;
+
 //Dependencies for the target
 laser_scan_filters_LIB_DEPENDS:STATIC=general;/opt/ros/hydro/lib/libbase_local_planner.so;general;/opt/ros/hydro/lib/libtrajectory_planner_ros.so;general;/opt/ros/hydro/lib/libcostmap_2d.so;general;/opt/ros/hydro/lib/liblaser_geometry.so;general;/opt/ros/hydro/lib/libpcl_ros_filters.so;general;/opt/ros/hydro/lib/libpcl_ros_io.so;general;/opt/ros/hydro/lib/libpcl_ros_tf.so;optimized;/usr/lib/libpcl_common.so;debug;/usr/lib/libpcl_common.so;optimized;/usr/lib/libpcl_kdtree.so;debug;/usr/lib/libpcl_kdtree.so;optimized;/usr/lib/libpcl_octree.so;debug;/usr/lib/libpcl_octree.so;optimized;/usr/lib/libpcl_search.so;debug;/usr/lib/libpcl_search.so;optimized;/usr/lib/libpcl_io.so;debug;/usr/lib/libpcl_io.so;optimized;/usr/lib/libpcl_sample_consensus.so;debug;/usr/lib/libpcl_sample_consensus.so;optimized;/usr/lib/libpcl_filters.so;debug;/usr/lib/libpcl_filters.so;optimized;/usr/lib/libpcl_visualization.so;debug;/usr/lib/libpcl_visualization.so;optimized;/usr/lib/libpcl_outofcore.so;debug;/usr/lib/libpcl_outofcore.so;optimized;/usr/lib/libpcl_features.so;debug;/usr/lib/libpcl_features.so;optimized;/usr/lib/libpcl_segmentation.so;debug;/usr/lib/libpcl_segmentation.so;optimized;/usr/lib/libpcl_people.so;debug;/usr/lib/libpcl_people.so;optimized;/usr/lib/libpcl_registration.so;debug;/usr/lib/libpcl_registration.so;optimized;/usr/lib/libpcl_recognition.so;debug;/usr/lib/libpcl_recognition.so;optimized;/usr/lib/libpcl_keypoints.so;debug;/usr/lib/libpcl_keypoints.so;optimized;/usr/lib/libpcl_surface.so;debug;/usr/lib/libpcl_surface.so;optimized;/usr/lib/libpcl_tracking.so;debug;/usr/lib/libpcl_tracking.so;optimized;/usr/lib/libpcl_apps.so;debug;/usr/lib/libpcl_apps.so;general;/usr/lib/libboost_iostreams-mt.so;general;/usr/lib/libboost_serialization-mt.so;optimized;/usr/lib/libqhull.so;debug;/usr/lib/libqhull.so;general;/usr/lib/libOpenNI.so;optimized;/usr/lib/libflann_cpp_s.a;debug;/usr/lib/libflann_cpp_s.a;general;/opt/ros/hydro/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/hydro/lib/libnodeletlib.so;general;/opt/ros/hydro/lib/libbondcpp.so;general;/usr/lib/i386-linux-gnu/libuuid.so;general;/opt/ros/hydro/lib/librosbag.so;general;/opt/ros/hydro/lib/librosbag_storage.so;general;/usr/lib/libboost_program_options-mt.so;general;/opt/ros/hydro/lib/libtopic_tools.so;general;/opt/ros/hydro/lib/libtf.so;general;/opt/ros/hydro/lib/libtf2_ros.so;general;/opt/ros/hydro/lib/libactionlib.so;general;/opt/ros/hydro/lib/libmessage_filters.so;general;/opt/ros/hydro/lib/libtf2.so;general;/opt/ros/hydro/lib/libvoxel_grid.so;general;/opt/ros/hydro/lib/libmean.so;general;/opt/ros/hydro/lib/libparams.so;general;/opt/ros/hydro/lib/libincrement.so;general;/opt/ros/hydro/lib/libmedian.so;general;/opt/ros/hydro/lib/libtransfer_function.so;general;/opt/ros/hydro/lib/libroscpp.so;general;/usr/lib/libboost_signals-mt.so;general;/opt/ros/hydro/lib/libroscpp_serialization.so;general;/opt/ros/hydro/lib/libxmlrpcpp.so;general;/usr/lib/libtinyxml.so;general;/usr/lib/libboost_filesystem-mt.so;general;/opt/ros/hydro/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/i386-linux-gnu/libdl.so;general;/opt/ros/hydro/lib/librosconsole.so;general;/opt/ros/hydro/lib/librosconsole_log4cxx.so;general;/opt/ros/hydro/lib/librosconsole_backend_interface.so;general;/usr/lib/liblog4cxx.so;general;/usr/lib/libboost_regex-mt.so;general;/opt/ros/hydro/lib/librostime.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/i386-linux-gnu/libpthread.so;general;/opt/ros/hydro/lib/libcpp_common.so;general;/opt/ros/hydro/lib/libconsole_bridge.so;general;/opt/ros/hydro/lib/libroslib.so;
+
+//Value Computed by CMake
+laser_scan_matcher_BINARY_DIR:STATIC=/home/sudha/catkin_ws/build/scan_tools/laser_scan_matcher
+
+//Dependencies for the target
+laser_scan_matcher_LIB_DEPENDS:STATIC=general;/opt/ros/hydro/lib/libpcl_ros_filters.so;general;/opt/ros/hydro/lib/libpcl_ros_io.so;general;/opt/ros/hydro/lib/libpcl_ros_tf.so;optimized;/usr/lib/libpcl_common.so;debug;/usr/lib/libpcl_common.so;optimized;/usr/lib/libpcl_kdtree.so;debug;/usr/lib/libpcl_kdtree.so;optimized;/usr/lib/libpcl_octree.so;debug;/usr/lib/libpcl_octree.so;optimized;/usr/lib/libpcl_search.so;debug;/usr/lib/libpcl_search.so;optimized;/usr/lib/libpcl_io.so;debug;/usr/lib/libpcl_io.so;optimized;/usr/lib/libpcl_sample_consensus.so;debug;/usr/lib/libpcl_sample_consensus.so;optimized;/usr/lib/libpcl_filters.so;debug;/usr/lib/libpcl_filters.so;optimized;/usr/lib/libpcl_visualization.so;debug;/usr/lib/libpcl_visualization.so;optimized;/usr/lib/libpcl_outofcore.so;debug;/usr/lib/libpcl_outofcore.so;optimized;/usr/lib/libpcl_features.so;debug;/usr/lib/libpcl_features.so;optimized;/usr/lib/libpcl_segmentation.so;debug;/usr/lib/libpcl_segmentation.so;optimized;/usr/lib/libpcl_people.so;debug;/usr/lib/libpcl_people.so;optimized;/usr/lib/libpcl_registration.so;debug;/usr/lib/libpcl_registration.so;optimized;/usr/lib/libpcl_recognition.so;debug;/usr/lib/libpcl_recognition.so;optimized;/usr/lib/libpcl_keypoints.so;debug;/usr/lib/libpcl_keypoints.so;optimized;/usr/lib/libpcl_surface.so;debug;/usr/lib/libpcl_surface.so;optimized;/usr/lib/libpcl_tracking.so;debug;/usr/lib/libpcl_tracking.so;optimized;/usr/lib/libpcl_apps.so;debug;/usr/lib/libpcl_apps.so;general;/usr/lib/libboost_iostreams-mt.so;general;/usr/lib/libboost_serialization-mt.so;optimized;/usr/lib/libqhull.so;debug;/usr/lib/libqhull.so;general;/usr/lib/libOpenNI.so;optimized;/usr/lib/libflann_cpp_s.a;debug;/usr/lib/libflann_cpp_s.a;general;/opt/ros/hydro/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/hydro/lib/libnodeletlib.so;general;/opt/ros/hydro/lib/libbondcpp.so;general;/usr/lib/i386-linux-gnu/libuuid.so;general;/usr/lib/libtinyxml.so;general;/opt/ros/hydro/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/i386-linux-gnu/libdl.so;general;/opt/ros/hydro/lib/libroslib.so;general;/opt/ros/hydro/lib/librosbag.so;general;/opt/ros/hydro/lib/librosbag_storage.so;general;/usr/lib/libboost_program_options-mt.so;general;/opt/ros/hydro/lib/libtopic_tools.so;general;tf;general;/opt/ros/hydro/lib/libtf2_ros.so;general;/opt/ros/hydro/lib/libactionlib.so;general;/opt/ros/hydro/lib/libmessage_filters.so;general;/opt/ros/hydro/lib/libtf2.so;general;/opt/ros/hydro/lib/libroscpp.so;general;/usr/lib/libboost_signals-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/opt/ros/hydro/lib/librosconsole.so;general;/opt/ros/hydro/lib/librosconsole_log4cxx.so;general;/opt/ros/hydro/lib/librosconsole_backend_interface.so;general;/usr/lib/liblog4cxx.so;general;/usr/lib/libboost_regex-mt.so;general;/opt/ros/hydro/lib/libxmlrpcpp.so;general;/opt/ros/hydro/lib/libroscpp_serialization.so;general;/opt/ros/hydro/lib/librostime.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/i386-linux-gnu/libpthread.so;general;/opt/ros/hydro/lib/libcpp_common.so;general;/opt/ros/hydro/lib/libconsole_bridge.so;general;csm;
+
+//Value Computed by CMake
+laser_scan_matcher_SOURCE_DIR:STATIC=/home/sudha/catkin_ws/src/scan_tools/laser_scan_matcher
+
+//Dependencies for the target
+laser_scan_matcher_nodelet_LIB_DEPENDS:STATIC=general;laser_scan_matcher;
+
+//Value Computed by CMake
+laser_scan_sparsifier_BINARY_DIR:STATIC=/home/sudha/catkin_ws/build/scan_tools/laser_scan_sparsifier
+
+//Dependencies for the target
+laser_scan_sparsifier_LIB_DEPENDS:STATIC=general;/opt/ros/hydro/lib/libnodeletlib.so;general;/opt/ros/hydro/lib/libbondcpp.so;general;/usr/lib/i386-linux-gnu/libuuid.so;general;/usr/lib/libtinyxml.so;general;/opt/ros/hydro/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/i386-linux-gnu/libdl.so;general;/opt/ros/hydro/lib/libroslib.so;general;/opt/ros/hydro/lib/libroscpp.so;general;/usr/lib/libboost_signals-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/opt/ros/hydro/lib/librosconsole.so;general;/opt/ros/hydro/lib/librosconsole_log4cxx.so;general;/opt/ros/hydro/lib/librosconsole_backend_interface.so;general;/usr/lib/liblog4cxx.so;general;/usr/lib/libboost_regex-mt.so;general;/opt/ros/hydro/lib/libxmlrpcpp.so;general;/opt/ros/hydro/lib/libroscpp_serialization.so;general;/opt/ros/hydro/lib/librostime.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/i386-linux-gnu/libpthread.so;general;/opt/ros/hydro/lib/libcpp_common.so;general;/opt/ros/hydro/lib/libconsole_bridge.so;
+
+//Value Computed by CMake
+laser_scan_sparsifier_SOURCE_DIR:STATIC=/home/sudha/catkin_ws/src/scan_tools/laser_scan_sparsifier
+
+//Dependencies for the target
+laser_scan_sparsifier_nodelet_LIB_DEPENDS:STATIC=general;laser_scan_sparsifier;
+
+//Value Computed by CMake
+laser_scan_splitter_BINARY_DIR:STATIC=/home/sudha/catkin_ws/build/scan_tools/laser_scan_splitter
+
+//Dependencies for the target
+laser_scan_splitter_LIB_DEPENDS:STATIC=general;/opt/ros/hydro/lib/libnodeletlib.so;general;/opt/ros/hydro/lib/libbondcpp.so;general;/usr/lib/i386-linux-gnu/libuuid.so;general;/usr/lib/libtinyxml.so;general;/opt/ros/hydro/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/i386-linux-gnu/libdl.so;general;/opt/ros/hydro/lib/libroslib.so;general;/opt/ros/hydro/lib/libroscpp.so;general;/usr/lib/libboost_signals-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/opt/ros/hydro/lib/librosconsole.so;general;/opt/ros/hydro/lib/librosconsole_log4cxx.so;general;/opt/ros/hydro/lib/librosconsole_backend_interface.so;general;/usr/lib/liblog4cxx.so;general;/usr/lib/libboost_regex-mt.so;general;/opt/ros/hydro/lib/libxmlrpcpp.so;general;/opt/ros/hydro/lib/libroscpp_serialization.so;general;/opt/ros/hydro/lib/librostime.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/i386-linux-gnu/libpthread.so;general;/opt/ros/hydro/lib/libcpp_common.so;general;/opt/ros/hydro/lib/libconsole_bridge.so;
+
+//Value Computed by CMake
+laser_scan_splitter_SOURCE_DIR:STATIC=/home/sudha/catkin_ws/src/scan_tools/laser_scan_splitter
+
+//Dependencies for the target
+laser_scan_splitter_nodelet_LIB_DEPENDS:STATIC=general;laser_scan_splitter;
 
 //Dependencies for the target
 layers_LIB_DEPENDS:STATIC=general;costmap_2d;
@@ -1761,6 +1818,18 @@ navigation_experimental_BINARY_DIR:STATIC=/home/sudha/catkin_ws/build/navigation
 
 //Value Computed by CMake
 navigation_experimental_SOURCE_DIR:STATIC=/home/sudha/catkin_ws/src/navigation_experimental-hydro-devel/navigation_experimental
+
+//Value Computed by CMake
+navyata_BINARY_DIR:STATIC=/home/sudha/catkin_ws/build/navyata
+
+//Value Computed by CMake
+navyata_SOURCE_DIR:STATIC=/home/sudha/catkin_ws/src/navyata
+
+//Value Computed by CMake
+ncd_parser_BINARY_DIR:STATIC=/home/sudha/catkin_ws/build/scan_tools/ncd_parser
+
+//Value Computed by CMake
+ncd_parser_SOURCE_DIR:STATIC=/home/sudha/catkin_ws/src/scan_tools/ncd_parser
 
 //The directory containing a CMake configuration file for nodelet.
 nodelet_DIR:PATH=/opt/ros/hydro/share/nodelet/cmake
@@ -2004,6 +2073,18 @@ sbpl_recovery_LIB_DEPENDS:STATIC=general;/opt/ros/hydro/lib/libsbpl.so;general;/
 
 //Value Computed by CMake
 sbpl_recovery_SOURCE_DIR:STATIC=/home/sudha/catkin_ws/src/navigation_experimental-hydro-devel/sbpl_recovery
+
+//Value Computed by CMake
+scan_to_cld_converter_BINARY_DIR:STATIC=/home/sudha/catkin_ws/build/scan_tools/scan_to_cld_converter
+
+//Value Computed by CMake
+scan_to_cld_converter_SOURCE_DIR:STATIC=/home/sudha/catkin_ws/src/scan_tools/scan_to_cld_converter
+
+//Value Computed by CMake
+scan_tools_BINARY_DIR:STATIC=/home/sudha/catkin_ws/build/scan_tools/scan_tools
+
+//Value Computed by CMake
+scan_tools_SOURCE_DIR:STATIC=/home/sudha/catkin_ws/src/scan_tools/scan_tools
 
 //The directory containing a CMake configuration file for sensor_msgs.
 sensor_msgs_DIR:PATH=/opt/ros/hydro/share/sensor_msgs/cmake
@@ -2405,6 +2486,8 @@ EIGEN_INCLUDE_DIR-ADVANCED:INTERNAL=1
 FIND_PACKAGE_MESSAGE_DETAILS_Eigen:INTERNAL=[/usr/include/eigen3][v()]
 //Details about finding Flann
 FIND_PACKAGE_MESSAGE_DETAILS_Flann:INTERNAL=[/usr/lib/libflann_cpp_s.a][/usr/include][v()]
+//Details about finding Git
+FIND_PACKAGE_MESSAGE_DETAILS_Git:INTERNAL=[/usr/bin/git][v()]
 //Details about finding OpenGL
 FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[/usr/lib/i386-linux-gnu/libGL.so][v()]
 //Details about finding PCL
@@ -2465,6 +2548,8 @@ FIND_PACKAGE_MESSAGE_DETAILS_libusb-1.0:INTERNAL=[/usr/include][v()]
 FIND_PACKAGE_MESSAGE_DETAILS_openni:INTERNAL=[/usr/lib/libOpenNI.so][/usr/include/ni][v()]
 //Details about finding qhull
 FIND_PACKAGE_MESSAGE_DETAILS_qhull:INTERNAL=[/usr/lib/libqhull.so][/usr/include/qhull][v()]
+//ADVANCED property for variable: GIT_EXECUTABLE
+GIT_EXECUTABLE-ADVANCED:INTERNAL=1
 GTEST_FROM_SOURCE_FOUND:INTERNAL=TRUE
 GTEST_FROM_SOURCE_INCLUDE_DIRS:INTERNAL=
 GTEST_FROM_SOURCE_LIBRARIES:INTERNAL=gtest

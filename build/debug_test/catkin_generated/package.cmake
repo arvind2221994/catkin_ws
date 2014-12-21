@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "debug_test")
+set(debug_test_MAINTAINER "saathvik <saathvik@todo.todo>")
+set(debug_test_DEPRECATED "")
+set(debug_test_VERSION "0.0.0")
+set(debug_test_BUILD_DEPENDS "roscpp" "rospy" "std_msgs")
+set(debug_test_RUN_DEPENDS "roscpp" "rospy" "std_msgs")
+set(debug_test_BUILDTOOL_DEPENDS "catkin")

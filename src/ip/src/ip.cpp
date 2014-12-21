@@ -56,13 +56,13 @@ int main(int argc, char** argv)
     Mat logPolar(src.rows,src.cols,CV_8U,Scalar(0,0,0));
 
     /* This part of the code includes perspective transform and thresholding the image */
-//    imshow("Input",temp_src);
+    imshow("Input",temp_src);
     warpPerspective(src, src, H, Size(src.cols, src.rows));
   //  imshow("Ortho",src);
     cvtColor(src,src,CV_RGB2HSV);
-	inRange(src,  Scalar(0,0,200), Scalar(140,255,255), src);
+	inRange(src,  Scalar(0,0,180), Scalar(160,255,255), src);
 	medianBlur(src,src,3);
-	Canny(src,src,50,150,3);
+	Canny(src,src,40,160,3);
 
     /* Hough Lines being drawn from the input image which is thresholded */
     HoughLinesP(src, lines, 1, CV_PI/180, 15, 50, 20 );

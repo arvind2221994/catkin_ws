@@ -330,12 +330,6 @@ pcl_ros/publisher.h
 pcl/register_point_struct.h
 -
 
-/home/sudha/catkin_ws/src/navfn/src/navfn.cpp
-navfn/navfn.h
--
-ros/console.h
--
-
 /home/sudha/catkin_ws/src/navfn/src/navfn_ros.cpp
 navfn/navfn_ros.h
 -

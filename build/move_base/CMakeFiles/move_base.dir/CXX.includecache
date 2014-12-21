@@ -491,6 +491,8 @@ move_base/MoveBaseConfig.h
 /home/sudha/catkin_ws/src/move_base/include/move_base/move_base/MoveBaseConfig.h
 
 /home/sudha/catkin_ws/src/move_base/src/move_base.cpp
+iostream
+-
 move_base/move_base.h
 -
 cmath

@@ -187,6 +187,8 @@ math.h
 -
 stdlib.h
 -
+string.h
+-
 
 /opt/ros/hydro/include/XmlRpcDecl.h
 ros/macros.h

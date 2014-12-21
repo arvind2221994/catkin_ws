@@ -178,7 +178,3 @@ add_executable(test2_odom_code src/test2_odom_code.cpp)
 target_link_libraries(test2_odom_code ${catkin_LIBRARIES})
 add_dependencies(test2_odom_code lite_odom_generate_messages_cpp)
 
-
-add_executable(ros_ard src/ros_ard.cpp)
-target_link_libraries(ros_ard ${catkin_LIBRARIES})
-add_dependencies(ros_ard lite_odom_generate_messages_cpp)

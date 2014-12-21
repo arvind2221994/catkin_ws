@@ -50,7 +50,7 @@ double dist(double lat2,double lat1,double lon2,double lon1){
 }
 
 
-//angle between three gps points (our theata c here)(lat1-lat2 is the horizontal line)
+//angle between three gps points (our theta c here)(lat1-lat2 is the horizontal line)
 double angle(double lat3,double lat2,double lat1,double long3,double long2,double long1){
     double a=dist(lat3,lat2,long3,long2);
     double b=dist(lat1,lat2,long1,long2);
@@ -75,7 +75,7 @@ void callback(const NavSatFixConstPtr& gpsmsg, const TwistStampedConstPtr& compa
     latprsnt= gpsmsg->latitude;
     longprsnt= gpsmsg->longitude;
     cout<<"     new -lat-long "<<latprsnt<<" "<<longprsnt<<endl;
-    //keeping longitude const and calculating angle phi (done for gps point and prev gps point
+    //keeping longitude const and calculating angle phi (done for gps point and prev gps point)
     double testlat=latprsnt+0.1;
     double testlong=longprsnt+0.1;
     double thetaN,thetaE;

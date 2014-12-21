@@ -1,0 +1,8 @@
+prefix=/home/sudha/catkin_ws/install
+
+Name: ncd_parser
+Description: Description of ncd_parser
+Version: 0.1.2
+Cflags: 
+Libs: -L/home/sudha/catkin_ws/install/lib 
+Requires: 

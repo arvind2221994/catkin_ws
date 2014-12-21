@@ -1,0 +1,8 @@
+prefix=/home/sudha/catkin_ws/devel
+
+Name: laser_ortho_projector
+Description: Description of laser_ortho_projector
+Version: 0.1.2
+Cflags: -I/home/sudha/catkin_ws/src/scan_tools/laser_ortho_projector/include
+Libs: -L/home/sudha/catkin_ws/devel/lib -llaser_ortho_projector
+Requires: roscpp nodelet sensor_msgs tf pcl_ros pcl_conversions geometry_msgs message_filters

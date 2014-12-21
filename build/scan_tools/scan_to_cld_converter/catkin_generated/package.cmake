@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "scan_to_cld_converter")
+set(scan_to_cld_converter_MAINTAINER "Ivan Dryanovski <ccnyroboticslab@gmail.com>")
+set(scan_to_cld_converter_DEPRECATED "")
+set(scan_to_cld_converter_VERSION "0.1.2")
+set(scan_to_cld_converter_BUILD_DEPENDS "roscpp" "pcl" "pcl_ros" "pcl_conversions")
+set(scan_to_cld_converter_RUN_DEPENDS "roscpp" "pcl" "pcl_ros" "pcl_conversions")
+set(scan_to_cld_converter_BUILDTOOL_DEPENDS "catkin")

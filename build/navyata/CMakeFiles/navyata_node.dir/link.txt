@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/navyata_node.dir/src/navyata_node.cpp.o  -o /home/sudha/catkin_ws/devel/lib/navyata/navyata_node -rdynamic 

@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "laser_scan_matcher")
+set(laser_scan_matcher_MAINTAINER "Ivan Dryanovski <ccnyroboticslab@gmail.com>")
+set(laser_scan_matcher_DEPRECATED "")
+set(laser_scan_matcher_VERSION "0.1.2")
+set(laser_scan_matcher_BUILD_DEPENDS "roscpp" "nodelet" "sensor_msgs" "tf" "pcl" "pcl_ros" "pcl_conversions" "geometry_msgs" "nav_msgs" "libgsl")
+set(laser_scan_matcher_RUN_DEPENDS "roscpp" "nodelet" "sensor_msgs" "tf" "pcl" "pcl_ros" "pcl_conversions" "geometry_msgs" "nav_msgs" "libgsl")
+set(laser_scan_matcher_BUILDTOOL_DEPENDS "catkin" "git")

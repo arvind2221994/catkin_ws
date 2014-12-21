@@ -1226,17 +1226,17 @@ actionlib_generate_messages_py/fast:
 .PHONY : actionlib_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named gpsgoal
+# Target rules for targets named simple_navigation_goals
 
 # Build rule for target.
-gpsgoal: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gpsgoal
-.PHONY : gpsgoal
+simple_navigation_goals: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 simple_navigation_goals
+.PHONY : simple_navigation_goals
 
 # fast build rule for target.
-gpsgoal/fast:
-	$(MAKE) -f simple_navigation_goals/CMakeFiles/gpsgoal.dir/build.make simple_navigation_goals/CMakeFiles/gpsgoal.dir/build
-.PHONY : gpsgoal/fast
+simple_navigation_goals/fast:
+	$(MAKE) -f simple_navigation_goals/CMakeFiles/simple_navigation_goals.dir/build.make simple_navigation_goals/CMakeFiles/simple_navigation_goals.dir/build
+.PHONY : simple_navigation_goals/fast
 
 #=============================================================================
 # Target rules for targets named temp
@@ -2082,19 +2082,6 @@ lite_odom_code: cmake_check_build_system
 lite_odom_code/fast:
 	$(MAKE) -f lite_odom/CMakeFiles/lite_odom_code.dir/build.make lite_odom/CMakeFiles/lite_odom_code.dir/build
 .PHONY : lite_odom_code/fast
-
-#=============================================================================
-# Target rules for targets named ros_ard
-
-# Build rule for target.
-ros_ard: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ros_ard
-.PHONY : ros_ard
-
-# fast build rule for target.
-ros_ard/fast:
-	$(MAKE) -f lite_odom/CMakeFiles/ros_ard.dir/build.make lite_odom/CMakeFiles/ros_ard.dir/build
-.PHONY : ros_ard/fast
 
 #=============================================================================
 # Target rules for targets named test2_odom_code
@@ -5026,7 +5013,7 @@ help:
 	@echo "... actionlib_generate_messages_cpp"
 	@echo "... actionlib_generate_messages_lisp"
 	@echo "... actionlib_generate_messages_py"
-	@echo "... gpsgoal"
+	@echo "... simple_navigation_goals"
 	@echo "... temp"
 	@echo "... _run_tests_tf"
 	@echo "... _run_tests_tf_gtest"
@@ -5092,7 +5079,6 @@ help:
 	@echo "... run_tests_gmapping_rostest_test_basic_localization_stage.launch"
 	@echo "... slam_gmapping"
 	@echo "... lite_odom_code"
-	@echo "... ros_ard"
 	@echo "... test2_odom_code"
 	@echo "... test_odom_code"
 	@echo "... _run_tests_map_server"

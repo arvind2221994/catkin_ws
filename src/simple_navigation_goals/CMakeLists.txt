@@ -165,6 +165,6 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 include_directories(include ${catkin_INCLUDE_DIRS})
-add_executable(gpsgoal src/gpsgoal.cpp)
-target_link_libraries(gpsgoal ${catkin_LIBRARIES})
-add_dependencies(gpsgoal gps_goal_generate_messages_cpp)
+add_executable(simple_navigation_goals src/simple_navigation_goals.cpp)
+target_link_libraries(simple_navigation_goals ${catkin_LIBRARIES})
+add_dependencies(simple_navigation_goals simple_navigation_goals_generate_messages_cpp)

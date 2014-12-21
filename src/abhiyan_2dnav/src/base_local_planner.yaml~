@@ -1,8 +1,8 @@
 TrajectoryPlannerROS:
-  max_vel_x: 0.09
-  min_vel_x: 0.01
-  max_vel_y: 0.09
-  min_vel_y: 0.01
+  max_vel_x: 1.0
+  min_vel_x: 0.25
+  max_vel_y: 1.0
+  min_vel_y: 0.25
   max_rotational_vel: 0.4
   min_in_place_rotational_vel: 0.0
 
@@ -13,6 +13,10 @@ TrajectoryPlannerROS:
   holonomic_robot: true
   meter_scoring: true
 
+  escape_vel: -0.2
+
+  xy_goal_tolerance: 0.30
+
   sim_time: 5.0
   sim_granularity: 0.025
   angular_sim_granularity: 0.025
@@ -20,4 +24,4 @@ TrajectoryPlannerROS:
   vtheta_samples: 20
   dwa: true
   simple_attractor: false
-  controller_frequency: 10
+  controller_frequency: 50

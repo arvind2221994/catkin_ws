@@ -189,42 +189,42 @@ actionlib_generate_messages_py/fast:
 .PHONY : actionlib_generate_messages_py/fast
 
 # Convenience name for target.
-simple_navigation_goals/CMakeFiles/gpsgoal.dir/rule:
-	cd /home/sudha/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 simple_navigation_goals/CMakeFiles/gpsgoal.dir/rule
-.PHONY : simple_navigation_goals/CMakeFiles/gpsgoal.dir/rule
+simple_navigation_goals/CMakeFiles/simple_navigation_goals.dir/rule:
+	cd /home/sudha/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 simple_navigation_goals/CMakeFiles/simple_navigation_goals.dir/rule
+.PHONY : simple_navigation_goals/CMakeFiles/simple_navigation_goals.dir/rule
 
 # Convenience name for target.
-gpsgoal: simple_navigation_goals/CMakeFiles/gpsgoal.dir/rule
-.PHONY : gpsgoal
+simple_navigation_goals: simple_navigation_goals/CMakeFiles/simple_navigation_goals.dir/rule
+.PHONY : simple_navigation_goals
 
 # fast build rule for target.
-gpsgoal/fast:
-	cd /home/sudha/catkin_ws/build && $(MAKE) -f simple_navigation_goals/CMakeFiles/gpsgoal.dir/build.make simple_navigation_goals/CMakeFiles/gpsgoal.dir/build
-.PHONY : gpsgoal/fast
+simple_navigation_goals/fast:
+	cd /home/sudha/catkin_ws/build && $(MAKE) -f simple_navigation_goals/CMakeFiles/simple_navigation_goals.dir/build.make simple_navigation_goals/CMakeFiles/simple_navigation_goals.dir/build
+.PHONY : simple_navigation_goals/fast
 
-src/gpsgoal.o: src/gpsgoal.cpp.o
-.PHONY : src/gpsgoal.o
+src/simple_navigation_goals.o: src/simple_navigation_goals.cpp.o
+.PHONY : src/simple_navigation_goals.o
 
 # target to build an object file
-src/gpsgoal.cpp.o:
-	cd /home/sudha/catkin_ws/build && $(MAKE) -f simple_navigation_goals/CMakeFiles/gpsgoal.dir/build.make simple_navigation_goals/CMakeFiles/gpsgoal.dir/src/gpsgoal.cpp.o
-.PHONY : src/gpsgoal.cpp.o
+src/simple_navigation_goals.cpp.o:
+	cd /home/sudha/catkin_ws/build && $(MAKE) -f simple_navigation_goals/CMakeFiles/simple_navigation_goals.dir/build.make simple_navigation_goals/CMakeFiles/simple_navigation_goals.dir/src/simple_navigation_goals.cpp.o
+.PHONY : src/simple_navigation_goals.cpp.o
 
-src/gpsgoal.i: src/gpsgoal.cpp.i
-.PHONY : src/gpsgoal.i
+src/simple_navigation_goals.i: src/simple_navigation_goals.cpp.i
+.PHONY : src/simple_navigation_goals.i
 
 # target to preprocess a source file
-src/gpsgoal.cpp.i:
-	cd /home/sudha/catkin_ws/build && $(MAKE) -f simple_navigation_goals/CMakeFiles/gpsgoal.dir/build.make simple_navigation_goals/CMakeFiles/gpsgoal.dir/src/gpsgoal.cpp.i
-.PHONY : src/gpsgoal.cpp.i
+src/simple_navigation_goals.cpp.i:
+	cd /home/sudha/catkin_ws/build && $(MAKE) -f simple_navigation_goals/CMakeFiles/simple_navigation_goals.dir/build.make simple_navigation_goals/CMakeFiles/simple_navigation_goals.dir/src/simple_navigation_goals.cpp.i
+.PHONY : src/simple_navigation_goals.cpp.i
 
-src/gpsgoal.s: src/gpsgoal.cpp.s
-.PHONY : src/gpsgoal.s
+src/simple_navigation_goals.s: src/simple_navigation_goals.cpp.s
+.PHONY : src/simple_navigation_goals.s
 
 # target to generate assembly for a file
-src/gpsgoal.cpp.s:
-	cd /home/sudha/catkin_ws/build && $(MAKE) -f simple_navigation_goals/CMakeFiles/gpsgoal.dir/build.make simple_navigation_goals/CMakeFiles/gpsgoal.dir/src/gpsgoal.cpp.s
-.PHONY : src/gpsgoal.cpp.s
+src/simple_navigation_goals.cpp.s:
+	cd /home/sudha/catkin_ws/build && $(MAKE) -f simple_navigation_goals/CMakeFiles/simple_navigation_goals.dir/build.make simple_navigation_goals/CMakeFiles/simple_navigation_goals.dir/src/simple_navigation_goals.cpp.s
+.PHONY : src/simple_navigation_goals.cpp.s
 
 # Help Target
 help:
@@ -236,16 +236,16 @@ help:
 	@echo "... actionlib_generate_messages_lisp"
 	@echo "... actionlib_generate_messages_py"
 	@echo "... edit_cache"
-	@echo "... gpsgoal"
 	@echo "... install"
 	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... simple_navigation_goals"
 	@echo "... test"
-	@echo "... src/gpsgoal.o"
-	@echo "... src/gpsgoal.i"
-	@echo "... src/gpsgoal.s"
+	@echo "... src/simple_navigation_goals.o"
+	@echo "... src/simple_navigation_goals.i"
+	@echo "... src/simple_navigation_goals.s"
 .PHONY : help
 
 

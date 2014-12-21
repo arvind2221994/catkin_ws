@@ -8,14 +8,21 @@
 #include <termios.h>
 #include <math.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define DEFAULT_SERIALPORT "/dev/ttyUSB0"
 #define DEFAULT_BAUDRATE 57600
 
+#define DEG2RAD M_PI/180
+
+//NOTE::Start reading from the main then onto the rcvThread function it helps :)
 // Global data
 FILE *fpSerial = NULL; // serial port file pointer
-ros::Publisher pubRazorImu;  // yaw, pitch, roll
-ros::Publisher pubImu;  // ros imu sensor message
+
+//Publishers for data 
+ros::Publisher pubRazorImu;// yaw, pitch, roll (not used in code but can be done)
+ros::Publisher pubImu;     // ros imu sensor message 
+ros::Publisher pubMag;     // ros mag sensor message (not working presently)
 int rzIndex; // index number
 int fd = -1;
 
@@ -85,16 +92,18 @@ FILE *serialInit(char * port, int baud)
 void *rcvThread(void *arg)
 {
   razor_imu_9dof::RazorImu rz;
-  sensor_msgs::Imu imuMsg;
-  imuMsg.orientation_covariance[0] = 999999;
-  imuMsg.orientation_covariance[4] = 9999999;
-  imuMsg.orientation_covariance[8] = 999999;
-  imuMsg.angular_velocity_covariance[0] = 9999;
-  imuMsg.angular_velocity_covariance[4] = 9999;
-  imuMsg.angular_velocity_covariance[8] = 0.02;
-  imuMsg.linear_acceleration_covariance[0] = 0.2;
-  imuMsg.linear_acceleration_covariance[4] = 0.2;
-  imuMsg.linear_acceleration_covariance[8] = 0.2;
+  sensor_msgs::Imu msg_imu;
+  
+  //Please be carefull this maybe wrong <<< error possible
+  msg_imu.orientation_covariance[0] = 999999;
+  msg_imu.orientation_covariance[4] = 9999999;
+  msg_imu.orientation_covariance[8] = 999999;
+  msg_imu.angular_velocity_covariance[0] = 9999;
+  msg_imu.angular_velocity_covariance[4] = 9999;
+  msg_imu.angular_velocity_covariance[8] = 0.02;
+  msg_imu.linear_acceleration_covariance[0] = 0.2;
+  msg_imu.linear_acceleration_covariance[4] = 0.2;
+  msg_imu.linear_acceleration_covariance[8] = 0.2;
 
   int rcvBufSize = 500;
   char imuData[rcvBufSize];   //received string from imu
@@ -109,70 +118,94 @@ void *rcvThread(void *arg)
   ROS_INFO("rcvThread: serial receive thread running");
 
   ros::Rate loop_rate(10); // 10 Hz
+  double y,p,r;
+  double a_x,a_y,a_z,g_x,g_y,g_z,m_x,m_y,m_z;
 
-  int count=0;
+      
   while (ros::ok()) {
-      count++;
       printf("\nreached here flag 1\n");
 
-      // clear the first line as it may be incomplete after flush
-      //fgets(imuData,rcvBufSize,fpSerial);
+      //Clear the first line as it may be incomplete after flush
       fgets(imuData,rcvBufSize,fpSerial);
       memset(imuData,0x0,rcvBufSize);  
       bufPos=fgets(imuData,rcvBufSize,fpSerial);
-      printf("\ntrying %d  %s",count,imuData);
       if(bufPos == NULL){
           printf("bufPos is null\n");
       }
+      else{
+        printf("\ntrying  %s",imuData);
+        
+        //Parsing the imuData string and publishing
+        //Input format is #YPR=yaw,pitch,roll #A-C=ax,ay,az #M-C=mx,my,mz #G-C=gx,gy,gz <<< error posible please look into the output format and arrage accordingly
+	    sscanf(imuData,"#YPR=%lf,%lf,%lf #A-C=%lf,%lf,%lf #M-C=%lf,%lf,%lf #G-C=%lf,%lf,%lf",&y,&p,&r,&a_x,&a_y,&a_z,&m_x,&m_y,&m_z,&g_x,&g_y,&g_z);
+	    printf("#YPR=%lf,%lf,%lf #A-C=%lf,%lf,%lf #M-C=%lf,%lf,%lf #G-C=%lf,%lf,%lf",y,p,r,a_x,a_y,a_z,m_x,m_y,m_z,g_x,g_y,g_z);
 
-      //if (bufPos != NULL) {
-      //  printf("\ntrying %d  %s",count,imuData);
-      //  ROS_DEBUG("IMU Received Data: %s", imuData);
+        //Calculations as done in https://github.com/FroboLab/FroboMind/blob/master/fmSensors/global_sensing/imu/sparkfun_razor_9dof/src/sparkfun_9dof.cpp 
+        a_x = a_x / 1000.0 * 4 * 9.82;
+        a_y = a_y / 1000.0 * 4 * 9.82;
+        a_z = a_z / 1000.0 * 4 * 9.82;
+	    g_x = g_x * 1/14.375 * DEG2RAD;
+	    g_y = g_y * 1/14.375 * DEG2RAD;
+	    g_z = g_z * 1/14.375 * DEG2RAD;
+	    m_x = m_x / 660.0;
+	    m_y = m_y / 660.0;
+	    m_z = m_z / 660.0;
+        
+        //The publishing part
+        ++msg_imu.header.seq;
+	    msg_imu.header.frame_id = "imu_frame";
+	    msg_imu.header.stamp = ros::Time::now();
+        	
+        //Acceleration
+	    msg_imu.linear_acceleration.x = a_x;
+	    msg_imu.linear_acceleration.y = a_y;
+        //negate z if gives wrong value depends on orientation of sensor i suppose
+	    msg_imu.linear_acceleration.z = a_z;
 
-      //  // Remove '#YPR='
-      //  char truncMsg[rcvBufSize];
-      //  memcpy(truncMsg, &imuData[5], 45);
+	    //Angular rates
+	    msg_imu.angular_velocity.x = g_x;
+	    msg_imu.angular_velocity.y = g_y;
+        //negate z if gives wrong value depends on orientation of sensor i suppose
+	    msg_imu.angular_velocity.z = g_z;
+        
+        //This is copy pasted directly from the code <<< error possible
+        tf::Quaternion qt = tf::createQuaternionFromRPY(r, p, y);
+        msg_imu.orientation.x = qt[0];
+        msg_imu.orientation.y = qt[1];
+        msg_imu.orientation.z = qt[2];
+        msg_imu.orientation.w = qt[3];
+        msg_imu.header.stamp = ros::Time::now();
+        
+        // broadcast transform
+        tf::Transform transform;
+        transform.setOrigin( tf::Vector3(0.0, 0.0, 0.0) );
+        transform.setRotation(qt);
 
-      //  // break into 3 strings separated by ','
-      //  int i=0;
-      //  char * tok;
-      //  tok=strtok(truncMsg, ",");
-      //  while (tok != NULL) {
-      //    strcpy(msgArray[i], tok);
-      //    tok=strtok(NULL,",");
-      //    i++;
-      //  }
+        static tf::TransformBroadcaster br;
+        br.sendTransform( tf::StampedTransform(transform, ros::Time::now(), "base_link","imu_frame") );
 
-      //  // store yaw, pitch, roll as radians
-      //  rz.yaw = -(float) atof(msgArray[0]);
-      //  rz.pitch = -(float) atof(msgArray[1]);
-      //  rz.roll = -(float) atof(msgArray[2]);
-      //  pubRazorImu.publish(rz);
+        //Publishers for imu data and magnetometer data are declared as global variables
+        //Naming Imu publisher as required by robot_pose_ekf package
+        //Publishing imu data here magneto meter not needed in imu data
+        pubImu.publish(msg_imu);
+          
+        //Uncomment if magneto meter readings are needed(presently not working)
+	    //++msg_mag_.header.seq;
+	    //msg_mag_.header.frame_id = frame_id_;
+	    //msg_mag_.header.stamp = ros::Time::now();
+	    //msg_mag_.x = m_x;
+	    //msg_mag_.y = m_y;
+	    //msg_mag_.z = m_z;
 
-      //  tf::Quaternion qt = tf::createQuaternionFromRPY(rz.roll*(M_PI/180), rz.pitch*(M_PI/180), rz.yaw*(M_PI/180));
-      //  imuMsg.orientation.x = qt[0];
-      //  imuMsg.orientation.y = qt[1];
-      //  imuMsg.orientation.z = qt[2];
-      //  imuMsg.orientation.w = qt[3];
-      //  imuMsg.header.stamp = ros::Time::now();
-      //  imuMsg.header.frame_id = "laser";
-      //  
-      //  // broadcast transform
-      //  tf::Transform transform;
-      //  transform.setOrigin( tf::Vector3(0.0, 0.0, 0.0) );
-      //  transform.setRotation(qt);
-
-      //  static tf::TransformBroadcaster br;
-      //  br.sendTransform( tf::StampedTransform(transform, ros::Time::now(), "world","laser") );
-
-      //  pubImu.publish(imuMsg);
-      //}
-
+	    //pub_mag_.publish(msg_mag_);
+        
+      }
+    
     // flush the contents of the input
     tcflush(fd, TCIFLUSH);
 
     loop_rate.sleep();
-    printf("reached here flag 1\n");
+    printf("r`eached here flag 1\n");
   }
   return NULL;
 }
@@ -181,24 +214,27 @@ void *rcvThread(void *arg)
 int main(int argc, char **argv)
 {
   char port[20];    //port name
-  int baud;     //baud rate 
+  int baud;         //baud rate 
 
-  char rzTopic[20];
-  char imuTopic[20];
+  char rzTopic[20];  //topic name for ypr data
+  char imuTopic[20]; //topic name for imu data
+  char magTopic[20]; //topic name for mag data
 
   pthread_t rcvThrID;   //receive thread ID
   int err;
 
   //Initialize ROS
   ros::init(argc, argv, "razor_imu_9dof");
-  ros::NodeHandle rosNode;
+  ros::NodeHandle nh;
   ROS_INFO("razor_imu_9dof starting");
 
+  //Arguments can be given to package
   //Open and initialize the serial port to the Razor IMU
   if (argc > 1) {
     if(sscanf(argv[1],"%d", &rzIndex)==1) {
-      sprintf(rzTopic, "RazorImu", rzIndex);
-      sprintf(imuTopic, "Imu", rzIndex);
+      sprintf(rzTopic, "imu_ypr_data", rzIndex);
+      sprintf(imuTopic, "imu_data", rzIndex);
+      sprintf(magTopic, "imu_mag_data", rzIndex);
     }
     else {
       ROS_ERROR("rzIndex parameter invalid");
@@ -206,10 +242,12 @@ int main(int argc, char **argv)
     }
   }
   else {
-    strcpy(rzTopic, "RazorImu");
-    strcpy(imuTopic, "Imu");
+    strcpy(rzTopic, "imu_ypr_data");
+    strcpy(imuTopic, "imu_data");
+    strcpy(magTopic, "imu_mag_data");
   }
-
+    
+  //checking if there is a serial port given like /dev/ttyACM0 
   strcpy(port, DEFAULT_SERIALPORT);
   if (argc > 2)
      strcpy(port, argv[2]);
@@ -229,13 +267,13 @@ int main(int argc, char **argv)
     return 1;
   }
   ROS_INFO("serial connection successful");
+  
+  //Advertising topic names to remaining ros system
+  pubRazorImu = nh.advertise<razor_imu_9dof::RazorImu>(rzTopic, 1);
+  pubImu = nh.advertise<sensor_msgs::Imu>(imuTopic, 1);
+  //magneto meter publisher requires a custom defined type not done yet
 
-
-  //Setup to publish ROS messages
-  pubRazorImu = rosNode.advertise<razor_imu_9dof::RazorImu>(rzTopic, 1);
-  pubImu = rosNode.advertise<sensor_msgs::Imu>(imuTopic, 1);
-
-  //Create receive thread
+  //Create receive thread the messages are received and published from this thread
   err = pthread_create(&rcvThrID, NULL, rcvThread, NULL);
   if (err != 0) {
     ROS_ERROR("unable to create receive thread");
