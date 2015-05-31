@@ -153,6 +153,14 @@ move_base_msgs/MoveBaseAction.h
 -
 actionlib/client/simple_action_client.h
 -
+sstream
+-
+math.h
+-
+stdlib.h
+-
+string.h
+-
 
 /opt/ros/hydro/include/XmlRpcDecl.h
 ros/macros.h

@@ -272,48 +272,6 @@ navfn_node/fast:
 	cd /home/sudha/catkin_ws/build && $(MAKE) -f navfn/CMakeFiles/navfn_node.dir/build.make navfn/CMakeFiles/navfn_node.dir/build
 .PHONY : navfn_node/fast
 
-# Convenience name for target.
-navfn/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule:
-	cd /home/sudha/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navfn/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
-.PHONY : navfn/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-visualization_msgs_generate_messages_cpp: navfn/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
-.PHONY : visualization_msgs_generate_messages_cpp
-
-# fast build rule for target.
-visualization_msgs_generate_messages_cpp/fast:
-	cd /home/sudha/catkin_ws/build && $(MAKE) -f navfn/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build.make navfn/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build
-.PHONY : visualization_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-navfn/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule:
-	cd /home/sudha/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navfn/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
-.PHONY : navfn/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-visualization_msgs_generate_messages_lisp: navfn/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
-.PHONY : visualization_msgs_generate_messages_lisp
-
-# fast build rule for target.
-visualization_msgs_generate_messages_lisp/fast:
-	cd /home/sudha/catkin_ws/build && $(MAKE) -f navfn/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make navfn/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build
-.PHONY : visualization_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-navfn/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule:
-	cd /home/sudha/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navfn/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
-.PHONY : navfn/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-visualization_msgs_generate_messages_py: navfn/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
-.PHONY : visualization_msgs_generate_messages_py
-
-# fast build rule for target.
-visualization_msgs_generate_messages_py/fast:
-	cd /home/sudha/catkin_ws/build && $(MAKE) -f navfn/CMakeFiles/visualization_msgs_generate_messages_py.dir/build.make navfn/CMakeFiles/visualization_msgs_generate_messages_py.dir/build
-.PHONY : visualization_msgs_generate_messages_py/fast
-
 src/navfn.o: src/navfn.cpp.o
 .PHONY : src/navfn.o
 
@@ -408,9 +366,6 @@ help:
 	@echo "... navfn_node"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... visualization_msgs_generate_messages_cpp"
-	@echo "... visualization_msgs_generate_messages_lisp"
-	@echo "... visualization_msgs_generate_messages_py"
 	@echo "... src/navfn.o"
 	@echo "... src/navfn.i"
 	@echo "... src/navfn.s"

@@ -46,7 +46,6 @@ macro(_pack_libraries_with_build_configuration VAR)
     endif()
     math(EXPR _index "${_index} + 1")
   endwhile()
-  debug_message(10 "_pack_libraries_with_build_configuration(${VAR} ${ARGN}) ${${VAR}}")
 endmacro()
 
 # unpack a list of libraries with optional build configuration keyword prefixes
@@ -58,7 +57,6 @@ macro(_unpack_libraries_with_build_configuration VAR)
     string(REGEX REPLACE "^(debug|optimized|general)${CATKIN_BUILD_CONFIGURATION_KEYWORD_SEPARATOR}(.+)$" "\\1;\\2" lib "${lib}")
     list(APPEND ${VAR} "${lib}")
   endforeach()
-  debug_message(10 "_unpack_libraries_with_build_configuration(${VAR} ${ARGN}) ${${VAR}}")
 endmacro()
 
 
@@ -69,7 +67,7 @@ set(rviz_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(rviz_SOURCE_PREFIX /home/sudha/catkin_ws/src/rviz)
+  set(rviz_SOURCE_PREFIX /home/sudha/catkin_ws/src/rviz-hydro-devel)
   set(rviz_DEVEL_PREFIX /home/sudha/catkin_ws/devel)
   set(rviz_INSTALL_PREFIX "")
   set(rviz_PREFIX ${rviz_DEVEL_PREFIX})
@@ -93,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(rviz_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/sudha/catkin_ws/src/rviz/src;/usr/include/eigen3;/usr/include/OGRE;/usr/include;/opt/ros/hydro/include;/opt/ros/hydro/include;/opt/ros/hydro/include" STREQUAL "")
+if(NOT "/home/sudha/catkin_ws/src/rviz-hydro-devel/src;/usr/include/eigen3;/usr/include/OGRE;/usr/include;/opt/ros/hydro/include" STREQUAL "")
   set(rviz_INCLUDE_DIRS "")
-  set(_include_dirs "/home/sudha/catkin_ws/src/rviz/src;/usr/include/eigen3;/usr/include/OGRE;/usr/include;/opt/ros/hydro/include;/opt/ros/hydro/include;/opt/ros/hydro/include")
+  set(_include_dirs "/home/sudha/catkin_ws/src/rviz-hydro-devel/src;/usr/include/eigen3;/usr/include/OGRE;/usr/include;/opt/ros/hydro/include")
   foreach(idir ${_include_dirs})
     if(IS_ABSOLUTE ${idir} AND IS_DIRECTORY ${idir})
       set(include ${idir})
@@ -105,7 +103,7 @@ if(NOT "/home/sudha/catkin_ws/src/rviz/src;/usr/include/eigen3;/usr/include/OGRE
         message(FATAL_ERROR "Project 'rviz' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  Ask the maintainer 'David Gossow <dgossow@gmail.com>, William Woodall <william@osrfoundation.org>' to fix it.")
       endif()
     else()
-      message(FATAL_ERROR "Project 'rviz' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/sudha/catkin_ws/src/rviz/${idir}'.  Ask the maintainer 'David Gossow <dgossow@gmail.com>, William Woodall <william@osrfoundation.org>' to fix it.")
+      message(FATAL_ERROR "Project 'rviz' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/sudha/catkin_ws/src/rviz-hydro-devel/${idir}'.  Ask the maintainer 'David Gossow <dgossow@gmail.com>, William Woodall <william@osrfoundation.org>' to fix it.")
     endif()
     _list_append_unique(rviz_INCLUDE_DIRS ${include})
   endforeach()

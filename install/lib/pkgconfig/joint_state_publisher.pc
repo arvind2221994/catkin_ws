@@ -1,0 +1,8 @@
+prefix=/home/sudha/catkin_ws/install
+
+Name: joint_state_publisher
+Description: Description of joint_state_publisher
+Version: 1.10.21
+Cflags: 
+Libs: -L/home/sudha/catkin_ws/install/lib 
+Requires: 

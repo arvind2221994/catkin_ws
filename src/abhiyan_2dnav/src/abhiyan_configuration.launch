@@ -1,6 +1,6 @@
 <launch>
   <node pkg="lms1xx" type="LMS1xx_node" name="LMS1xx_node" output="screen">
-    <param name="host" value="169.254.180.130" />
+  <param name="host" value="169.254.180.130" />
   </node>
 
   <node pkg="lite_odom" type="lite_odom_code" name="lite_odom_code" output="screen">
@@ -14,6 +14,4 @@
   <!--node pkg="ip" type="ip" name="ip" output="screen"-->
     <!--param name="" value="" /-->
   <!--/node-->
-
-
 </launch>

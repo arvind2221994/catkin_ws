@@ -1,0 +1,8 @@
+prefix=/home/sudha/catkin_ws/devel
+
+Name: collada_parser
+Description: Description of collada_parser
+Version: 1.10.21
+Cflags: -I/home/sudha/catkin_ws/src/robot_model-hydro-devel/collada_parser/include -I/opt/ros/hydro/include
+Libs: -L/home/sudha/catkin_ws/devel/lib -lcollada_parser
+Requires: roscpp urdf_parser_plugin

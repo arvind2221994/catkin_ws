@@ -7,5 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PATH="/home/sudha/catkin_ws/devel/bin:/home/sudha/catkin_ws/install/bin:$PATH"
 export PWD="/home/sudha/catkin_ws/build"

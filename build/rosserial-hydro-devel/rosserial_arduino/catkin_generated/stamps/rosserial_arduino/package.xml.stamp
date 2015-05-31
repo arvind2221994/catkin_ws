@@ -1,12 +1,13 @@
 <package>
   <name>rosserial_arduino</name>
-  <version>0.5.5</version>
+  <version>0.5.6</version>
   <description>
     Libraries and examples for ROSserial usage on Arduino/AVR Platforms.
   </description>
   <author>Michael Ferguson</author>
   <author>Adam Stambler</author>
   <maintainer email="paul.bouchier@gmail.com">Paul Bouchier</maintainer>
+  <maintainer email="mpurvis@clearpathrobotics.com">Mike Purvis</maintainer>
   <license>BSD</license>
   <url>http://ros.org/wiki/rosserial_arduino</url>
 

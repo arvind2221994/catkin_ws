@@ -96,6 +96,7 @@ struct TopicInfo_
      enum { ID_PARAMETER_REQUEST = 6 };
      enum { ID_LOG = 7 };
      enum { ID_TIME = 10 };
+     enum { ID_TX_STOP = 11 };
  
 
   typedef boost::shared_ptr< ::rosserial_msgs::TopicInfo_<ContainerAllocator> > Ptr;
@@ -110,6 +111,8 @@ typedef boost::shared_ptr< ::rosserial_msgs::TopicInfo > TopicInfoPtr;
 typedef boost::shared_ptr< ::rosserial_msgs::TopicInfo const> TopicInfoConstPtr;
 
 // constants requiring out of line definition
+
+   
 
    
 
@@ -187,12 +190,12 @@ struct MD5Sum< ::rosserial_msgs::TopicInfo_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "63aa5e8f1bdd6f35c69fe1a1b9d28e9f";
+    return "0ad51f88fc44892f8c10684077646005";
   }
 
   static const char* value(const ::rosserial_msgs::TopicInfo_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x63aa5e8f1bdd6f35ULL;
-  static const uint64_t static_value2 = 0xc69fe1a1b9d28e9fULL;
+  static const uint64_t static_value1 = 0x0ad51f88fc44892fULL;
+  static const uint64_t static_value2 = 0x8c10684077646005ULL;
 };
 
 template<class ContainerAllocator>
@@ -219,7 +222,7 @@ uint16 ID_SERVICE_CLIENT=4\n\
 uint16 ID_PARAMETER_REQUEST=6\n\
 uint16 ID_LOG=7\n\
 uint16 ID_TIME=10\n\
-# uint16 ID_TX_STOP=11\n\
+uint16 ID_TX_STOP=11\n\
 \n\
 # The endpoint ID for this topic\n\
 uint16 topic_id\n\

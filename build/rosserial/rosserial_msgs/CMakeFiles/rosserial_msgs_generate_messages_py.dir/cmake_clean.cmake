@@ -2,6 +2,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/rosserial_msgs_generate_messages_py"
   "/home/sudha/catkin_ws/devel/lib/python2.7/dist-packages/rosserial_msgs/msg/_Log.py"
   "/home/sudha/catkin_ws/devel/lib/python2.7/dist-packages/rosserial_msgs/msg/_TopicInfo.py"
+  "/home/sudha/catkin_ws/devel/lib/python2.7/dist-packages/rosserial_msgs/srv/_RequestServiceInfo.py"
   "/home/sudha/catkin_ws/devel/lib/python2.7/dist-packages/rosserial_msgs/srv/_RequestParam.py"
   "/home/sudha/catkin_ws/devel/lib/python2.7/dist-packages/rosserial_msgs/srv/_RequestMessageInfo.py"
   "/home/sudha/catkin_ws/devel/lib/python2.7/dist-packages/rosserial_msgs/msg/__init__.py"

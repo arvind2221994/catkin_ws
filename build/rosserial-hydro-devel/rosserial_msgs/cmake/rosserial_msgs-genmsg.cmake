@@ -157,8 +157,6 @@ add_dependencies(rosserial_msgs_genpy rosserial_msgs_generate_messages_py)
 list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS rosserial_msgs_generate_messages_py)
 
 
-debug_message(2 "rosserial_msgs: Iflags=${MSG_I_FLAGS}")
-
 
 if(gencpp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/rosserial_msgs)
   # install generated code

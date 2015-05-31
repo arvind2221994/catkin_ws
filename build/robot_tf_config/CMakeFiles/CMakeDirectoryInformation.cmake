@@ -13,6 +13,7 @@ SET(CMAKE_C_INCLUDE_PATH
   "/home/sudha/catkin_ws/devel/include"
   "/home/sudha/catkin_ws/src/geometry-hydro-devel/tf/include"
   "/opt/ros/hydro/include"
+  "/opt/ros/hydro/include/opencv"
   )
 SET(CMAKE_CXX_INCLUDE_PATH ${CMAKE_C_INCLUDE_PATH})
 SET(CMAKE_Fortran_INCLUDE_PATH ${CMAKE_C_INCLUDE_PATH})

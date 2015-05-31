@@ -74,7 +74,8 @@
     (:ID_SERVICE_CLIENT . 4)
     (:ID_PARAMETER_REQUEST . 6)
     (:ID_LOG . 7)
-    (:ID_TIME . 10))
+    (:ID_TIME . 10)
+    (:ID_TX_STOP . 11))
 )
 (cl:defmethod roslisp-msg-protocol:symbol-codes ((msg-type (cl:eql 'TopicInfo)))
     "Constants for message type 'TopicInfo"
@@ -84,7 +85,8 @@
     (:ID_SERVICE_CLIENT . 4)
     (:ID_PARAMETER_REQUEST . 6)
     (:ID_LOG . 7)
-    (:ID_TIME . 10))
+    (:ID_TIME . 10)
+    (:ID_TX_STOP . 11))
 )
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <TopicInfo>) ostream)
   "Serializes a message object of type '<TopicInfo>"
@@ -159,16 +161,16 @@
   "rosserial_msgs/TopicInfo")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<TopicInfo>)))
   "Returns md5sum for a message object of type '<TopicInfo>"
-  "63aa5e8f1bdd6f35c69fe1a1b9d28e9f")
+  "0ad51f88fc44892f8c10684077646005")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'TopicInfo)))
   "Returns md5sum for a message object of type 'TopicInfo"
-  "63aa5e8f1bdd6f35c69fe1a1b9d28e9f")
+  "0ad51f88fc44892f8c10684077646005")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<TopicInfo>)))
   "Returns full string definition for message of type '<TopicInfo>"
-  (cl:format cl:nil "# special topic_ids~%uint16 ID_PUBLISHER=0~%uint16 ID_SUBSCRIBER=1~%uint16 ID_SERVICE_SERVER=2~%uint16 ID_SERVICE_CLIENT=4~%uint16 ID_PARAMETER_REQUEST=6~%uint16 ID_LOG=7~%uint16 ID_TIME=10~%# uint16 ID_TX_STOP=11~%~%# The endpoint ID for this topic~%uint16 topic_id~%~%string topic_name~%string message_type~%~%# MD5 checksum for this message type~%string md5sum~%~%# size of the buffer message must fit in~%int32 buffer_size~%~%~%"))
+  (cl:format cl:nil "# special topic_ids~%uint16 ID_PUBLISHER=0~%uint16 ID_SUBSCRIBER=1~%uint16 ID_SERVICE_SERVER=2~%uint16 ID_SERVICE_CLIENT=4~%uint16 ID_PARAMETER_REQUEST=6~%uint16 ID_LOG=7~%uint16 ID_TIME=10~%uint16 ID_TX_STOP=11~%~%# The endpoint ID for this topic~%uint16 topic_id~%~%string topic_name~%string message_type~%~%# MD5 checksum for this message type~%string md5sum~%~%# size of the buffer message must fit in~%int32 buffer_size~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'TopicInfo)))
   "Returns full string definition for message of type 'TopicInfo"
-  (cl:format cl:nil "# special topic_ids~%uint16 ID_PUBLISHER=0~%uint16 ID_SUBSCRIBER=1~%uint16 ID_SERVICE_SERVER=2~%uint16 ID_SERVICE_CLIENT=4~%uint16 ID_PARAMETER_REQUEST=6~%uint16 ID_LOG=7~%uint16 ID_TIME=10~%# uint16 ID_TX_STOP=11~%~%# The endpoint ID for this topic~%uint16 topic_id~%~%string topic_name~%string message_type~%~%# MD5 checksum for this message type~%string md5sum~%~%# size of the buffer message must fit in~%int32 buffer_size~%~%~%"))
+  (cl:format cl:nil "# special topic_ids~%uint16 ID_PUBLISHER=0~%uint16 ID_SUBSCRIBER=1~%uint16 ID_SERVICE_SERVER=2~%uint16 ID_SERVICE_CLIENT=4~%uint16 ID_PARAMETER_REQUEST=6~%uint16 ID_LOG=7~%uint16 ID_TIME=10~%uint16 ID_TX_STOP=11~%~%# The endpoint ID for this topic~%uint16 topic_id~%~%string topic_name~%string message_type~%~%# MD5 checksum for this message type~%string md5sum~%~%# size of the buffer message must fit in~%int32 buffer_size~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <TopicInfo>))
   (cl:+ 0
      2

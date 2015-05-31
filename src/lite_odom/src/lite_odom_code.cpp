@@ -21,7 +21,7 @@ void odom_cb( const litemsgs::lite::ConstPtr & msg ) {
    out.pose.pose = msg->pose;
    for (int i=0;i<36;i++)
    {
-		if(i%7 == 0)
+		if(i==0 || (i>5 && i%7 == 0))
 		out.pose.covariance[i]=0.01;
 		else
 		out.pose.covariance[i]=0.00;
@@ -30,7 +30,7 @@ void odom_cb( const litemsgs::lite::ConstPtr & msg ) {
    out.twist.twist = msg->twist;
    for (int i=0;i<36;i++)
    {
-          if(i%7 == 0)
+          if(i==0 || (i>5 && i%7 == 0))
 		out.twist.covariance[i]=0.01;
 		else
 		out.twist.covariance[i]=0.00;
@@ -58,7 +58,7 @@ int main(int argc, char ** argv) {
    ros::NodeHandle nh;
 
    ros::Subscriber s = nh.subscribe("odom_sub", 2, &odom_cb);
-
+   ROS_INFO("bhavya!!!");
    odom_pub = nh.advertise<nav_msgs::Odometry>("odom", 2);
 
    ros::spin();

@@ -2,6 +2,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/rosserial_msgs_generate_messages_cpp"
   "/home/sudha/catkin_ws/devel/include/rosserial_msgs/Log.h"
   "/home/sudha/catkin_ws/devel/include/rosserial_msgs/TopicInfo.h"
+  "/home/sudha/catkin_ws/devel/include/rosserial_msgs/RequestServiceInfo.h"
   "/home/sudha/catkin_ws/devel/include/rosserial_msgs/RequestParam.h"
   "/home/sudha/catkin_ws/devel/include/rosserial_msgs/RequestMessageInfo.h"
 )

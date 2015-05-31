@@ -2,7 +2,7 @@ prefix=/home/sudha/catkin_ws/devel
 
 Name: rosserial_python
 Description: Description of rosserial_python
-Version: 0.5.5
+Version: 0.7.0
 Cflags: 
 Libs: -L/home/sudha/catkin_ws/devel/lib 
 Requires: 

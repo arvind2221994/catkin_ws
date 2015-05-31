@@ -7,7 +7,7 @@ typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseCl
 int main(int argc, char** argv){
   ros::init(argc, argv, "simple_navigation_goals");
 
-	int i = 1;
+	//int i = 1;
   //tell the action client that we want to spin a thread by default
   MoveBaseClient ac("move_base", true);
 
@@ -22,7 +22,7 @@ int main(int argc, char** argv){
   goal.target_pose.header.frame_id = "base_link";
   goal.target_pose.header.stamp = ros::Time::now();
 
-  goal.target_pose.pose.position.x = 1.0;
+  goal.target_pose.pose.position.x = 2.0;
   goal.target_pose.pose.position.y = 0.0;
   goal.target_pose.pose.orientation.w = 0.0;
 
@@ -31,13 +31,13 @@ int main(int argc, char** argv){
 
   ac.waitForResult();
 
-  while((ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED))
+  /*while((ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED))
     {
 
     ROS_INFO("Hooray, the base moved 1 more meter forward");
 	goal.target_pose.header.stamp = ros::Time::now();
 
-  goal.target_pose.pose.position.x = 1.0 + (float)i;
+  goal.target_pose.pose.position.x = 1.0;// + (float)i;
   goal.target_pose.pose.position.y = 0.0;
   goal.target_pose.pose.orientation.w = 0.0;
 	ac.sendGoal(goal);
@@ -45,6 +45,7 @@ int main(int argc, char** argv){
   ac.waitForResult();
 	i++;
 	}
+*/
   if(!(ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED))
    {
 	 ROS_INFO("The base failed to move forward 1 meter for some reason");

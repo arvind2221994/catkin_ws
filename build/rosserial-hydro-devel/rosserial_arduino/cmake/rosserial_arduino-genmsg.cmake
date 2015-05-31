@@ -121,8 +121,6 @@ add_dependencies(rosserial_arduino_genpy rosserial_arduino_generate_messages_py)
 list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS rosserial_arduino_generate_messages_py)
 
 
-debug_message(2 "rosserial_arduino: Iflags=${MSG_I_FLAGS}")
-
 
 if(gencpp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/rosserial_arduino)
   # install generated code

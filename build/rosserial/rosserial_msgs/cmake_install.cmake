@@ -43,6 +43,7 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rosserial_msgs/srv" TYPE FILE FILES
     "/home/sudha/catkin_ws/src/rosserial/rosserial_msgs/srv/RequestParam.srv"
     "/home/sudha/catkin_ws/src/rosserial/rosserial_msgs/srv/RequestMessageInfo.srv"
+    "/home/sudha/catkin_ws/src/rosserial/rosserial_msgs/srv/RequestServiceInfo.srv"
     )
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 

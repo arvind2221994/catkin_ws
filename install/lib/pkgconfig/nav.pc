@@ -1,0 +1,8 @@
+prefix=/home/sudha/catkin_ws/install
+
+Name: nav
+Description: Description of nav
+Version: 0.0.1
+Cflags: -I/home/sudha/catkin_ws/install/include
+Libs: -L/home/sudha/catkin_ws/install/lib 
+Requires: roscpp move_base angles amcl gmapping

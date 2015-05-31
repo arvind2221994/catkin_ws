@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "rosserial_msgs: 2 messages, 2 services")
+message(STATUS "rosserial_msgs: 2 messages, 3 services")
 
 set(MSG_I_FLAGS "-Irosserial_msgs:/home/sudha/catkin_ws/src/rosserial/rosserial_msgs/msg")
 
@@ -31,6 +31,12 @@ _generate_msg_cpp(rosserial_msgs
 )
 
 ### Generating Services
+_generate_srv_cpp(rosserial_msgs
+  "/home/sudha/catkin_ws/src/rosserial/rosserial_msgs/srv/RequestServiceInfo.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/rosserial_msgs
+)
 _generate_srv_cpp(rosserial_msgs
   "/home/sudha/catkin_ws/src/rosserial/rosserial_msgs/srv/RequestParam.srv"
   "${MSG_I_FLAGS}"
@@ -79,6 +85,12 @@ _generate_msg_lisp(rosserial_msgs
 
 ### Generating Services
 _generate_srv_lisp(rosserial_msgs
+  "/home/sudha/catkin_ws/src/rosserial/rosserial_msgs/srv/RequestServiceInfo.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/rosserial_msgs
+)
+_generate_srv_lisp(rosserial_msgs
   "/home/sudha/catkin_ws/src/rosserial/rosserial_msgs/srv/RequestParam.srv"
   "${MSG_I_FLAGS}"
   ""
@@ -125,6 +137,12 @@ _generate_msg_py(rosserial_msgs
 )
 
 ### Generating Services
+_generate_srv_py(rosserial_msgs
+  "/home/sudha/catkin_ws/src/rosserial/rosserial_msgs/srv/RequestServiceInfo.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/rosserial_msgs
+)
 _generate_srv_py(rosserial_msgs
   "/home/sudha/catkin_ws/src/rosserial/rosserial_msgs/srv/RequestParam.srv"
   "${MSG_I_FLAGS}"

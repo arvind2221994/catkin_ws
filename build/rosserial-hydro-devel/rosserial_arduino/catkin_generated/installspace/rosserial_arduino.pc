@@ -2,7 +2,7 @@ prefix=/home/sudha/catkin_ws/install
 
 Name: rosserial_arduino
 Description: Description of rosserial_arduino
-Version: 0.5.5
+Version: 0.5.6
 Cflags: -I/home/sudha/catkin_ws/install/include
 Libs: -L/home/sudha/catkin_ws/install/lib 
 Requires: message_runtime

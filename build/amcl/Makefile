@@ -469,48 +469,6 @@ amcl_willow-full.pgm/fast:
 .PHONY : amcl_willow-full.pgm/fast
 
 # Convenience name for target.
-amcl/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule:
-	cd /home/sudha/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 amcl/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
-.PHONY : amcl/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_generate_messages_cpp: amcl/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
-.PHONY : dynamic_reconfigure_generate_messages_cpp
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_cpp/fast:
-	cd /home/sudha/catkin_ws/build && $(MAKE) -f amcl/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build.make amcl/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_cpp/fast
-
-# Convenience name for target.
-amcl/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule:
-	cd /home/sudha/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 amcl/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
-.PHONY : amcl/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_generate_messages_lisp: amcl/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
-.PHONY : dynamic_reconfigure_generate_messages_lisp
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_lisp/fast:
-	cd /home/sudha/catkin_ws/build && $(MAKE) -f amcl/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build.make amcl/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_lisp/fast
-
-# Convenience name for target.
-amcl/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule:
-	cd /home/sudha/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 amcl/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
-.PHONY : amcl/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_generate_messages_py: amcl/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
-.PHONY : dynamic_reconfigure_generate_messages_py
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_py/fast:
-	cd /home/sudha/catkin_ws/build && $(MAKE) -f amcl/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build.make amcl/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_py/fast
-
-# Convenience name for target.
 amcl/CMakeFiles/run_tests_amcl.dir/rule:
 	cd /home/sudha/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 amcl/CMakeFiles/run_tests_amcl.dir/rule
 .PHONY : amcl/CMakeFiles/run_tests_amcl.dir/rule
@@ -1025,9 +983,6 @@ help:
 	@echo "... amcl_texas_willow_hallway_loop_indexed.bag"
 	@echo "... amcl_willow-full-0.05.pgm"
 	@echo "... amcl_willow-full.pgm"
-	@echo "... dynamic_reconfigure_generate_messages_cpp"
-	@echo "... dynamic_reconfigure_generate_messages_lisp"
-	@echo "... dynamic_reconfigure_generate_messages_py"
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"

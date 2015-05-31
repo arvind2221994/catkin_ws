@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "teleop")
+set(teleop_MAINTAINER "Raul Perula-Martinez <raul.perula@uc3m.es>")
+set(teleop_DEPRECATED "")
+set(teleop_VERSION "0.0.1")
+set(teleop_BUILD_DEPENDS "roscpp")
+set(teleop_RUN_DEPENDS "roscpp")
+set(teleop_BUILDTOOL_DEPENDS "catkin")

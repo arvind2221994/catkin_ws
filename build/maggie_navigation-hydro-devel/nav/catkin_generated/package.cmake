@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "nav")
+set(nav_MAINTAINER "Raul Perula-Martinez <raul.perula@uc3m.es>")
+set(nav_DEPRECATED "")
+set(nav_VERSION "0.0.1")
+set(nav_BUILD_DEPENDS "roscpp" "move_base" "angles" "amcl" "stage" "gmapping")
+set(nav_RUN_DEPENDS "roscpp" "move_base" "angles" "amcl" "stage" "gmapping")
+set(nav_BUILDTOOL_DEPENDS "catkin")

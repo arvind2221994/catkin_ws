@@ -5,4 +5,4 @@ PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "rosserial_embeddedlinux"
 PROJECT_SPACE_DIR = "/home/sudha/catkin_ws/install"
-PROJECT_VERSION = "0.5.5"
+PROJECT_VERSION = "0.7.0"

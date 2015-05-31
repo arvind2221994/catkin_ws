@@ -5,11 +5,14 @@ project(robot_tf_config)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  cv_bridge
   geometry_msgs
   roscpp
   rospy
   tf
 )
+
+find_package(OpenCV REQUIRED)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -106,6 +109,7 @@ include_directories(
 ## Declare a cpp executable
 add_executable(tf_broadcaster src/tf_broadcaster.cpp)
 add_executable(tf_listener src/tf_listener.cpp)
+add_executable(shaastra_pub src/shaastra_pub.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
@@ -114,6 +118,7 @@ add_executable(tf_listener src/tf_listener.cpp)
 ## Specify libraries to link a library or executable target against
 target_link_libraries(tf_broadcaster ${catkin_LIBRARIES})
 target_link_libraries(tf_listener ${catkin_LIBRARIES})
+target_link_libraries(shaastra_pub ${catkin_LIBRARIES})
 
 #############
 ## Install ##

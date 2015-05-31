@@ -168,3 +168,7 @@ include_directories(include ${catkin_INCLUDE_DIRS})
 add_executable(simple_navigation_goals src/simple_navigation_goals.cpp)
 target_link_libraries(simple_navigation_goals ${catkin_LIBRARIES})
 add_dependencies(simple_navigation_goals simple_navigation_goals_generate_messages_cpp)
+
+#add_executable(simple_navigation_goals1 src/simple_navigation_goals1.cpp)
+#target_link_libraries(simple_navigation_goals1 ${catkin_LIBRARIES})
+#add_dependencies(simple_navigation_goals1 simple_navigation_goals1_generate_messages_cpp)

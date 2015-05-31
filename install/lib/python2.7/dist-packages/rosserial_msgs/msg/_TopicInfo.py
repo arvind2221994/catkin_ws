@@ -6,7 +6,7 @@ import struct
 
 
 class TopicInfo(genpy.Message):
-  _md5sum = "63aa5e8f1bdd6f35c69fe1a1b9d28e9f"
+  _md5sum = "0ad51f88fc44892f8c10684077646005"
   _type = "rosserial_msgs/TopicInfo"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """# special topic_ids
@@ -17,7 +17,7 @@ uint16 ID_SERVICE_CLIENT=4
 uint16 ID_PARAMETER_REQUEST=6
 uint16 ID_LOG=7
 uint16 ID_TIME=10
-# uint16 ID_TX_STOP=11
+uint16 ID_TX_STOP=11
 
 # The endpoint ID for this topic
 uint16 topic_id
@@ -40,6 +40,7 @@ int32 buffer_size
   ID_PARAMETER_REQUEST = 6
   ID_LOG = 7
   ID_TIME = 10
+  ID_TX_STOP = 11
 
   __slots__ = ['topic_id','topic_name','message_type','md5sum','buffer_size']
   _slot_types = ['uint16','string','string','string','int32']

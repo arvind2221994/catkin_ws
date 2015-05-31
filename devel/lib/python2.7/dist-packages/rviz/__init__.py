@@ -6,7 +6,7 @@ from sys import path as sys_path
 
 from pkgutil import extend_path
 
-__extended_path = "/home/sudha/catkin_ws/src/rviz/src/python_bindings".split(";")
+__extended_path = "/home/sudha/catkin_ws/src/rviz-hydro-devel/src/python_bindings".split(";")
 for p in reversed(__extended_path):
     sys_path.insert(0, p)
     del p

@@ -1,0 +1,106 @@
+<launch>
+    <arg name="robot" />
+
+    <arg name="global_map_server" default="true" />
+
+    <group ns="$(arg robot)">
+        <node name="amcl" pkg="amcl" type="amcl" args="scan:=scan_filtered">
+            <!-- Overall filter parameters -->
+
+            <!-- Minimum allowed number of particles (default: 100) -->
+            <param name="min_particles" value="250" />
+
+            <!-- Maximum allowed number of particles (default: 5000) -->
+            <param name="max_particles" value="1000" />
+
+            <!-- Maximum error between the true distribution and the estimated distribution (default: 0.01) -->
+            <param name="kld_err" value="0.01" />
+
+            <!-- Upper standard normal quantile for (1 - p), where p is the probability that the error on the estimated distrubition 
+                will be less than kld_err. (default: 0.99) -->
+            <param name="kld_z" value="0.99" />
+
+            <!-- Translational movement required before performing a filter update (default: 0.2 meters) -->
+            <param name="update_min_d" value="0.1" />
+
+            <!-- Rotational movement required before performing a filter update (default: pi/6.0 radians) -->
+            <param name="update_min_a" value="0.5" />
+
+            <!-- Number of filter updates required before resampling (default: 2) -->
+            <param name="resample_interval" value="2" />
+
+            <!-- Time with which to post-date the transform that is published, to indicate that this transform is valid into 
+                the future (default: 0.1 seconds) -->
+            <param name="transform_tolerance" value="0.5" />
+
+            <!-- Exponential decay rate for the slow average weight filter, used in deciding when to recover by adding random 
+                poses. A good value might be 0.001. (default: 0.0 (disabled)) -->
+            <param name="recovery_alpha_slow" value="0.0" />
+
+            <!-- Exponential decay rate for the fast average weight filter, used in deciding when to recover by adding random 
+                poses. A good value might be 0.1 (default: 0.0 (disabled)) -->
+            <param name="recovery_alpha_fast" value="0.0" />
+
+            <!-- Maximum rate (Hz) at which scans and paths are published for visualization, -1.0 to disable (default: -1.0 
+                Hz) -->
+            <!--param name="gui_publish_rate" value="10.0"/ -->
+
+            <!-- Laser model parameters -->
+
+            <!-- How many evenly-spaced beams in each scan to be used when updating the filter (default: 30) -->
+            <param name="laser_max_beams" value="50" />
+            
+            <!-- Mixture weight for the z_hit part of the model (default: 0.95) -->
+            <param name="laser_z_hit" value="0.85" />
+            
+            <!-- Mixture weight for the z_short part of the model (default: 0.1) -->
+            <!--param name="laser_z_short" value="0.05"/ -->
+            
+            <!-- Mixture weight for the z_max part of the model (default: 0.05) -->
+            <!--param name="laser_z_max" value="0.05"/ -->
+            
+            <!-- Mixture weight for the z_rand part of the model (default: 0.05) -->
+            <param name="laser_z_rand" value="0.15" />
+            
+            <!-- Standard deviation for Gaussian model used in z_hit part of the model (default: 0.2 meters) -->
+            <param name="laser_sigma_hit" value="0.15" />
+            
+            <!-- Exponential decay parameter for z_short part of model (default: 0.1) -->
+            <param name="laser_lambda_short" value="0.1" />
+            
+            <!-- Maximum distance to do obstacle inflation on map, for use in likelihood_field model (default: 2.0 meters) -->
+            <param name="laser_likelihood_max_dist" value="2.0" />
+            
+            <!-- Which model to use, either beam, likelihood_field, or likelihood_field_prob (default: "likelihood_field") -->
+            <param name="laser_model_type" value="likelihood_field" />
+
+            <!-- Odometry model parameters -->
+
+            <!-- Which model to use, either "diff" or "omni" (default: "diff") -->
+            <param name="odom_model_type" value="diff" />
+            
+            <!-- Specifies the expected noise in odometry's rotation estimate from the rotational component of the robot's 
+                motion (default: 0.2) -->
+            <param name="odom_alpha1" value="0.2" />
+            
+            <!-- Specifies the expected noise in odometry's rotation estimate from translational component of the robot's 
+                motion (default: 0.2) -->
+            <param name="odom_alpha2" value="0.2" />
+            
+            <!-- Specifies the expected noise in odometry's translation estimate from the translational component of the 
+                robot's motion (default: 0.2) -->
+            <param name="odom_alpha3" value="0.2" />
+            
+            <!-- Specifies the expected noise in odometry's translation estimate from the rotational component of the robot's 
+                motion (default: 0.2) -->
+            <param name="odom_alpha4" value="0.2" />
+            
+            <!-- Which frame to use for odometry -->
+            <param name="odom_frame_id" value="odom" />
+            
+            <!-- The name of the coordinate frame published by the localization system (default: "map") -->
+            <remap from="static_map" to="/static_map" if="$(arg global_map_server)" />
+            <param name="global_frame_id" value="/map" if="$(arg global_map_server)" />
+        </node>
+    </group>
+</launch>
