@@ -1,8 +1,0 @@
-prefix=/home/sudha/catkin_ws/install
-
-Name: rosserial_msgs
-Description: Description of rosserial_msgs
-Version: 0.7.0
-Cflags: -I/home/sudha/catkin_ws/install/include
-Libs: -L/home/sudha/catkin_ws/install/lib 
-Requires: message_runtime

@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "gps_t")
-set(gps_t_MAINTAINER "saathvik <saathvik@todo.todo>")
-set(gps_t_DEPRECATED "")
-set(gps_t_VERSION "0.0.0")
-set(gps_t_BUILD_DEPENDS "gpsd_client" "roscpp" "rospy")
-set(gps_t_RUN_DEPENDS "gpsd_client" "roscpp" "rospy")
-set(gps_t_BUILDTOOL_DEPENDS "catkin")

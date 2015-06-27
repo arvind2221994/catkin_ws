@@ -1,8 +1,0 @@
-prefix=/home/sudha/catkin_ws/devel
-
-Name: navfn
-Description: Description of navfn
-Version: 1.11.6
-Cflags: -I/home/sudha/catkin_ws/devel/include -I/home/sudha/catkin_ws/src/navfn/include
-Libs: -L/home/sudha/catkin_ws/devel/lib -lnavfn
-Requires: nav_core roscpp pluginlib

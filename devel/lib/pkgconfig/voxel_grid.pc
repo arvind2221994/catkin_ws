@@ -1,8 +1,0 @@
-prefix=/home/sudha/catkin_ws/devel
-
-Name: voxel_grid
-Description: Description of voxel_grid
-Version: 1.11.6
-Cflags: -I/home/sudha/catkin_ws/src/voxel_grid/include
-Libs: -L/home/sudha/catkin_ws/devel/lib -lvoxel_grid
-Requires: roscpp

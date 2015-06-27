@@ -1,1 +1,0 @@
-/usr/bin/c++       CMakeFiles/tf_broadcaster.dir/src/tf_broadcaster.cpp.o  -o /home/sudha/catkin_ws/devel/lib/robot_setup_tf/tf_broadcaster -rdynamic 

@@ -1,8 +1,0 @@
-prefix=/home/sudha/catkin_ws/install
-
-Name: kdl_conversions
-Description: Description of kdl_conversions
-Version: 1.10.8
-Cflags: -I/home/sudha/catkin_ws/install/include -I/usr/include/eigen3 -I/opt/ros/hydro/include
-Libs: -L/home/sudha/catkin_ws/install/lib -lkdl_conversions
-Requires: geometry_msgs

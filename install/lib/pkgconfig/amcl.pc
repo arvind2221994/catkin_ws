@@ -1,8 +1,0 @@
-prefix=/home/sudha/catkin_ws/install
-
-Name: amcl
-Description: Description of amcl
-Version: 1.11.6
-Cflags: -I/home/sudha/catkin_ws/install/include
-Libs: -L/home/sudha/catkin_ws/install/lib -lamcl_sensors -lamcl_map -lamcl_pf
-Requires: roscpp dynamic_reconfigure tf

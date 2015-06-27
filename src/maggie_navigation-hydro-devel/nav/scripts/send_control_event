@@ -1,2 +1,0 @@
-rostopic pub /maiss_control_events maiss_msg/MaissControlEvent '{event: {type: 1, id: 7, timestamp: now, event_id: now}, event_po
-sition: {x: -13, y: 5, z: 0}}'

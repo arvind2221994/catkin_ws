@@ -1,8 +1,0 @@
-prefix=/home/sudha/catkin_ws/devel
-
-Name: scan_to_cld_converter
-Description: Description of scan_to_cld_converter
-Version: 0.1.2
-Cflags: 
-Libs: -L/home/sudha/catkin_ws/devel/lib 
-Requires: 

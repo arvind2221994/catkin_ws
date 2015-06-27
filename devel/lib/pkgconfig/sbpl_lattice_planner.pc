@@ -1,8 +1,0 @@
-prefix=/home/sudha/catkin_ws/devel
-
-Name: sbpl_lattice_planner
-Description: Description of sbpl_lattice_planner
-Version: 0.1.11
-Cflags: -I/home/sudha/catkin_ws/devel/include -I/home/sudha/catkin_ws/src/navigation_experimental-hydro-devel/sbpl_lattice_planner/include -I/opt/ros/hydro/include
-Libs: -L/home/sudha/catkin_ws/devel/lib -lsbpl
-Requires: roscpp costmap_2d nav_core pluginlib geometry_msgs nav_msgs message_runtime

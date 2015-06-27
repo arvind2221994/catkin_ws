@@ -1,8 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "map_server")
-set(map_server_VERSION "1.11.6")
-set(map_server_MAINTAINER "David V. Lu!! <davidvlu@gmail.com>")
-set(map_server_BUILD_DEPENDS "roscpp" "rostest" "nav_msgs" "tf" "yaml-cpp" "sdl-image")
-set(map_server_RUN_DEPENDS "roscpp" "rostest" "nav_msgs" "tf" "yaml-cpp" "sdl-image")
-set(map_server_DEPRECATED "")
-set(map_server_BUILDTOOL_DEPENDS "catkin")
-set(map_server_BUILDTOOL_DEPENDS_catkin_VERSION_GTE "0.5.68")

@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "navyata")
-set(navyata_MAINTAINER "sudha <sudha@todo.todo>")
-set(navyata_DEPRECATED "")
-set(navyata_VERSION "0.0.0")
-set(navyata_BUILD_DEPENDS )
-set(navyata_RUN_DEPENDS )
-set(navyata_BUILDTOOL_DEPENDS "catkin")

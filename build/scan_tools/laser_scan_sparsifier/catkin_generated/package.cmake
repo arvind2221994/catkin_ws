@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "laser_scan_sparsifier")
-set(laser_scan_sparsifier_MAINTAINER "Ivan Dryanovski <ccnyroboticslab@gmail.com>")
-set(laser_scan_sparsifier_DEPRECATED "")
-set(laser_scan_sparsifier_VERSION "0.1.2")
-set(laser_scan_sparsifier_BUILD_DEPENDS "roscpp" "nodelet" "sensor_msgs")
-set(laser_scan_sparsifier_RUN_DEPENDS "roscpp" "nodelet" "sensor_msgs")
-set(laser_scan_sparsifier_BUILDTOOL_DEPENDS "catkin")

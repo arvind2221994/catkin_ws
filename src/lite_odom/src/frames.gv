@@ -1,3 +1,0 @@
-digraph G {
-"base_link" -> "base_laser"[label="Broadcaster: /robot_tf_publisher\nAverage rate: 100.201 Hz\nMost recent transform: 1397997618.823 \nBuffer length: 4.980 sec\n"];
-}

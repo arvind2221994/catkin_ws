@@ -1,8 +1,0 @@
-prefix=/home/sudha/catkin_ws/install
-
-Name: goal_passer
-Description: Description of goal_passer
-Version: 0.1.11
-Cflags: -I/home/sudha/catkin_ws/install/include
-Libs: -L/home/sudha/catkin_ws/install/lib 
-Requires: roscpp costmap_2d pluginlib nav_core

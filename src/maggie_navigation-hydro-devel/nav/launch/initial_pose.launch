@@ -1,9 +1,0 @@
-<launch>
-    <arg name="robot" value="maggie" />
-
-    <group ns="$(arg robot)">
-        <rosparam file="$(find nav)/config/initial_pose.yaml" ns="initial_pose" />
-
-        <node pkg="nav" name="initial_status_sender" type="initial_status_sender" output="screen" />
-    </group>
-</launch>

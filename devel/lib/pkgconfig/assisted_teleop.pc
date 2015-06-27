@@ -1,8 +1,0 @@
-prefix=/home/sudha/catkin_ws/devel
-
-Name: assisted_teleop
-Description: Description of assisted_teleop
-Version: 0.1.11
-Cflags: -I/home/sudha/catkin_ws/src/navigation_experimental-hydro-devel/assisted_teleop/include -I/usr/include/eigen3
-Libs: -L/home/sudha/catkin_ws/devel/lib 
-Requires: tf costmap_2d roscpp roslib geometry_msgs move_base_msgs actionlib message_filters base_local_planner angles pluginlib sensor_msgs filters

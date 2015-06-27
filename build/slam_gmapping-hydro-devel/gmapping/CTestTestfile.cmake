@@ -1,8 +1,0 @@
-# CMake generated Testfile for 
-# Source directory: /home/sudha/catkin_ws/src/slam_gmapping-hydro-devel/gmapping
-# Build directory: /home/sudha/catkin_ws/build/slam_gmapping-hydro-devel/gmapping
-# 
-# This file includes the relevent testing commands required for 
-# testing this directory and lists subdirectories to be tested as well.
-ADD_TEST(_ctest_gmapping_rostest_test_basic_localization_stage.launch "/home/sudha/catkin_ws/build/catkin_generated/env_cached.sh" "/usr/bin/python" "/opt/ros/hydro/share/catkin/cmake/test/run_tests.py" "/home/sudha/catkin_ws/build/test_results/gmapping/rostest-test_basic_localization_stage.xml" "--return-code" "/opt/ros/hydro/share/rostest/cmake/../../../bin/rostest --pkgdir=/home/sudha/catkin_ws/src/slam_gmapping-hydro-devel/gmapping --package=gmapping --results-filename test_basic_localization_stage.xml /home/sudha/catkin_ws/src/slam_gmapping-hydro-devel/gmapping/test/basic_localization_stage.launch ")
-ADD_TEST(_ctest_gmapping_rostest_test_basic_localization_laser_different_beamcount.test "/home/sudha/catkin_ws/build/catkin_generated/env_cached.sh" "/usr/bin/python" "/opt/ros/hydro/share/catkin/cmake/test/run_tests.py" "/home/sudha/catkin_ws/build/test_results/gmapping/rostest-test_basic_localization_laser_different_beamcount.xml" "--return-code" "/opt/ros/hydro/share/rostest/cmake/../../../bin/rostest --pkgdir=/home/sudha/catkin_ws/src/slam_gmapping-hydro-devel/gmapping --package=gmapping --results-filename test_basic_localization_laser_different_beamcount.xml /home/sudha/catkin_ws/src/slam_gmapping-hydro-devel/gmapping/test/basic_localization_laser_different_beamcount.test ")

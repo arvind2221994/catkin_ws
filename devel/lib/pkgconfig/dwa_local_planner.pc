@@ -1,8 +1,0 @@
-prefix=/home/sudha/catkin_ws/devel
-
-Name: dwa_local_planner
-Description: Description of dwa_local_planner
-Version: 1.11.6
-Cflags: -I/home/sudha/catkin_ws/devel/include -I/home/sudha/catkin_ws/src/dwa_local_planner/include
-Libs: -L/home/sudha/catkin_ws/devel/lib -ldwa_local_planner
-Requires: dynamic_reconfigure pluginlib roscpp

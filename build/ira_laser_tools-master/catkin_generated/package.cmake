@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "ira_laser_tools")
-set(ira_laser_tools_MAINTAINER "furlan <axelfurlan@gmail.com>")
-set(ira_laser_tools_DEPRECATED "")
-set(ira_laser_tools_VERSION "1.0.0")
-set(ira_laser_tools_BUILD_DEPENDS "sensor_msgs" "pcl" "pcl_ros" "std_msgs" "tf" "laser_geometry" "roscpp")
-set(ira_laser_tools_RUN_DEPENDS "sensor_msgs" "pcl" "pcl_ros" "std_msgs" "tf" "laser_geometry" "roscpp")
-set(ira_laser_tools_BUILDTOOL_DEPENDS "catkin")

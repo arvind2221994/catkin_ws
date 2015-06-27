@@ -1,8 +1,0 @@
-prefix=/home/sudha/catkin_ws/devel
-
-Name: pose_follower
-Description: Description of pose_follower
-Version: 0.1.11
-Cflags: -I/home/sudha/catkin_ws/src/navigation_experimental-hydro-devel/pose_follower/include
-Libs: -L/home/sudha/catkin_ws/devel/lib 
-Requires: nav_core base_local_planner costmap_2d roscpp tf nav_msgs pluginlib

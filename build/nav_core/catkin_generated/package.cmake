@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "nav_core")
-set(nav_core_MAINTAINER "David V. Lu!! <davidvlu@gmail.com>")
-set(nav_core_DEPRECATED "")
-set(nav_core_VERSION "1.11.6")
-set(nav_core_BUILD_DEPENDS "std_msgs" "geometry_msgs" "costmap_2d" "tf")
-set(nav_core_RUN_DEPENDS "std_msgs" "geometry_msgs" "costmap_2d" "tf")
-set(nav_core_BUILDTOOL_DEPENDS "catkin")

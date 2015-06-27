@@ -1,8 +1,0 @@
-prefix=/home/sudha/catkin_ws/install
-
-Name: twist_recovery
-Description: Description of twist_recovery
-Version: 0.1.11
-Cflags: -I/home/sudha/catkin_ws/install/include
-Libs: -L/home/sudha/catkin_ws/install/lib 
-Requires: nav_core costmap_2d geometry_msgs pluginlib base_local_planner

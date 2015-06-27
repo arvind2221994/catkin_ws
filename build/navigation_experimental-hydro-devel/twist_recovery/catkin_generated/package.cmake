@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "twist_recovery")
-set(twist_recovery_MAINTAINER "Dave Hershberger <hersh@willowgarage.com>")
-set(twist_recovery_DEPRECATED "")
-set(twist_recovery_VERSION "0.1.11")
-set(twist_recovery_BUILD_DEPENDS "nav_core" "costmap_2d" "geometry_msgs" "pluginlib" "base_local_planner")
-set(twist_recovery_RUN_DEPENDS "nav_core" "costmap_2d" "geometry_msgs" "pluginlib" "base_local_planner")
-set(twist_recovery_BUILDTOOL_DEPENDS "catkin")

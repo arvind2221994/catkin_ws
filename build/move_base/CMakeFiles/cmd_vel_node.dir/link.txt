@@ -1,1 +1,0 @@
-/usr/bin/c++       CMakeFiles/cmd_vel_node.dir/src/cmd_vel_node.cpp.o  -o /home/sudha/catkin_ws/devel/lib/move_base/cmd_vel_node -rdynamic 

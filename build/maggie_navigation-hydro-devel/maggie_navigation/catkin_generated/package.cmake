@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "maggie_navigation")
-set(maggie_navigation_MAINTAINER "Raul Perula-Martinez <raul.perula@uc3m.es>")
-set(maggie_navigation_DEPRECATED "")
-set(maggie_navigation_VERSION "0.0.1")
-set(maggie_navigation_BUILD_DEPENDS )
-set(maggie_navigation_RUN_DEPENDS "nav")
-set(maggie_navigation_BUILDTOOL_DEPENDS "catkin")

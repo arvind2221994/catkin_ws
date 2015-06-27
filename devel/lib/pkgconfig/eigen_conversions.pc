@@ -1,8 +1,0 @@
-prefix=/home/sudha/catkin_ws/devel
-
-Name: eigen_conversions
-Description: Description of eigen_conversions
-Version: 1.10.8
-Cflags: -I/home/sudha/catkin_ws/src/geometry-hydro-devel/eigen_conversions/include -I/usr/include/eigen3 -I/opt/ros/hydro/include
-Libs: -L/home/sudha/catkin_ws/devel/lib -leigen_conversions
-Requires: geometry_msgs std_msgs

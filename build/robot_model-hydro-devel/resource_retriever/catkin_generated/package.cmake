@@ -1,8 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "resource_retriever")
-set(resource_retriever_VERSION "1.10.21")
-set(resource_retriever_MAINTAINER "Ioan Sucan <isucan@gmail.com>")
-set(resource_retriever_BUILD_DEPENDS "curl" "rosconsole" "roslib")
-set(resource_retriever_RUN_DEPENDS "curl" "rosconsole" "roslib")
-set(resource_retriever_DEPRECATED "")
-set(resource_retriever_BUILDTOOL_DEPENDS "catkin")
-set(resource_retriever_BUILDTOOL_DEPENDS_catkin_VERSION_GTE "0.5.68")

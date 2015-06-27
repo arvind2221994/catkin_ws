@@ -1,8 +1,0 @@
-prefix=/home/sudha/catkin_ws/install
-
-Name: rosserial_client
-Description: Description of rosserial_client
-Version: 0.5.6
-Cflags: 
-Libs: -L/home/sudha/catkin_ws/install/lib 
-Requires: 

@@ -1,8 +1,0 @@
-prefix=/home/sudha/catkin_ws/install
-
-Name: sbpl_recovery
-Description: Description of sbpl_recovery
-Version: 0.1.11
-Cflags: -I/home/sudha/catkin_ws/install/include
-Libs: -L/home/sudha/catkin_ws/install/lib 
-Requires: roscpp nav_core sbpl_lattice_planner pose_follower costmap_2d pluginlib base_local_planner

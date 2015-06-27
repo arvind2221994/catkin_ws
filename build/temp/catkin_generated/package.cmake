@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "temp")
-set(temp_MAINTAINER "akhil <akhil@todo.todo>")
-set(temp_DEPRECATED "")
-set(temp_VERSION "0.0.0")
-set(temp_BUILD_DEPENDS "cv_bridge" "opencv2" "roscpp" "rospy" "sensor_msgs")
-set(temp_RUN_DEPENDS "cv_bridge" "opencv2" "roscpp" "rospy" "sensor_msgs")
-set(temp_BUILDTOOL_DEPENDS "catkin")

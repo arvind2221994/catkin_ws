@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "eigen_conversions")
-set(eigen_conversions_MAINTAINER "Tully Foote <tfoote@willowgarage.com>")
-set(eigen_conversions_DEPRECATED "")
-set(eigen_conversions_VERSION "1.10.8")
-set(eigen_conversions_BUILD_DEPENDS "geometry_msgs" "eigen" "orocos_kdl" "std_msgs")
-set(eigen_conversions_RUN_DEPENDS "geometry_msgs" "eigen" "orocos_kdl" "std_msgs")
-set(eigen_conversions_BUILDTOOL_DEPENDS "catkin")

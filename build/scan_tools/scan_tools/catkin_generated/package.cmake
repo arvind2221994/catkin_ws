@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "scan_tools")
-set(scan_tools_MAINTAINER "Ivan Dryanovski <ccnyroboticslab@gmail.com>")
-set(scan_tools_DEPRECATED "")
-set(scan_tools_VERSION "0.1.2")
-set(scan_tools_BUILD_DEPENDS )
-set(scan_tools_RUN_DEPENDS "laser_ortho_projector" "laser_scan_matcher" "laser_scan_sparsifier" "laser_scan_splitter" "ncd_parser" "scan_to_cloud_converter")
-set(scan_tools_BUILDTOOL_DEPENDS "catkin")

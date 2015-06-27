@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "ncd_parser")
-set(ncd_parser_MAINTAINER "Ivan Dryanovski <ccnyroboticslab@gmail.com>")
-set(ncd_parser_DEPRECATED "")
-set(ncd_parser_VERSION "0.1.2")
-set(ncd_parser_BUILD_DEPENDS "roscpp" "sensor_msgs" "tf")
-set(ncd_parser_RUN_DEPENDS "roscpp" "sensor_msgs" "tf")
-set(ncd_parser_BUILDTOOL_DEPENDS "catkin")

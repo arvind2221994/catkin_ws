@@ -1,8 +1,0 @@
-prefix=/home/sudha/catkin_ws/devel
-
-Name: laser_scan_matcher
-Description: Description of laser_scan_matcher
-Version: 0.1.2
-Cflags: -I/home/sudha/catkin_ws/src/scan_tools/laser_scan_matcher/include
-Libs: -L/home/sudha/catkin_ws/devel/lib -llaser_scan_matcher
-Requires: roscpp nodelet sensor_msgs tf pcl_ros pcl_conversions geometry_msgs nav_msgs
