@@ -1,0 +1,6 @@
+image: ../maps/map_1.3.C12_2.pgm
+resolution: 0.050000
+origin: [-6.3, -7.85, 0.00]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196

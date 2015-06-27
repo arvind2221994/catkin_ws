@@ -1,0 +1,17 @@
+<launch>
+    <arg name="robot" />
+    <group ns="$(arg robot)">
+        <node name="sicklms_node" pkg="sicktoolbox_wrapper" type="sicklms" output="screen">
+            <param name="port" type="string" value="/dev/laser" />
+            <param name="baud" type="int" value="38400" />
+            <param name="resolution" type="double" value="0.5" />
+        </node>
+
+        <!-- publish the required transform /base_link -> /laser -->
+        <node name="laser_tf_broadcaster" pkg="tf" type="static_transform_publisher" args="0.15 0 0.25   0 0 0   base_link  laser   100" />
+
+        <!-- *** homebrew filter: replace out_of_range measurements with max_range -->
+        <node name="laser_max_range_filter" pkg="nav" type="laser_max_range_filter.exe"
+            args="_laser_src_topic:=scan  _laser_dst_topic:=scan_filtered" />
+    </group>
+</launch>

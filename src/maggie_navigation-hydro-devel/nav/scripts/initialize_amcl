@@ -1,0 +1,5 @@
+# This sends the initial position of the robot through ROS and initialized the AMCL algorithm
+
+echo -e "Sending initial position...\n"
+
+rostopic pub -1 /initialpose geometry_msgs/PoseWithCovarianceStamped '{header: {stamp: now, frame_id: map}, pose: {pose: {position: [-10, -7.5, 0.0], orientation: [0.0, 0.0, 1.0, 1.0]}, covariance: [0.05, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.05, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.03]}}'
