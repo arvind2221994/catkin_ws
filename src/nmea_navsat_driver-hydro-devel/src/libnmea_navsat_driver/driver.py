@@ -40,27 +40,28 @@ from geometry_msgs.msg import TwistStamped
 from libnmea_navsat_driver.checksum_utils import check_nmea_checksum
 import libnmea_navsat_driver.parser
 
-
 class RosNMEADriver(object):
     def __init__(self):
-        self.fix_pub = rospy.Publisher('fix', NavSatFix, queue_size=1)
-        self.vel_pub = rospy.Publisher('vel', TwistStamped, queue_size=1)
-        self.time_ref_pub = rospy.Publisher('time_reference', TimeReference, queue_size=1)
+        self.fix_pub = rospy.Publisher('fix', NavSatFix)
+        self.vel_pub = rospy.Publisher('vel', TwistStamped)
+        self.time_ref_pub = rospy.Publisher('time_reference', TimeReference)
 
-        self.time_ref_source = rospy.get_param('~time_ref_source', None)
+        self.time_ref_source = rospy.get_param('~time_ref_source',
+                None)
         self.use_RMC = rospy.get_param('~useRMC', False)
 
     # Returns True if we successfully did something with the passed in
     # nmea_string
     def add_sentence(self, nmea_string, frame_id, timestamp=None):
         if not check_nmea_checksum(nmea_string):
-            rospy.logwarn("Received a sentence with an invalid checksum. " +
-                          "Sentence was: %s" % repr(nmea_string))
+            rospy.logwarn("Received a sentence with an invalid checksum. \
+                Sentence was: %s" % nmea_string)
             return False
 
         parsed_sentence = libnmea_navsat_driver.parser.parse_nmea_sentence(nmea_string)
         if not parsed_sentence:
-            rospy.logdebug("Failed to parse NMEA sentence. Sentece was: %s" % nmea_string)
+            rospy.logdebug("Failed to parse NMEA sentence. Sentece was: %s" %
+                nmea_string)
             return False
 
         if timestamp:
@@ -107,21 +108,20 @@ class RosNMEADriver(object):
             current_fix.longitude = longitude
 
             hdop = data['hdop']
-            current_fix.position_covariance[0] = hdop ** 2
-            current_fix.position_covariance[4] = hdop ** 2
-            current_fix.position_covariance[8] = (2 * hdop) ** 2  # FIXME
+            current_fix.position_covariance[0] = hdop**2
+            current_fix.position_covariance[4] = hdop**2
+            current_fix.position_covariance[8] = (2*hdop)**2 # FIXME
             current_fix.position_covariance_type = \
                 NavSatFix.COVARIANCE_TYPE_APPROXIMATED
 
-            # Altitude is above ellipsoid, so adjust for mean-sea-level
+            #Altitude is above ellipsoid, so adjust for mean-sea-level
             altitude = data['altitude'] + data['mean_sea_level']
             current_fix.altitude = altitude
 
-            self.fix_pub.publish(current_fix)
+            current_time_ref.time_ref = rospy.Time.from_sec(data['utc_time'])
 
-            if not math.isnan(data['utc_time']):
-                current_time_ref.time_ref = rospy.Time.from_sec(data['utc_time'])
-                self.time_ref_pub.publish(current_time_ref)
+            self.fix_pub.publish(current_fix)
+            self.time_ref_pub.publish(current_time_ref)
 
         elif 'RMC' in parsed_sentence:
             data = parsed_sentence['RMC']
@@ -149,11 +149,10 @@ class RosNMEADriver(object):
                 current_fix.position_covariance_type = \
                     NavSatFix.COVARIANCE_TYPE_UNKNOWN
 
-                self.fix_pub.publish(current_fix)
+                current_time_ref.time_ref = rospy.Time.from_sec(data['utc_time'])
 
-                if not math.isnan(data['utc_time']):
-                    current_time_ref.time_ref = rospy.Time.from_sec(data['utc_time'])
-                    self.time_ref_pub.publish(current_time_ref)
+                self.fix_pub.publish(current_fix)
+                self.time_ref_pub.publish(current_time_ref)
 
             # Publish velocity from RMC regardless, since GGA doesn't provide it.
             if data['fix_valid']:
@@ -169,7 +168,6 @@ class RosNMEADriver(object):
             return False
 
     """Helper method for getting the frame_id with the correct TF prefix"""
-
     @staticmethod
     def get_frame_id():
         frame_id = rospy.get_param('~frame_id', 'gps')
