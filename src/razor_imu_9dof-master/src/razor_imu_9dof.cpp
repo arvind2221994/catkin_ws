@@ -168,11 +168,11 @@ void *rcvThread(void *arg)
         //Transform
         //NOTE: Should be changed based on the imu placement
         tf::Transform transform;
-        transform.setOrigin( tf::Vector3(0.0, 0.0, 0.0) );
-        transform.setRotation(qt);
+        transform.setOrigin( tf::Vector3(0.08, 0.0, 0.125) );
+        //transform.setRotation(qt);
 
         static tf::TransformBroadcaster br;
-        br.sendTransform( tf::StampedTransform(transform, ros::Time::now(), "base_footprint","imu_frame") );
+        br.sendTransform( tf::StampedTransform(transform, ros::Time::now(), "base_link","imu_frame") );
 
         //Publishers for imu data and magnetometer data are declared as global variables
         //Naming Imu publisher as required by robot_pose_ekf package
@@ -195,7 +195,7 @@ void *rcvThread(void *arg)
     tcflush(fd, TCIFLUSH);
 
     loop_rate.sleep();
-    printf("r`eached here flag 1\n");
+    printf("reached here flag 1 \n");
   }
   return NULL;
 }

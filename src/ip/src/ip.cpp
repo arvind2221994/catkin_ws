@@ -311,7 +311,7 @@ int main( int argc, char** argv )
 
 	    sensor_msgs::LaserScan scan_cam;
 	    scan_cam.header.stamp = scan_time;
-	    scan_cam.header.frame_id = "laser_frame";
+	    scan_cam.header.frame_id = "cam_laser";
 	    scan_cam.angle_increment = angle_width;
 	    scan_cam.angle_min = -M_PI/2.0;
 	    scan_cam.angle_max = M_PI/2.0;

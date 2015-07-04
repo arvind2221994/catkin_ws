@@ -8,7 +8,7 @@ int main(int argc, char** argv){
   ros::init(argc, argv, "robot_tf_publisher");
   ros::NodeHandle n;
 
-  ros::Rate r(100);
+  ros::Rate r(50);
 
   tf::TransformBroadcaster broadcaster;
 
@@ -21,12 +21,12 @@ int main(int argc, char** argv){
      broadcaster.sendTransform(
       tf::StampedTransform(
         tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(0.1, 0.0, 0.4)),
-        ros::Time::now(),"base_link", "laser_frame"));      /*For images as laser scan*/
+        ros::Time::now(),"base_link", "cam_laser"));      /*For images as laser scan*/
      
      broadcaster.sendTransform(
       tf::StampedTransform(
-        tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(0.0, 0.0, 0.18)),
-        ros::Time::now(),"base_link", "base_footprint"));      /*base footprint for imu*/
+        tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(0.0, 0.0, -0.195)),
+        ros::Time::now(),"base_link", "base_footprint"));      /*Base footprint for IMU*/
     r.sleep();
   }
 }
