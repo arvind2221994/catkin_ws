@@ -15,13 +15,18 @@ int main(int argc, char** argv){
   while(n.ok()){
     broadcaster.sendTransform(
       tf::StampedTransform(
-        tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(0.25, 0.0, 0.35)),
+        tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(0.25, 0.0, 0.41)),
         ros::Time::now(),"base_link", "base_laser"));		/*For LiDAR scans*/
 	
      broadcaster.sendTransform(
       tf::StampedTransform(
-        tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(0.20, 0.0, 0.45)),
+        tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(0.1, 0.0, 0.4)),
         ros::Time::now(),"base_link", "laser_frame"));      /*For images as laser scan*/
+     
+     broadcaster.sendTransform(
+      tf::StampedTransform(
+        tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(0.0, 0.0, 0.18)),
+        ros::Time::now(),"base_link", "base_footprint"));      /*base footprint for imu*/
     r.sleep();
   }
 }

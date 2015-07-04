@@ -1,18 +1,14 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(robot_tf_config)
+project(fakes)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  cv_bridge
-  geometry_msgs
   roscpp
-  rospy
+  sensor_msgs
   tf
 )
-
-find_package(OpenCV REQUIRED)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -71,7 +67,7 @@ find_package(OpenCV REQUIRED)
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
-#   geometry_msgs
+#   sensor_msgs
 # )
 
 ###################################
@@ -85,8 +81,8 @@ find_package(OpenCV REQUIRED)
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES robot
-#  CATKIN_DEPENDS geometry_msgs roscpp rospy tf
+#  LIBRARIES fakes
+#  CATKIN_DEPENDS roscpp sensor_msgs tf
 #  DEPENDS system_lib
 )
 
@@ -102,23 +98,21 @@ include_directories(
 )
 
 ## Declare a cpp library
-# add_library(robot
-#   src/${PROJECT_NAME}/robot.cpp
+# add_library(fakes
+#   src/${PROJECT_NAME}/fakes.cpp
 # )
 
 ## Declare a cpp executable
-add_executable(tf_broadcaster src/tf_broadcaster.cpp)
-add_executable(tf_listener src/tf_listener.cpp)
-#add_executable(shaastra_pub src/shaastra_pub.cpp)
+# add_executable(fakes_node src/fakes_node.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
-# add_dependencies(robot_node robot_generate_messages_cpp)
+# add_dependencies(fakes_node fakes_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(tf_broadcaster ${catkin_LIBRARIES})
-target_link_libraries(tf_listener ${catkin_LIBRARIES})
-#target_link_libraries(shaastra_pub ${catkin_LIBRARIES})
+# target_link_libraries(fakes_node
+#   ${catkin_LIBRARIES}
+# )
 
 #############
 ## Install ##
@@ -135,7 +129,7 @@ target_link_libraries(tf_listener ${catkin_LIBRARIES})
 # )
 
 ## Mark executables and/or libraries for installation
-# install(TARGETS robot robot_node
+# install(TARGETS fakes fakes_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -160,10 +154,23 @@ target_link_libraries(tf_listener ${catkin_LIBRARIES})
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_robot.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_fakes.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+include_directories(include ${catkin_INCLUDE_DIRS})
+add_executable(fake_odom src/fake_odom.cpp)
+target_link_libraries(fake_odom  ${catkin_LIBRARIES})
+add_dependencies(fake_odom  fakes_generate_messages_cpp)
+
+add_executable(fake_imu src/fake_imu.cpp)
+target_link_libraries(fake_imu  ${catkin_LIBRARIES})
+add_dependencies(fake_imu  fakes_generate_messages_cpp)
+
+add_executable(fake_gps src/fake_gps.cpp)
+target_link_libraries(fake_gps  ${catkin_LIBRARIES})
+add_dependencies(fake_gps  fakes_generate_messages_cpp)
+
