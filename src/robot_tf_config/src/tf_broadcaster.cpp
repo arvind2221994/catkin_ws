@@ -16,17 +16,24 @@ int main(int argc, char** argv){
     broadcaster.sendTransform(
       tf::StampedTransform(
         tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(0.25, 0.0, 0.41)),
-        ros::Time::now(),"base_link", "base_laser"));		/*For LiDAR scans*/
+        ros::Time::now(),"base_link", "lidar_frame"));		/*For LiDAR scans*/
 	
      broadcaster.sendTransform(
       tf::StampedTransform(
         tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(0.1, 0.0, 0.4)),
         ros::Time::now(),"base_link", "cam_laser"));      /*For images as laser scan*/
      
-     broadcaster.sendTransform(
+     /*broadcaster.sendTransform(
       tf::StampedTransform(
         tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(0.0, 0.0, -0.195)),
         ros::Time::now(),"base_link", "base_footprint"));      /*Base footprint for IMU*/
+
+     /*broadcaster.sendTransform(
+      tf::StampedTransform(
+        tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(0.0, 0.0, 0.0)),
+        ros::Time::now(),"odom_combined", "base_link"));      /*Base footprint for Odom_combined*/
+
+
     r.sleep();
   }
 }

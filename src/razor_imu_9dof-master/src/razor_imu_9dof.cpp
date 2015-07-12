@@ -159,17 +159,17 @@ void *rcvThread(void *arg)
         
         //XXX: possible error 
         tf::Quaternion qt = tf::createQuaternionFromRPY(r, p, y);
-        msg_imu.orientation.x = qt[0];
-        msg_imu.orientation.y = qt[1];
-        msg_imu.orientation.z = qt[2];
-        msg_imu.orientation.w = qt[3];
+        msg_imu.orientation.x = 0; //qt[0];
+        msg_imu.orientation.y = 0; //qt[1];
+        msg_imu.orientation.z = 0; //qt[2];
+        msg_imu.orientation.w = 1; //qt[3];
         msg_imu.header.stamp = ros::Time::now();
         
         //Transform
         //NOTE: Should be changed based on the imu placement
         tf::Transform transform;
         transform.setOrigin( tf::Vector3(0.08, 0.0, 0.125) );
-        //transform.setRotation(qt);
+        transform.setRotation(qt);
 
         static tf::TransformBroadcaster br;
         br.sendTransform( tf::StampedTransform(transform, ros::Time::now(), "base_link","imu_frame") );

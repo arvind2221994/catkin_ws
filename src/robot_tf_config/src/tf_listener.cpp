@@ -8,7 +8,7 @@
 void transformPoint(const tf::TransformListener& listener){
   //we'll create a point in the base_laser frame that we'd like to transform to the base_link frame
   geometry_msgs::PointStamped laser_point;
-  laser_point.header.frame_id = "base_laser";
+  laser_point.header.frame_id = "lidar_frame";
 
   //we'll just use the most recent transform available for our simple example
   laser_point.header.stamp = ros::Time();

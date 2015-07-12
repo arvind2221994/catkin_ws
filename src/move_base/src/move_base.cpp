@@ -524,7 +524,7 @@ namespace move_base {
     }
 
     tf::Quaternion tf_q(q.x, q.y, q.z, q.w);
-    	//ROS_ERROR("LOOK HERE _____ ");
+    	//ROS_ERROR("Look here - Quaternion ");
 	 std::cout<<q.x<<" "<<q.y<<" "<<q.z<<" "<<q.w<<" "<<std::endl;
 
     //next, we need to check if the length of the quaternion is close to zero

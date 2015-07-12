@@ -54,8 +54,8 @@ namespace estimation
     imu_initialized_(false),
     vo_initialized_(false),
     gps_initialized_(false),
-    output_frame_(std::string("odom_combined")),
-    base_footprint_frame_(std::string("base_footprint"))
+    output_frame_(std::string("odom")), //Changed from odom_combined to odom
+    base_footprint_frame_(std::string("base_link")) //Changed from base_footprint to base_link
   {
     // create SYSTEM MODEL
     ColumnVector sysNoise_Mu(6);  sysNoise_Mu = 0;
@@ -390,7 +390,7 @@ namespace estimation
 
     // header
     estimate.header.stamp = tmp.stamp_;
-    estimate.header.frame_id = "odom";
+    estimate.header.frame_id = "odom"; //FIND OUT WHAT THIS HEADER IS FOR
 
     // covariance
     SymmetricMatrix covar =  filter_->PostGet()->CovarianceGet();
