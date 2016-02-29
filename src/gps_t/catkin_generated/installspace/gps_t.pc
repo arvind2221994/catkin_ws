@@ -1,8 +1,0 @@
-prefix=/usr/local
-
-Name: gps_t
-Description: Description of gps_t
-Version: 0.0.0
-Cflags: 
-Libs: -L/usr/local/lib 
-Requires: 

@@ -1,7 +1,0 @@
-<launch>
-    <!-- the joy node -->
-    <node name="joy_node" pkg="joy" type="joy_node" required="true" output="screen" />
-
-    <!-- the teleoperation node -->
-    <node name="teleop_joy" pkg="teleop" type="teleop_joy.exe" output="screen" />
-</launch>

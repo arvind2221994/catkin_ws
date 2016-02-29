@@ -22,7 +22,7 @@ int main(int argc, char** argv){
   move_base_msgs::MoveBaseGoal goal;
 
   //we'll send a goal to the robot to move forward as given
-  goal.target_pose.header.frame_id = "odom";
+  goal.target_pose.header.frame_id = "map";
   goal.target_pose.header.stamp = ros::Time::now();
 
   int x=0,y=0;
@@ -54,10 +54,7 @@ int main(int argc, char** argv){
   ROS_INFO("Sending goal");
   ac.sendGoal(goal);
   ROS_INFO("Goal sent!");
-  while(ac.waitForResult(ros::Duration())){
-    ROS_INFO("Waiting for result...");
-   //ros::Duration(0.5).sleep(); // sleep for half a second
-  }
+  
   ac.waitForResult();
 
   if(ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED)

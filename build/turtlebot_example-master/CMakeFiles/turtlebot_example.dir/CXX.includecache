@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kiran/catkin_ws/src/turtlebot_example-master/src/turtlebot_example.cpp
+ros/ros.h
+-
+geometry_msgs/PoseWithCovarianceStamped.h
+-
+geometry_msgs/Twist.h
+-
+tf/transform_datatypes.h
+-
+

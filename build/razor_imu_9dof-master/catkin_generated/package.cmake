@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "razor_imu_9dof")
+set(razor_imu_9dof_MAINTAINER "Michael Lennon <michael.lennon@griffithuni.edu.au>")
+set(razor_imu_9dof_DEPRECATED "")
+set(razor_imu_9dof_VERSION "0.1.0")
+set(razor_imu_9dof_BUILD_DEPENDS "roscpp" "rospy" "std_msgs" "sensor_msgs" "tf")
+set(razor_imu_9dof_RUN_DEPENDS "roscpp" "rospy" "std_msgs" "sensor_msgs" "tf")
+set(razor_imu_9dof_BUILDTOOL_DEPENDS "catkin")

@@ -35,7 +35,7 @@ Point findmin(Mat CurrImage, float theta, Point rot_center, float diaglen, int b
             newy=radiusVector*sin(angle + rads) + midy + 0.5*row;
             //cout<<"\n\n"<<i<<','<<j<<"\t"<<newx<<','<<newy<<"\t"<<angle<<'\n';
             normalThresholdedImage.at<uchar>(newy,newx)=CurrImage.at<uchar>(i, j);
-            
+
         }
     }
 
@@ -65,12 +65,12 @@ Point findmin(Mat CurrImage, float theta, Point rot_center, float diaglen, int b
         //waitKey(0);
     }
     //cout<<"\nAND THE ANSWER IS: Before Rotation"<<POI<<'\n';
-    
+
     radiusVector=sqrt((POI.y-midy)*(POI.y-midy) + (POI.x-midx)*(POI.x-midx));
     angle=atan2(POI.y-midy, POI.x-midx);
     POI.x=radiusVector*cos(angle-rads)+midx;
     POI.y=radiusVector*sin(angle-rads)+midy;
-    
+
     //cout<<"\tAfr Rotation: "<<POI<<'\n';
     POI.x*=1.5;     //Calibration Factor
     //cout<<"\tAfter multiplying with calibration factor, it is "<<POI;
@@ -95,10 +95,10 @@ int main( int argc, char** argv )
 	sensor_msgs::Image ros_image;
 	Mat imgOriginal;
 
-	ros::Publisher pub = nh.advertise<sensor_msgs::LaserScan>("scan", 1);
+	ros::Publisher pub = nh.advertise<sensor_msgs::LaserScan>("scan", 10);
 	ros::Rate loop_rate(10);
 	VideoCapture cap(0);
-    
+
 
     /*if ( !cap.isOpened() )  // if not success, exit program
     {
@@ -110,17 +110,17 @@ int main( int argc, char** argv )
     {
         	Mat bgr_planes[3], normalThresholded;
        // medianBlur(src,src,3); //blurring the image by convolution to aperture size 3 matrix
-		Mat src=Mat::zeros(640,640,CV_8UC3);
+		Mat src;
 		cap >> cv_image.image;
-		//cv_image.encoding = "bgr8";
-		//src = cv_image.image;
-        
+		cv_image.encoding = "bgr8";
+		src = cv_image.image;
+
         imshow("Input",src);
 		//src=src(Rect(0.2*src.cols, 0.3*src.rows, 0.6*src.cols, 0.6*src.rows));
         split(src,bgr_planes);
 
         Mat src_HSV, whiteThresholded, orangeThresholded;
-        
+
         cvtColor(src, src_HSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
         inRange(src,Scalar(235,235, 235),Scalar(255, 255, 255),whiteThresholded);
         inRange(src_HSV, Scalar(0, 120, 121), Scalar(24, 255, 255), orangeThresholded); //Threshold the image
@@ -133,8 +133,8 @@ int main( int argc, char** argv )
         //morphological closing (fill small holes in the foreground)
         dilate( orangeThresholded, orangeThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
         erode(orangeThresholded, orangeThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
-        
-        
+
+
 
         Mat b_hist, dst;
         int histSize = 256; /// Establish the number of bins
@@ -162,7 +162,7 @@ int main( int argc, char** argv )
 
         b_hist=b_hist(Rect( 0, maxLoc.y, 1, b_hist.rows - maxLoc.y - 1 ) ); //The histogram given by opencv is filled in column-major
         histSize = b_hist.rows;
-        
+
         // Draw the histograms for B, G and R
         Mat histImage( hist_h, hist_w, CV_8UC1, Scalar( 0,0,0) );
 
@@ -189,7 +189,7 @@ int main( int argc, char** argv )
         Point rot_center( 0, 0);
         Point min_of_hist = findmin(histImage, -5, rot_center, diaglen, bin_w);
 
-        
+
 
         int fin_thresh = min_of_hist.x + maxLoc.y, simpleThreshold=240;
         fin_thresh>255?fin_thresh=250:1;
@@ -200,7 +200,7 @@ int main( int argc, char** argv )
 
 
         //Start of Obstacle Avoidance part
-		Mat barrels(src.rows,src.cols,CV_32F,Scalar(0,0,0)), canny_output, drawing = Mat::zeros( src.size(), CV_8UC1 );
+		    Mat barrels(src.rows,src.cols,CV_32F,Scalar(0,0,0)), canny_output, drawing = Mat::zeros( src.size(), CV_8UC1 );
         int kernel_rows = 71;
         Mat kernel = Mat::ones(kernel_rows,1,CV_32F) / (float)(kernel_rows);
         filter2D(orangeThresholded, barrels, -1 , kernel, Point(-1, -1), 0, BORDER_DEFAULT );
@@ -228,12 +228,12 @@ int main( int argc, char** argv )
                 drawContours( drawing, hull, i, Scalar(255,255,255), CV_FILLED, 8, vector<Vec4i>(), 0, Point() );
         }
 
-        
+
         inRange(barrels, Scalar(30,0,0), Scalar(255,255,255), barrels);
         drawing = drawing + barrels;
         dst = dst - drawing;
 
-        
+
         //Do HoughP to get it as lines
         Mat HoughP=Mat::zeros(dst.size(), CV_8UC1);
         lines.clear();
@@ -255,12 +255,12 @@ int main( int argc, char** argv )
 
 
 
-		// Create temp IplImage to convert Mat to IplImage to work on cvLogPolar 
+		// Create temp IplImage to convert Mat to IplImage to work on cvLogPolar
 	    IplImage temp = HoughP;
 	    IplImage temp1 = logPolar;
 	    cvLogPolar(&temp,&temp1,cvPoint2D32f(src.size().width/2,src.size().height),40,CV_INTER_LINEAR+CV_WARP_FILL_OUTLIERS);
 
-	    // Convert it back to Mat object 
+	    // Convert it back to Mat object
 	    logPolar = cvarrToMat(&temp1,true);
 
 
@@ -273,41 +273,31 @@ int main( int argc, char** argv )
 
 	    uint8_t* pixelPtr = (uint8_t*)logPolar.data;
 
-        bool blackImageFlag=true;
+        //bool blackImageFlag=true;
 
-	    for(int i = 0; i < num_readings-1; i++)
-	    {
-	        unsigned int row = i * RAY_THICKNESS;
-	        unsigned int c = 0;
-	        for(c = 0;c < max_dist ; c++)
-	        {
-	            bool flag = false;
-	            for(unsigned int r = row;r < row + RAY_THICKNESS;r++)
-	            {
-	                if(pixelPtr[r*max_dist + c] == 255)
-	                {
-	                    flag = true;
-                        blackImageFlag=false;
-	                    break;
-	                }
-	            }
-	            if(flag)
-	            {
-	                break;
-	            }
+	    for(int i = 0; i < num_readings-1; i++){
+        unsigned int row = i * RAY_THICKNESS;
+        unsigned int c = 0;
+        for(c = 0;c < max_dist ; c++){
+            bool flag = false;
+            for(unsigned int r = row;r < row + RAY_THICKNESS;r++){
+                if(pixelPtr[r*max_dist + c] == 255) {
+                    flag = true;
+                    break;
+                }
+            }
+            if(flag) {
+                break;
+            }
 
-	        }
+        }
             double distance = exp(c/LOG_SCALE)/(double)PIXELS_PER_METER;
-            //ROS_INFO("%lf ",distance);
-            //ranges[num_readings - i - 1] = distance;
-	    }
-	    ranges[0] = ranges[1];
+            ROS_INFO("%lf ",distance);
+            ranges[num_readings - i - 1] = distance;
+    }
+    ranges[0] = ranges[1];
 
-            //if(blackImageFlag==true)
-            for(int i=0; i<num_readings; i++)
-                ranges[i]=0;
-
-	    ros::Time scan_time = ros::Time::now();
+    ros::Time scan_time = ros::Time::now();
 
 	    sensor_msgs::LaserScan scan_cam;
 	    scan_cam.header.stamp = scan_time;
@@ -318,19 +308,20 @@ int main( int argc, char** argv )
 	    scan_cam.range_max = exp(max_dist/LOG_SCALE)/(double)PIXELS_PER_METER;
 	    scan_cam.ranges.resize(num_readings);
 	    scan_cam.intensities.resize(num_readings);
-	    for(unsigned int i=0;i<num_readings;++i)
-	    {
-	        scan_cam.ranges[i] = ranges[i];
-	        scan_cam.intensities[i] = 0.0;
-	    }
-	    
+	    for(unsigned int i=0;i<num_readings;++i){
+        scan_cam.ranges[i] = ranges[i];
+        scan_cam.intensities[i] = 300.0;
+    }
+
 	    imshow("Output",HoughP);
 	    imshow("Out",logPolar);
 
 	    cv_image.toImageMsg(ros_image);
-	    cvWaitKey(30);
-	    pub.publish(scan_cam);
+	  //  cvWaitKey(30);
 
+	    pub.publish(scan_cam);
+      ros::spinOnce();
+      loop_rate.sleep();
 		if(char(waitKey(30))==27)
 			break;
 

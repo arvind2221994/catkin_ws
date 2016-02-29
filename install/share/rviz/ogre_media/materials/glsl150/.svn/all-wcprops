@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl150
+END
+pass_pos_color.vert
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl150/pass_pos_color.vert
+END
+glsl150.program
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl150/glsl150.program
+END
+box.geom
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl150/box.geom
+END
+billboard.geom
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl150/billboard.geom
+END

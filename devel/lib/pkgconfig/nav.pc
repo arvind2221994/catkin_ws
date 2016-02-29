@@ -1,0 +1,8 @@
+prefix=/home/kiran/catkin_ws/devel
+
+Name: nav
+Description: Description of nav
+Version: 0.0.1
+Cflags: -I/home/kiran/catkin_ws/src/maggie_navigation-hydro-devel/nav/src
+Libs: -L/home/kiran/catkin_ws/devel/lib 
+Requires: roscpp move_base angles amcl gmapping

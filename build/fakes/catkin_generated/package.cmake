@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "fakes")
+set(fakes_MAINTAINER "saathvik <saathvik@todo.todo>")
+set(fakes_DEPRECATED "")
+set(fakes_VERSION "0.0.0")
+set(fakes_BUILD_DEPENDS "roscpp" "sensor_msgs" "tf")
+set(fakes_RUN_DEPENDS "roscpp" "sensor_msgs" "tf")
+set(fakes_BUILDTOOL_DEPENDS "catkin")

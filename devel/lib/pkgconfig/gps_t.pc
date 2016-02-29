@@ -1,0 +1,8 @@
+prefix=/home/kiran/catkin_ws/devel
+
+Name: gps_t
+Description: Description of gps_t
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/kiran/catkin_ws/devel/lib 
+Requires: 

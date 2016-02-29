@@ -1,0 +1,8 @@
+prefix=/home/kiran/catkin_ws/devel
+
+Name: resource_retriever
+Description: Description of resource_retriever
+Version: 1.10.21
+Cflags: -I/home/kiran/catkin_ws/src/robot_model-hydro-devel/resource_retriever/include
+Libs: -L/home/kiran/catkin_ws/devel/lib -lresource_retriever
+Requires: 

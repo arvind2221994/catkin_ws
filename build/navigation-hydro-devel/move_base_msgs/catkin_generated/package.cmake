@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "move_base_msgs")
+set(move_base_msgs_MAINTAINER "David V. Lu!! <davidvlu@gmail.com>")
+set(move_base_msgs_DEPRECATED "")
+set(move_base_msgs_VERSION "1.11.6")
+set(move_base_msgs_BUILD_DEPENDS "roscpp" "actionlib_msgs" "geometry_msgs" "message_generation")
+set(move_base_msgs_RUN_DEPENDS "roscpp" "actionlib_msgs" "geometry_msgs" "message_runtime")
+set(move_base_msgs_BUILDTOOL_DEPENDS "catkin")

@@ -4,7 +4,7 @@
   <node name="gmapping" pkg="gmapping" type="slam_gmapping" output="screen"/>
     
   <!-- Run the map server -->
-  <node name="map_server" pkg="map_server" type="map_server" args="/home/sudha/catkin_ws/map.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="/home/kiran/catkin_ws/map.yaml"/>
 
   <!--- Run AMCL -->
   <!--- include file="$(find amcl)/examples/amcl_omni.launch" /-->

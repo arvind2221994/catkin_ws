@@ -1,0 +1,8 @@
+prefix=/home/kiran/catkin_ws/devel
+
+Name: teleop
+Description: Description of teleop
+Version: 0.0.1
+Cflags: -I/home/kiran/catkin_ws/src/maggie_navigation-hydro-devel/teleop/src
+Libs: -L/home/kiran/catkin_ws/devel/lib 
+Requires: roscpp

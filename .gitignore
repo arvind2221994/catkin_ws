@@ -1,5 +1,2 @@
 ./libraries:
 src/CMakeLists.txt
-devel
-install
-build

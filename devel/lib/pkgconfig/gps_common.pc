@@ -1,0 +1,8 @@
+prefix=/home/kiran/catkin_ws/devel
+
+Name: gps_common
+Description: Description of gps_common
+Version: 0.1.6
+Cflags: -I/home/kiran/catkin_ws/devel/include -I/home/kiran/catkin_ws/src/gps_umd/gps_common/include
+Libs: -L/home/kiran/catkin_ws/devel/lib 
+Requires: message_runtime

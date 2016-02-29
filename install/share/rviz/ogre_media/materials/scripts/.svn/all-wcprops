@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/scripts
+END
+indexed_8bit_image.material
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/scripts/indexed_8bit_image.material
+END
+point_cloud_point.material
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/scripts/point_cloud_point.material
+END
+point_cloud_tile.material
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/scripts/point_cloud_tile.material
+END
+default_pick_and_depth.material
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/scripts/default_pick_and_depth.material
+END

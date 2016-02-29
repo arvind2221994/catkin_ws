@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "fake_localization")
+set(fake_localization_MAINTAINER "David V. Lu!! <davidvlu@gmail.com>")
+set(fake_localization_DEPRECATED "")
+set(fake_localization_VERSION "1.11.6")
+set(fake_localization_BUILD_DEPENDS "angles" "roscpp" "rosconsole" "nav_msgs" "geometry_msgs" "tf" "message_filters" "rospy")
+set(fake_localization_RUN_DEPENDS "roscpp" "rosconsole" "nav_msgs" "geometry_msgs" "tf" "message_filters" "rospy")
+set(fake_localization_BUILDTOOL_DEPENDS "catkin")

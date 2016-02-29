@@ -1,0 +1,8 @@
+prefix=/home/kiran/catkin_ws/install
+
+Name: liblms1xx
+Description: Description of liblms1xx
+Version: 0.0.0
+Cflags: -I/home/kiran/catkin_ws/install/include
+Libs: -L/home/kiran/catkin_ws/install/lib -llms1xx
+Requires: roscpp sensor_msgs

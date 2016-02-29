@@ -1,0 +1,8 @@
+prefix=/home/kiran/catkin_ws/devel
+
+Name: lite_odom
+Description: Description of lite_odom
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/kiran/catkin_ws/devel/lib 
+Requires: 

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/include
+END
+pass_depth.vert
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/include/pass_depth.vert
+END
+circle_impl.frag
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/include/circle_impl.frag
+END
+pack_depth.frag
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/include/pack_depth.frag
+END

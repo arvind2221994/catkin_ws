@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "urdf_parser_plugin")
+set(urdf_parser_plugin_MAINTAINER "Ioan Sucan <isucan@gmail.com>")
+set(urdf_parser_plugin_DEPRECATED "")
+set(urdf_parser_plugin_VERSION "1.10.21")
+set(urdf_parser_plugin_BUILD_DEPENDS "urdfdom_headers")
+set(urdf_parser_plugin_RUN_DEPENDS "urdfdom_headers")
+set(urdf_parser_plugin_BUILDTOOL_DEPENDS "catkin")

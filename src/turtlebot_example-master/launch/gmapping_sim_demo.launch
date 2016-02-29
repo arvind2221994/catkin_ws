@@ -1,5 +1,0 @@
-<launch>
-
-  <include file="$(find turtlebot_example)/launch/gmapping.launch.xml"/>
-
-</launch>

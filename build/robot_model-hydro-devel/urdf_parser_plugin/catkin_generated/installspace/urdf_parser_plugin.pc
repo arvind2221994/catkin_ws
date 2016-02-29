@@ -1,0 +1,8 @@
+prefix=/home/kiran/catkin_ws/install
+
+Name: urdf_parser_plugin
+Description: Description of urdf_parser_plugin
+Version: 1.10.21
+Cflags: -I/home/kiran/catkin_ws/install/include -I/opt/ros/hydro/include
+Libs: -L/home/kiran/catkin_ws/install/lib 
+Requires: 
