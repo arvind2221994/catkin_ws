@@ -255,7 +255,9 @@ while not rospy.is_shutdown():
     imuMsg.orientation.z = q[2]
     imuMsg.orientation.w = q[3]
     imuMsg.header.stamp= rospy.Time.now()
-    imuMsg.header.frame_id = 'base_imu_link'
+#    imuMsg.header.frame_id = 'base_imu_link'
+#changing frame according to http://answers.ros.org/question/9957/what-frame_id-to-put-in-a-sensor_msgsimu-message/
+    imuMsg.header.frame_id = 'base_link'
     imuMsg.header.seq = seq
     seq = seq + 1
     pub.publish(imuMsg)

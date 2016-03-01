@@ -244,12 +244,6 @@ boost/thread.hpp
 tf2_ros/transform_listener.h
 -
 
-/home/kiran/catkin_ws/src/slam_gmapping-hydro-devel/gmapping/src/main.cpp
-ros/ros.h
--
-slam_gmapping.h
-/home/kiran/catkin_ws/src/slam_gmapping-hydro-devel/gmapping/src/slam_gmapping.h
-
 /home/kiran/catkin_ws/src/slam_gmapping-hydro-devel/gmapping/src/slam_gmapping.cpp
 slam_gmapping.h
 /home/kiran/catkin_ws/src/slam_gmapping-hydro-devel/gmapping/src/slam_gmapping.h

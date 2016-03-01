@@ -74,8 +74,9 @@ namespace estimation
     ros::NodeHandle nh;
 
     // paramters
-    nh_private.param("output_frame", output_frame_, std::string("odom")); //Changed from odom_combined to odom
-    nh_private.param("base_footprint_frame", base_footprint_frame_, std::string("base_link"));
+    // nh_private.param("output_frame", output_frame_, std::string("odom_combined"));
+    nh_private.param("output_frame", output_frame_, std::string("odom")); 
+    nh_private.param("base_footprint_frame", base_footprint_frame_, std::string("base_footprint"));
     nh_private.param("sensor_timeout", timeout_, 1.0);
     nh_private.param("odom_used", odom_used_, true);
     nh_private.param("imu_used",  imu_used_, true);
@@ -101,7 +102,8 @@ namespace estimation
     timer_ = nh_private.createTimer(ros::Duration(1.0/max(freq,1.0)), &OdomEstimationNode::spin, this);
 
     // advertise our estimation
-    pose_pub_ = nh_private.advertise<geometry_msgs::PoseWithCovarianceStamped>("odom_combined", 10); //Changed back to odom_combined from odom
+    // pose_pub_ = nh_private.advertise<geometry_msgs::PoseWithCovarianceStamped>("odom_combined", 10); //Changed back to odom_combined from odom
+    pose_pub_ = nh_private.advertise<geometry_msgs::PoseWithCovarianceStamped>("odom", 10); 
 
     // initialize
     filter_stamp_ = Time::now();
@@ -109,14 +111,14 @@ namespace estimation
     // subscribe to odom messages
     if (odom_used_){
       ROS_DEBUG("Odom sensor can be used");
-      odom_sub_ = nh.subscribe("odom", 10, &OdomEstimationNode::odomCallback, this);
+      odom_sub_ = nh.subscribe("odom_lite", 10, &OdomEstimationNode::odomCallback, this);
     }
     else ROS_DEBUG("Odom sensor will NOT be used");
 
     // subscribe to imu messages
     if (imu_used_){
       ROS_DEBUG("Imu sensor can be used");
-      imu_sub_ = nh.subscribe("imu_data", 10,  &OdomEstimationNode::imuCallback, this);
+      imu_sub_ = nh.subscribe("imu", 10,  &OdomEstimationNode::imuCallback, this);
     }
     else ROS_DEBUG("Imu sensor will NOT be used");
 

@@ -43,7 +43,8 @@ int main(int argc, char** argv)
     tf::StampedTransform transform;
     try 
     {
-      listener.lookupTransform("odom_combined", "base_link", ros::Time(0), transform);
+      // listener.lookupTransform("odom_combined", "base_link", ros::Time(0), transform);
+    	listener.lookupTransform("odom", "base_link", ros::Time(0), transform);
     }
     catch (tf::TransformException ex)
     {

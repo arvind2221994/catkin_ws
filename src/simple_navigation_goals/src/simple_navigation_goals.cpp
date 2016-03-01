@@ -22,7 +22,8 @@ int main(int argc, char** argv){
   move_base_msgs::MoveBaseGoal goal;
 
   //we'll send a goal to the robot to move forward as given
-  goal.target_pose.header.frame_id = "map";
+  // goal.target_pose.header.frame_id = "odom_combined";
+  goal.target_pose.header.frame_id = "odom";
   goal.target_pose.header.stamp = ros::Time::now();
 
   int x=0,y=0;

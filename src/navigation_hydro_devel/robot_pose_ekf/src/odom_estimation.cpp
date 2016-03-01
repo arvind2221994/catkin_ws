@@ -54,8 +54,9 @@ namespace estimation
     imu_initialized_(false),
     vo_initialized_(false),
     gps_initialized_(false),
-    output_frame_(std::string("odom")), //Changed from odom_combined to odom
-    base_footprint_frame_(std::string("base_link")) //Changed from base_footprint to base_link
+    // output_frame_(std::string("odom_combined")), //Again changed it//Changed from odom_combined to odom
+    output_frame_(std::string("odom")),//Changed from odom_combined to odom
+    base_footprint_frame_(std::string("base_footprint")) //Again changed it//Changed from base_footprint to base_link
   {
     // create SYSTEM MODEL
     ColumnVector sysNoise_Mu(6);  sysNoise_Mu = 0;

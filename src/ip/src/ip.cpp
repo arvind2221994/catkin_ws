@@ -95,9 +95,9 @@ int main( int argc, char** argv )
 	sensor_msgs::Image ros_image;
 	Mat imgOriginal;
 
-	ros::Publisher pub = nh.advertise<sensor_msgs::LaserScan>("scan", 10);
+	ros::Publisher pub = nh.advertise<sensor_msgs::LaserScan>("scan_camera", 10);
 	ros::Rate loop_rate(10);
-	VideoCapture cap(0);
+	//VideoCapture cap(1);
 
 
     /*if ( !cap.isOpened() )  // if not success, exit program
@@ -110,10 +110,10 @@ int main( int argc, char** argv )
     {
         	Mat bgr_planes[3], normalThresholded;
        // medianBlur(src,src,3); //blurring the image by convolution to aperture size 3 matrix
-		Mat src;
-		cap >> cv_image.image;
-		cv_image.encoding = "bgr8";
-		src = cv_image.image;
+		Mat src = imread("//home/kiran/ip_data/scene00801.png");
+		//cap >> cv_image.image;
+		//cv_image.encoding = "bgr8";
+		//src = cv_image.image;
 
         imshow("Input",src);
 		//src=src(Rect(0.2*src.cols, 0.3*src.rows, 0.6*src.cols, 0.6*src.rows));
