@@ -15,7 +15,7 @@
 ros::Publisher odom_pub;
 
 void odom_cb( const litemsgs::lite::ConstPtr & msg ) {
-   static tf::TransformBroadcaster odom_tf;
+   //static tf::TransformBroadcaster odom_tf;//Removed it according to 
    // odometry message
    nav_msgs::Odometry out;
    out.pose.pose = msg->pose;
@@ -38,18 +38,18 @@ void odom_cb( const litemsgs::lite::ConstPtr & msg ) {
 
    out.header = msg->header;
    out.child_frame_id = msg->child_frame_id;
-
+   
    odom_pub.publish(out);
 
    // tf transform
-   geometry_msgs::TransformStamped transform;
-   transform.header = msg->header;
-   transform.child_frame_id = msg->child_frame_id;
-   transform.transform.translation.x = msg->pose.position.x;
-   transform.transform.translation.y = msg->pose.position.y;
-   transform.transform.translation.z = msg->pose.position.z;
-   transform.transform.rotation = msg->pose.orientation;
-   odom_tf.sendTransform(transform);
+   // geometry_msgs::TransformStamped transform;
+   // transform.header = msg->header;
+   // transform.child_frame_id = msg->child_frame_id;
+   // transform.transform.translation.x = msg->pose.position.x;
+   // transform.transform.translation.y = msg->pose.position.y;
+   // transform.transform.translation.z = msg->pose.position.z;
+   // transform.transform.rotation = msg->pose.orientation;
+   // odom_tf.sendTransform(transform);
 }
 
 int main(int argc, char ** argv) {
@@ -59,7 +59,8 @@ int main(int argc, char ** argv) {
 
    ros::Subscriber s = nh.subscribe("odom_sub", 2, &odom_cb);
    ROS_INFO("Odom!");
-   odom_pub = nh.advertise<nav_msgs::Odometry>("odom", 2);
-
+   //odom_pub = nh.advertise<nav_msgs::Odometry>("odom_combined", 2);
+   // odom_pub = nh.advertise<nav_msgs::Odometry>("odom", 2);
+   odom_pub = nh.advertise<nav_msgs::Odometry>("odom_lite", 2);
    ros::spin();
 }

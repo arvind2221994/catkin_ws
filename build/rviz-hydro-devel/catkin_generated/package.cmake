@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "rviz")
+set(rviz_MAINTAINER "David Gossow <dgossow@gmail.com>, William Woodall <william@osrfoundation.org>")
+set(rviz_DEPRECATED "")
+set(rviz_VERSION "1.10.20")
+set(rviz_BUILD_DEPENDS "cmake_modules" "nav_msgs" "sensor_msgs" "geometry_msgs" "visualization_msgs" "tf" "image_transport" "laser_geometry" "pluginlib" "python_qt_binding" "urdfdom" "urdf" "roslib" "rosconsole" "std_srvs" "roscpp" "message_filters" "std_msgs" "rospy" "rosbag" "resource_retriever" "image_geometry" "interactive_markers" "libqt4-dev" "libqt4-opengl-dev" "libogre-dev" "yaml-cpp" "assimp-dev" "eigen" "map_msgs" "tinyxml")
+set(rviz_RUN_DEPENDS "nav_msgs" "sensor_msgs" "geometry_msgs" "visualization_msgs" "tf" "image_transport" "laser_geometry" "pluginlib" "python_qt_binding" "urdfdom" "urdf" "roslib" "rosconsole" "std_srvs" "roscpp" "message_filters" "std_msgs" "rospy" "rosbag" "resource_retriever" "image_geometry" "interactive_markers" "libqt4-dev" "libqt4-opengl-dev" "libogre-dev" "yaml-cpp" "assimp" "eigen" "map_msgs" "media_export" "tinyxml")
+set(rviz_BUILDTOOL_DEPENDS "catkin")

@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "lite_odom")
+set(lite_odom_MAINTAINER "saathvik <saathvik@todo.todo>")
+set(lite_odom_DEPRECATED "")
+set(lite_odom_VERSION "0.0.0")
+set(lite_odom_BUILD_DEPENDS "geometry_msgs" "litemsgs" "nav_msgs" "roscpp" "tf")
+set(lite_odom_RUN_DEPENDS "geometry_msgs" "litemsgs" "nav_msgs" "roscpp" "tf")
+set(lite_odom_BUILDTOOL_DEPENDS "catkin")

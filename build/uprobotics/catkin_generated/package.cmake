@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "uprobotics")
+set(uprobotics_MAINTAINER "sudha <sudha@todo.todo>")
+set(uprobotics_DEPRECATED "")
+set(uprobotics_VERSION "0.0.0")
+set(uprobotics_BUILD_DEPENDS )
+set(uprobotics_RUN_DEPENDS )
+set(uprobotics_BUILDTOOL_DEPENDS "catkin")

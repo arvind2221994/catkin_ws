@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/nogp
+END
+billboard_tile.vert
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/nogp/billboard_tile.vert
+END
+box.frag
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/nogp/box.frag
+END
+box.vert
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/nogp/box.vert
+END
+billboard.vert
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/nogp/billboard.vert
+END
+nogp.program
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/nogp/nogp.program
+END

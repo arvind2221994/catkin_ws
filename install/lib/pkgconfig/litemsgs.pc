@@ -1,0 +1,8 @@
+prefix=/home/kiran/catkin_ws/install
+
+Name: litemsgs
+Description: Description of litemsgs
+Version: 0.0.0
+Cflags: -I/home/kiran/catkin_ws/install/include
+Libs: -L/home/kiran/catkin_ws/install/lib 
+Requires: message_runtime

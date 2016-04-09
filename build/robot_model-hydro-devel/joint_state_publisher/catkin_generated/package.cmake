@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "joint_state_publisher")
+set(joint_state_publisher_MAINTAINER "David V. Lu!! <davidvlu@gmail.com>")
+set(joint_state_publisher_DEPRECATED "")
+set(joint_state_publisher_VERSION "1.10.21")
+set(joint_state_publisher_BUILD_DEPENDS "rospy" "wxpython" "sensor_msgs")
+set(joint_state_publisher_RUN_DEPENDS "rospy" "wxpython" "sensor_msgs")
+set(joint_state_publisher_BUILDTOOL_DEPENDS "catkin")

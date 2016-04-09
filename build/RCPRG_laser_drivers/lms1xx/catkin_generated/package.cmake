@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "lms1xx")
+set(lms1xx_MAINTAINER "kp <kp@todo.todo>")
+set(lms1xx_DEPRECATED "")
+set(lms1xx_VERSION "0.0.0")
+set(lms1xx_BUILD_DEPENDS "roscpp" "sensor_msgs" "liblms1xx")
+set(lms1xx_RUN_DEPENDS "roscpp" "sensor_msgs" "liblms1xx")
+set(lms1xx_BUILDTOOL_DEPENDS "catkin")

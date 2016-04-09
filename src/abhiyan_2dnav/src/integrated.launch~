@@ -1,0 +1,24 @@
+<launch>
+  <node pkg="lms1xx" type="LMS1xx_node" name="LMS1xx_node" output="screen">
+  <param name="host" value="169.254.180.130" />
+  </node>
+
+  <node pkg="lite_odom" type="lite_odom_code" name="lite_odom_code" output="screen">
+    <param name="" value="" />
+  </node>
+
+  <node pkg="robot_tf_config" type="tf_broadcaster" name="tf_broadcaster" output="screen">
+    <param name="" value="" />
+  </node>
+
+  <node pkg="ip" type="ip" name="ip" output="screen">
+  <param name="" value="" />
+  </node>
+
+  <node pkg="ira_laser_tools" name="laserscan_multi_merger" type="laserscan_multi_merger" output="screen">
+		<param name="destination_frame" value="/base_frame"/>
+		<param name="cloud_destination_topic" value="/merged_cloud"/>
+		<param name="scan_destination_topic" value="/merged_scan"/>
+                <param name="laserscan_topics" value="scan_camera scan" /> <!-- LIST OF THE LASER SCAN TOPICS TO SUBSCRIBE -->
+  </node>
+</launch>

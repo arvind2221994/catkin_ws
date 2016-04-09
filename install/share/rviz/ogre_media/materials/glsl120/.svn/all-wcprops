@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120
+END
+glsl120.program
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/glsl120.program
+END
+black.frag
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/black.frag
+END
+flat_color.frag
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/flat_color.frag
+END
+pickcolor.frag
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/pickcolor.frag
+END
+pass_color_circle.frag
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/pass_color_circle.frag
+END
+depth_circle.frag
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/depth_circle.frag
+END
+smooth_square.frag
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/smooth_square.frag
+END
+point.vert
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/point.vert
+END
+test_glsl.sh
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/test_glsl.sh
+END
+pass_color.frag
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/pass_color.frag
+END
+depth.frag
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/depth.frag
+END
+flat_color_circle.frag
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/flat_color_circle.frag
+END
+depth.vert
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/depth.vert
+END
+pickcolor_circle.frag
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/pickcolor_circle.frag
+END
+indexed_8bit_image.frag
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/indexed_8bit_image.frag
+END
+shaded_circle.frag
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/shaded_circle.frag
+END
+indexed_8bit_image.vert
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/arvnecro/abhiyan1.0/!svn/ver/8/trunk/src/rviz-hydro-devel/ogre_media/materials/glsl120/indexed_8bit_image.vert
+END

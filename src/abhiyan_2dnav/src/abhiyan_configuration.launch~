@@ -11,7 +11,4 @@
     <param name="" value="" />
   </node>
 
-  <!--node pkg="ip" type="ip" name="ip" output="screen"-->
-    <!--param name="" value="" /-->
-  <!--/node-->
 </launch>

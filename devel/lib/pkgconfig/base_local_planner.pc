@@ -1,0 +1,8 @@
+prefix=/home/kiran/catkin_ws/devel
+
+Name: base_local_planner
+Description: Description of base_local_planner
+Version: 1.11.6
+Cflags: -I/home/kiran/catkin_ws/devel/include -I/home/kiran/catkin_ws/src/navigation_hydro_devel/base_local_planner/include
+Libs: -L/home/kiran/catkin_ws/devel/lib -lbase_local_planner -ltrajectory_planner_ros
+Requires: roscpp dynamic_reconfigure message_generation tf pluginlib costmap_2d nav_core angles

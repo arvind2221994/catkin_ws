@@ -151,6 +151,7 @@ SlamGMapping::SlamGMapping():
   if(!private_nh_.getParam("map_frame", map_frame_))
     map_frame_ = "map";
   if(!private_nh_.getParam("odom_frame", odom_frame_))
+    // odom_frame_ = "odom_combined";
     odom_frame_ = "odom";
 
   double transform_publish_period;

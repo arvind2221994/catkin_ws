@@ -1,0 +1,8 @@
+prefix=/home/kiran/catkin_ws/install
+
+Name: map_server
+Description: Description of map_server
+Version: 1.11.6
+Cflags: -I/home/kiran/catkin_ws/install/include
+Libs: -L/home/kiran/catkin_ws/install/lib -limage_loader
+Requires: roscpp tf nav_msgs

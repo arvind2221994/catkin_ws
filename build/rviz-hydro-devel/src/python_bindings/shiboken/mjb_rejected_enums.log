@@ -1,0 +1,90 @@
+************************************************************************
+Not in type system
+ - PM_CbaIconHeight
+ - QAction::Priority
+ - QAction::SoftKeyRole
+ - QDataStream::FloatingPointPrecision
+ - QFile::FileHandleFlag
+ - QFont::HintingPreference
+ - QGraphicsItem::PanelModality
+ - QLocale::CurrencySymbolFormat
+ - QLocale::QuotationStyle
+ - QLocale::Script
+ - QPainter::PixmapFragmentHint
+ - QStyle::RequestSoftwareInputPanel
+ - QTextBlockFormat::LineHeightTypes
+ - QTextDocument::Stacks
+ - QXmlStreamReader::ReadElementTextBehaviour
+ - Qt::AnchorPoint
+ - Qt::CoordinateSystem
+ - Qt::CursorMoveStyle
+ - Qt::GestureFlag
+ - Qt::GestureState
+ - Qt::GestureType
+ - Qt::Initialization
+ - Qt::InputMethodHint
+ - Qt::NavigationMode
+ - Qt::TileRule
+ - Qt::TouchPointState
+ - QtConcurrent::ThreadFunctionResult
+ - SP_CustomTabVideos
+ - rviz::ViewController::CursorType
+************************************************************************
+
+************************************************************************
+Generation disabled by type system
+ - FP_NORMAL
+ - QAbstractFileEngineIterator::EntryInfoType
+ - QCoreApplication::ApplicationFlags
+ - QFont::ResolveProperties
+ - QGraphicsEllipseItem::Type
+ - QGraphicsItem::UserType
+ - QGraphicsItemGroup::Type
+ - QGraphicsLineItem::Type
+ - QGraphicsPathItem::Type
+ - QGraphicsPixmapItem::Type
+ - QGraphicsPolygonItem::Type
+ - QGraphicsProxyWidget::Type
+ - QGraphicsRectItem::Type
+ - QGraphicsSimpleTextItem::Type
+ - QGraphicsTextItem::Type
+ - QGraphicsWidget::Type
+ - QMetaMethod::Attributes
+ - Q_DUMMY_TYPE
+ - QtConcurrent::ReduceQueueThrottleLimit
+ - QtValidLicenseForActiveQtModule
+ - QtValidLicenseForCoreModule
+ - QtValidLicenseForDBusModule
+ - QtValidLicenseForGuiModule
+ - QtValidLicenseForHelpModule
+ - QtValidLicenseForNetworkModule
+ - QtValidLicenseForOpenGLModule
+ - QtValidLicenseForQt3SupportLightModule
+ - QtValidLicenseForQt3SupportModule
+ - QtValidLicenseForScriptModule
+ - QtValidLicenseForScriptToolsModule
+ - QtValidLicenseForSqlModule
+ - QtValidLicenseForSvgModule
+ - QtValidLicenseForTestModule
+ - QtValidLicenseForXmlModule
+ - QtValidLicenseForXmlPatternsModule
+ - __codecvt_result
+ - rviz::Tool::Finished
+************************************************************************
+
+************************************************************************
+Type redefined to not be a class
+************************************************************************
+
+************************************************************************
+Unmatched argument type
+************************************************************************
+
+************************************************************************
+Unmatched return type
+************************************************************************
+
+************************************************************************
+Incompatible API
+************************************************************************
+
